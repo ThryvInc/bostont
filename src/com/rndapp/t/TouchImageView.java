@@ -67,9 +67,9 @@ public class TouchImageView extends ImageView {
     	super.setClickable(true);
         this.context = cont;
         setScaleType(ScaleType.MATRIX);
-        matrix = this.getImageMatrix();
+        //matrix = this.getImageMatrix();
         mScaleDetector = new ScaleGestureDetector(cont, new ScaleListener());
-        mDetector = new GestureDetector(new GestureDetector.OnGestureListener() {
+        mDetector = new GestureDetector(context, new GestureDetector.OnGestureListener() {
             @Override
             public boolean onDown(MotionEvent motionEvent) {
                 return false;
@@ -99,7 +99,7 @@ public class TouchImageView extends ImageView {
             public boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent2, float v, float v2) {
                 return false;
             }
-        });
+        }, null, true);
         mDetector.setOnDoubleTapListener(new GestureDetector.OnDoubleTapListener(){
 
             @Override
