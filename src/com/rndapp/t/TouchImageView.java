@@ -12,6 +12,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Matrix;
 import android.graphics.PointF;
+import android.os.Build;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.GestureDetector;
@@ -66,8 +67,10 @@ public class TouchImageView extends ImageView {
     private void sharedConstructing(Context cont) {
     	super.setClickable(true);
         this.context = cont;
-        setScaleType(ScaleType.MATRIX);
-        //matrix = this.getImageMatrix();
+        if (Build.VERSION.SDK_INT > 17){
+            setScaleType(ScaleType.MATRIX);
+        }
+        matrix = this.getImageMatrix();
         mScaleDetector = new ScaleGestureDetector(cont, new ScaleListener());
         mDetector = new GestureDetector(context, new GestureDetector.OnGestureListener() {
             @Override
@@ -129,7 +132,7 @@ public class TouchImageView extends ImageView {
         });
         matrix.setTranslate(1f, 1f);
         m = new float[9];
-        setImageMatrix(matrix);
+        //setImageMatrix(matrix);
 
         setOnTouchListener(new DoubleTapPinchZoomListener());
     }
@@ -138,13 +141,8 @@ public class TouchImageView extends ImageView {
     public void setImageBitmap(Bitmap bm) { 
         super.setImageBitmap(bm);
         if(bm != null) {
-            if (context.getApplicationInfo().targetSdkVersion > 17){
-                bmWidth = bm.getWidth();
-                bmHeight = bm.getHeight();
-            } else {
-        	    bmWidth = bm.getWidth();
-        	    bmHeight = bm.getHeight();
-            }
+            bmWidth = bm.getWidth();
+        	bmHeight = bm.getHeight();
         }
     }
     
@@ -224,6 +222,7 @@ public class TouchImageView extends ImageView {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         width = MeasureSpec.getSize(widthMeasureSpec);
         height = MeasureSpec.getSize(heightMeasureSpec);
+
         //Fit to screen.
         float scale;
         float scaleX =  (float)width / (float)(bmWidth);
@@ -240,12 +239,12 @@ public class TouchImageView extends ImageView {
         redundantXSpace /= (float)2;
 
         matrix.postTranslate(redundantXSpace, redundantYSpace);
+        setImageMatrix(matrix);
         
         origWidth = width - 2 * redundantXSpace;
         origHeight = height - 2 * redundantYSpace;
         right = width * saveScale - width - (2 * redundantXSpace * saveScale);
         bottom = height * saveScale - height - (2 * redundantYSpace * saveScale);
-        setImageMatrix(matrix);
     }
     
     class DoubleTapPinchZoomListener implements OnTouchListener {
