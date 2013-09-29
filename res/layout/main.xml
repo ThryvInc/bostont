@@ -26,13 +26,13 @@
                     android:textColor="#fff"
 				    android:text="See Schedules" />
 			    
-				<com.rndapp.t.TouchImageView 
+				<com.rndapp.subway_lib.TouchImageView
 				    android:id="@+id/touchImg"
 					android:layout_width="wrap_content" 
-					android:layout_height="wrap_content" />
-				
-				
+					android:layout_height="wrap_content"/>
+
 			</LinearLayout>
+
 
 			<LinearLayout android:id="@+id/schedll"
 				android:orientation="vertical" android:layout_width="fill_parent"

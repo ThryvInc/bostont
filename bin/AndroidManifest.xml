@@ -22,7 +22,7 @@
         </activity>
         
         <activity
-        	android:name=".Notification"
+        	android:name="com.rndapp.subway_lib.Notification"
         	android:theme="@android:style/Theme.Dialog" />
         	
         <activity android:name="com.google.ads.AdActivity"

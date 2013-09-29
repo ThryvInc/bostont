@@ -5,6 +5,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
+import com.rndapp.subway_lib.MainActivity;
+import com.rndapp.subway_lib.Notification;
+import com.rndapp.subway_lib.TouchImageView;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.StatusLine;
@@ -32,22 +35,12 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.Animation.AnimationListener;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 import android.widget.ViewAnimator;
 
-public class BostonTActivity extends Activity implements OnClickListener{
-	ViewAnimator va;
-	private Animation slideLeftIn;
-	private Animation slideLeftOut;
-	private Animation slideRightIn;
-	private Animation slideRightOut;
-	
-	private Context context;
+public class BostonTActivity extends MainActivity implements OnClickListener{
 	private JSONObject fetchedData;
-	
-	boolean zoomed = false;
 
     private ProgressDialog pd;
     private Handler handler = new Handler() {
@@ -78,34 +71,15 @@ public class BostonTActivity extends Activity implements OnClickListener{
 
         setXML();
     }
-    
-    private void setXML(){
-		va = (ViewAnimator)findViewById(R.id.chooser_anim);
-		setAnimations();
 
-    	Button sched = (Button)findViewById(R.id.see_sched);
-
-        TouchImageView img = (TouchImageView)findViewById(R.id.touchImg);
-        Options options = new BitmapFactory.Options();
-        options.inScaled = false;
-        Bitmap subway = BitmapFactory.decodeResource(getResources(), R.drawable.subway, options);
-        img.setImageBitmap(subway);
-        
-    	Button map = (Button)findViewById(R.id.see_map);
+    @Override
+    protected void setXML(){
+        super.setXML();
     	
     	Button red = (Button)findViewById(R.id.red_btn);
     	Button blue = (Button)findViewById(R.id.blue_btn);
     	Button orange = (Button)findViewById(R.id.orange_btn);
     	Button green = (Button)findViewById(R.id.green_btn);
-    	
-    	Button backsched = (Button)findViewById(R.id.back_to_sched);
-    	
-    	sched.setOnClickListener(this);
-    	sched.setBackgroundColor(getResources().getColor(R.color.grey));
-    	map.setOnClickListener(this);
-    	map.setBackgroundColor(getResources().getColor(R.color.grey));
-    	backsched.setOnClickListener(this);
-    	backsched.setBackgroundColor(getResources().getColor(R.color.grey));
 
     	red.setOnClickListener(this);
     	red.setBackgroundColor(getResources().getColor(R.color.red));
@@ -116,34 +90,11 @@ public class BostonTActivity extends Activity implements OnClickListener{
     	green.setOnClickListener(this);
     	green.setBackgroundColor(getResources().getColor(R.color.green));
     }
-    
-    private void setAnimations(){
-		slideLeftIn = AnimationUtils.loadAnimation(this, R.anim.push_left_in);
-        slideLeftIn.setAnimationListener(new ScrollLeft());
-        slideLeftOut = AnimationUtils.loadAnimation(this, R.anim.push_left_out);
-        slideRightIn = AnimationUtils.loadAnimation(this, R.anim.push_right_in);
-        slideRightIn.setAnimationListener(new ScrollRight());
-        slideRightOut = AnimationUtils.loadAnimation(this, R.anim.push_right_out);
-	}
 
 	@Override
 	public void onClick(View v) {
+        super.onClick(v);
 		switch (v.getId()){
-		case R.id.see_map:
-			va.setInAnimation(slideRightIn);
-			va.setOutAnimation(slideRightOut);
-			va.showPrevious();
-			break;
-		case R.id.see_sched:
-			va.setInAnimation(slideLeftIn);
-			va.setOutAnimation(slideLeftOut);
-			va.showNext();
-			break;
-		case R.id.back_to_sched:
-			va.setInAnimation(slideRightIn);
-			va.setOutAnimation(slideRightOut);
-			va.showPrevious();
-			break;
 		case R.id.orange_btn:
 			pd = ProgressDialog.show(this, "", "Loading...", true, true);
 	    	Thread thread = new Thread(new Runnable(){
@@ -199,7 +150,7 @@ public class BostonTActivity extends Activity implements OnClickListener{
 		}
 	}
     
-    private String getSchedule(String line){
+    protected String getSchedule(String line){
 		StringBuilder builder = new StringBuilder();
 		HttpClient client = new DefaultHttpClient();
 		HttpGet httpGet = new HttpGet("http://developer.mbta.com/lib/rthr/"+line+".json");
@@ -239,55 +190,4 @@ public class BostonTActivity extends Activity implements OnClickListener{
     	super.onStop();		
     	FlurryAgent.onEndSession(this);
     }
-    
-    class ScrollRight implements AnimationListener{
-
-		@Override
-		public void onAnimationEnd(Animation animation) {
-			va.postDelayed(new Runnable(){
-				@Override
-				public void run(){
-					//va.showPrevious();
-				}
-			}, 10);
-		}
-
-		@Override
-		public void onAnimationRepeat(Animation animation) {
-			// TODO Auto-generated method stub
-
-		}
-
-		@Override
-		public void onAnimationStart(Animation animation) {
-			// TODO Auto-generated method stub
-
-		}
-	}
-
-	class ScrollLeft implements AnimationListener{
-
-		@Override
-		public void onAnimationEnd(Animation animation) {
-			va.postDelayed(new Runnable(){
-				@Override
-				public void run(){
-					//va.showNext();
-				}
-			}, 10);
-		}
-
-		@Override
-		public void onAnimationRepeat(Animation animation) {
-			// TODO Auto-generated method stub
-
-		}
-
-		@Override
-		public void onAnimationStart(Animation animation) {
-			// TODO Auto-generated method stub
-
-		}
-
-	}
 }
