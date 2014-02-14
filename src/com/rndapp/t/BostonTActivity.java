@@ -95,6 +95,21 @@ public class BostonTActivity extends MainActivity implements OnClickListener{
 	public void onClick(View v) {
         super.onClick(v);
 		switch (v.getId()){
+            case R.id.see_map:
+                va.setInAnimation(slideRightIn);
+                va.setOutAnimation(slideRightOut);
+                va.showPrevious();
+                break;
+            case R.id.see_sched:
+                va.setInAnimation(slideLeftIn);
+                va.setOutAnimation(slideLeftOut);
+                va.showNext();
+                break;
+            case R.id.back_to_sched:
+                va.setInAnimation(slideRightIn);
+                va.setOutAnimation(slideRightOut);
+                va.showPrevious();
+                break;
 		case R.id.orange_btn:
 			pd = ProgressDialog.show(this, "", "Loading...", true, true);
 	    	Thread thread = new Thread(new Runnable(){
