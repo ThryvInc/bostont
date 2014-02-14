@@ -1,13 +1,10 @@
-*.idea/*
-*.eml*
-*.iml*
-*DS_S*
+.idea/
+*.eml
+*.iml
+.DS_Store
 *~
-out/*
-
-/local.properties
-
-/AndroidManifest.xml.bak
+out/
+.gradle/
 
 /local.properties
 
