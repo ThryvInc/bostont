@@ -7,13 +7,13 @@ buildscript {
     }
 }
 
-apply plugin: 'android-library'
+apply plugin: 'android'
 
 dependencies {
     compile 'com.android.support:support-v4:+'
     compile 'com.android.support:appcompat-v7:19.0.1'
     compile fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
-    compile project(':bostont:subway_lib')
+    compile project(':subway_lib')
 }
 
 android {
@@ -29,11 +29,11 @@ android {
         main {
             manifest.srcFile 'AndroidManifest.xml'
             java.srcDirs = ['src']
+            resources.srcDirs = ['src']
             aidl.srcDirs = ['src']
             renderscript.srcDirs = ['src']
-            resources.srcDirs = ['src']
             res.srcDirs = ['res']
-	        assets.srcDirs = ['assets']
+            assets.srcDirs = ['assets']
         }
     }
 }

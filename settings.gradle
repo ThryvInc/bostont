@@ -1,2 +1,2 @@
-include ':bostont'
-include ':bostont:subway_lib'
+include ':'
+include ':subway_lib'
