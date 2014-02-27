@@ -7,15 +7,31 @@ import org.json.JSONObject;
 
 public class Stop implements Serializable {
 
+    /**
+     * The name of the {@code Stop}.
+     */
     public String name;
+
+    /**
+     * A list of
+     */
     public ArrayList<Long> seconds;
 
-    public Stop(String s) {
+    /**
+     * Constructs a {@code Stop}.
+     * @param name The name of the {@code Stop}.
+     */
+    public Stop(String name) {
         super();
         seconds = new ArrayList<Long>();
-        name = s;
+        this.name = name;
     }
 
+    /**
+     * Constructs a {@code Stop} from a {@code JSONObject}.
+     * Reads values for the stop's name and
+     * @param stop
+     */
     public Stop(JSONObject stop) {
         super();
         seconds = new ArrayList<Long>();

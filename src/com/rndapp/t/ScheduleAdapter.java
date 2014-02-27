@@ -17,12 +17,30 @@ import android.widget.TextView;
 
 public class ScheduleAdapter extends BaseAdapter {
 
+    /**
+     * The context from which the adapter was created.
+     * Used for getting resources and views.
+     */
     Context context;
+
+    /**
+     * The item resource ID. Used for layout inflation.
+     */
     int itemResID;
+
+    /**
+     *
+     */
     long time;
     int color;
     ArrayList<Trip> trips;
 
+    /**
+     *
+     * @param context
+     * @param itemResID
+     * @param json
+     */
     public ScheduleAdapter(Context context, int itemResID, JSONObject json) {
         this.context = context;
         this.itemResID = itemResID;
@@ -75,28 +93,45 @@ public class ScheduleAdapter extends BaseAdapter {
         return result;
     }
 
+    /**
+     * Returns the stop (or trip, if the stop ends on the completion of a trip)
+     * that is a specified number of stops away.
+     * @param stopsAway The specified number of stops away.
+     * @return the specified stop.
+     */
     @Override
-    public Object getItem(int position) {
+    public Object getItem(int stopsAway) {
         Object item = null;
-        int result = 0;
+        int stopCount = 0;
         for (Trip trip : trips) {
             for (int j = 0; j < trip.stops.size(); j++) {
-                if (result == position && j == 0) {
-                    item = trip;
-                } else if (result == position) {
-                    item = trip.stops.get(j);
+                Stop stop = trip.stops.get(j);
+                if (stopCount == stopsAway) {
+                    item = (j == 0) ? trip : stop;
+                    return item;
                 }
-                result++;
+                stopCount++;
             }
         }
         return item;
     }
 
+    /**
+     * A {@code Stop}'s ID is its position.
+     * @param position The requested stop.
+     * @return the position.
+     */
     @Override
     public long getItemId(int position) {
         return position;
     }
 
+    /**
+     * Checks to see if a {@code Stop} at a specified index is enabled.
+     * For now, you cannot click on the stops.
+     * @param position The requested stop.
+     * @return false.
+     */
     public boolean isEnabled(int position) {
         return false;
     }

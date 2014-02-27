@@ -57,6 +57,7 @@ public class BostonTActivity extends MainActivity implements OnClickListener {
 
     /**
      * A modifiable set of name/value mappings.
+     * Holds the schedule String.
      */
     private JSONObject fetchedData;
 
@@ -72,6 +73,10 @@ public class BostonTActivity extends MainActivity implements OnClickListener {
      * when they are received.
      */
     private Handler handler = new Handler() {
+        /**
+         * Populates the ListView.
+         * @param msg The received message (usually just a blank 0).
+         */
         @Override
         public void handleMessage(Message msg) {
             pd.dismiss();
@@ -83,7 +88,7 @@ public class BostonTActivity extends MainActivity implements OnClickListener {
                 va.setOutAnimation(slideLeftOut);
                 va.showNext();
             } else {
-                Toast.makeText(context, "Please make sure you are connected to the internet.", 8000).show();
+                Toast.makeText(context, "Please make sure you are connected to the internet.", Toast.LENGTH_LONG).show();
             }
         }
     };
@@ -136,6 +141,7 @@ public class BostonTActivity extends MainActivity implements OnClickListener {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
+                // Invokes handler's handleMessage, which creates new ScheduleAdapter
                 handler.sendEmptyMessage(0);
             }
         });
