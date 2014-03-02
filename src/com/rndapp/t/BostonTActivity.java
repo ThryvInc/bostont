@@ -130,7 +130,7 @@ public class BostonTActivity extends MainActivity implements OnClickListener {
      *
      * @param lineColor
      */
-    private void subwayLineButtonClicked(String lineColor) {
+    private void subwayLineButtonClicked(final String lineColor) {
         pd = ProgressDialog.show(this, "", "Loading...", true, true);
         Thread thread = new Thread(new Runnable() {
             public void run() {

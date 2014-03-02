@@ -18,4 +18,4 @@
         <translate android:fromXDelta="0" android:toXDelta="100%p" android:duration="300"/>
         <alpha android:fromAlpha="1.0" android:toAlpha="0.0" android:duration="300" />
 </set>
-<!-- From: file:/home/ell/development/bostont/subway_lib/res/anim/push_right_out.xml -->
+<!-- From: file:/Users/kmchen1/AndroidStudioProjects/bostont/subway_lib/res/anim/push_right_out.xml -->

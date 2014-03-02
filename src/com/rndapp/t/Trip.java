@@ -4,25 +4,52 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 public class Trip implements Serializable {
 
     /**
+     * Key for the Blue line.
+     */
+    public final static String BLUE = "blue";
+
+    /**
+     * Key for the Orange line.
+     */
+    public final static String ORANGE = "orange";
+
+    /**
+     * Key for the Red line.
+     */
+    public final static String RED = "red";
+
+    /**
+     * Key for the Green line.
+     */
+    public final static String GREEN = "green";
+
+    /**
      * The subway line the trip is on.
      */
-    public String line;
+    private String line;
 
     /**
      * The trip's destination.
      */
-    String destination;
+    private String destination;
 
     /**
      * A list of stops along the way to the destination.
      */
-    ArrayList<Stop> stops;
+    private ArrayList<Stop> stops;
 
+    /**
+     * Constructs a {@code Trip}.
+     * @param trip The {@code JSONObject} that contains the {@code Trip}'s
+     *             destination and a list of predictions.
+     * @param line The {@code Trip}'s line color.
+     */
     public Trip(JSONObject trip, String line) {
         super();
         destination = "";
@@ -37,55 +64,96 @@ public class Trip implements Serializable {
         }
     }
 
+    /**
+     * @param predictions An array of stops and their predicted seconds.
+     */
     public void incorporatePredictions(JSONArray predictions) {
+        // For each prediction...
         for (int i = 0; i < predictions.length(); i++) {
+
+            // We haven't added the prediction yet...
             boolean added = false;
+
+            // Get the prediction
+            JSONObject prediction = null;
+            try {
+                prediction = predictions.getJSONObject(i);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+            // Predicted stop
+            Stop predictedStop = new Stop(prediction);
+
+            // For each stop...
             for (int j = 0; j < stops.size(); j++) {
-                Stop s = stops.get(j);
+                Stop stop = stops.get(j);
                 try {
-                    JSONObject jsonp = predictions.getJSONObject(i);
-                    Stop p = new Stop(jsonp);
-                    if (p.equals(s)) {
-                        s.seconds.add(jsonp.getLong("Seconds"));
+                    // If the stops have the same destination...
+                    if (predictedStop.equals(stop)) {
+                        // Add the predicted seconds to get to the stop.
+                        stop.seconds.add(prediction.getLong("Seconds"));
                         added = true;
                     }
-                } catch (Exception e) {
+                } catch (JSONException e) {
                     e.printStackTrace();
                 }
             }
             if (!added) {
-                try {
-                    Stop p = new Stop(predictions.getJSONObject(i));
-                    stops.add(p);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+                stops.add(predictedStop);
             }
         }
     }
 
+    /**
+     * Returns this {@code Trip}'s list of stops.
+     * @return this {@code Trip}'s list of stops.
+     */
+    public ArrayList<Stop> getStops() {
+        return stops;
+    }
+
+    /**
+     * Returns this {@code Trip}'s destination.
+     * @return this {@code Trip}'s destination.
+     */
+    public String getDestination() {
+        return destination;
+    }
+
+    /**
+     * Checks if this {@code Trip} is equal to another {@code Trip}.
+     *
+     * @param o The other {@code Trip}.
+     * @return True if this {@code Trip} and the other {@code Trip}
+     * have the same destinations.
+     */
     @Override
     public boolean equals(Object o) {
         if (o.getClass() != Trip.class)
             return false;
-        if (!((Trip) o).destination.equalsIgnoreCase(this.destination))
-            return false;
-        return true;
+        return ((Trip) o).destination.equalsIgnoreCase(this.destination);
     }
 
+    /**
+     * Populates the list of stops, depending on this {@code Trip}'s destination.
+     */
     private void initStops() {
-        String[][] lines = {{"Wonderland",
-                "Revere Beach",
-                "Beachmont",
-                "Suffolk Downs",
-                "Orient Heights",
-                "Wood Island",
-                "Airport",
-                "Maverick",
-                "Aquarium",
-                "State Street",
-                "Government Center",
-                "Bowdoin"},
+        String[][] lines = {
+                // BLUE
+                {"Wonderland",
+                        "Revere Beach",
+                        "Beachmont",
+                        "Suffolk Downs",
+                        "Orient Heights",
+                        "Wood Island",
+                        "Airport",
+                        "Maverick",
+                        "Aquarium",
+                        "State Street",
+                        "Government Center",
+                        "Bowdoin"},
+                // ORANGE
                 {"Oak Grove",
                         "Malden Center",
                         "Wellington",
@@ -105,6 +173,7 @@ public class Trip implements Serializable {
                         "Stony Brook",
                         "Green Street",
                         "Forest Hills"},
+                // RED
                 {"Alewife",
                         "Davis",
                         "Porter Square",
@@ -127,6 +196,7 @@ public class Trip implements Serializable {
                         "Fields Corner",
                         "Shawmut",
                         "Ashmont"},
+                // RED
                 {"Alewife",
                         "Davis",
                         "Porter Square",
@@ -145,6 +215,7 @@ public class Trip implements Serializable {
                         "Quincy Center",
                         "Quincy Adams",
                         "Braintree"},
+                // RED
                 {"Alewife",
                         "Davis",
                         "Porter Square",
@@ -163,11 +234,11 @@ public class Trip implements Serializable {
                         "Shawmut",
                         "Ashmont"}};
         String[] list = {""};
-        if (line.equalsIgnoreCase("blue")) {
+        if (line.equalsIgnoreCase(BLUE)) {
             list = lines[0];
-        } else if (line.equalsIgnoreCase("orange")) {
+        } else if (line.equalsIgnoreCase(ORANGE)) {
             list = lines[1];
-        } else if (line.equalsIgnoreCase("red")) {
+        } else if (line.equalsIgnoreCase(RED)) {
             if (destination.equals("Alewife")) {
                 list = lines[2];
             } else if (destination.equals("Braintree")) {
@@ -179,15 +250,11 @@ public class Trip implements Serializable {
 
         if (!destination.equalsIgnoreCase(list[0])) {
             for (int i = 0; i < list.length; i++) {
-                String s = list[i];
-                Stop stop = new Stop(s);
-                stops.add(stop);
+                stops.add(new Stop(list[i]));
             }
         } else {
             for (int i = 0; i < list.length; i++) {
-                String s = list[list.length - 1 - i];
-                Stop stop = new Stop(s);
-                stops.add(stop);
+                stops.add(new Stop(list[list.length - 1 - i]));
             }
         }
 

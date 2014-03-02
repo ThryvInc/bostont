@@ -29,8 +29,9 @@ public class Stop implements Serializable {
 
     /**
      * Constructs a {@code Stop} from a {@code JSONObject}.
-     * Reads values for the stop's name and
-     * @param stop
+     * Reads values for the {@code Stop}'s name and
+     * @param stop The {@code JSONObject} that holds this {@code Stop}'s
+     *             name and the duration to this {@code Stop}.
      */
     public Stop(JSONObject stop) {
         super();
@@ -43,6 +44,10 @@ public class Stop implements Serializable {
         }
     }
 
+    /**
+     * Returns the minimum time/duration in the list of seconds.
+     * @return the minimum time/duration in the list of seconds.
+     */
     public long minSec() {
         long min = Long.MAX_VALUE;
         for (int i = 0; i < seconds.size(); i++) {
@@ -54,13 +59,17 @@ public class Stop implements Serializable {
         return min;
     }
 
+    /**
+     * Checks if this {@code Stop} is equal to another {@code Stop}.
+     * @param o The other {@code Stop}.
+     * @return True if this {@code Stop} and the other {@code Stop}
+     * have the same names.
+     */
     @Override
     public boolean equals(Object o) {
         if (o.getClass() != Stop.class)
             return false;
-        if (!((Stop) o).name.equalsIgnoreCase(this.name))
-            return false;
-        return true;
+        return ((Stop) o).name.equalsIgnoreCase(this.name);
     }
 
 }

@@ -1,4 +1,4 @@
-<!-- From: file:/home/ell/development/bostont/subway_lib/AndroidManifest.xml --><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="9" android:versionName="3.3" package="com.rndapp.subway_lib">
+<!-- From: file:/Users/kmchen1/AndroidStudioProjects/bostont/subway_lib/AndroidManifest.xml --><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="9" android:versionName="3.3" package="com.rndapp.subway_lib">
 
     <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="18"/>
 	<uses-permission android:name="android.permission.INTERNET"/>
