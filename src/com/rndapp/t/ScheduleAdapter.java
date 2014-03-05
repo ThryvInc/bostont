@@ -29,17 +29,23 @@ public class ScheduleAdapter extends BaseAdapter {
     int itemResID;
 
     /**
-     * When the
+     * When this {@code ScheduleAdapter} was constructed
+     * (i.e., when the schedule was looked up).
      */
     long time;
+
+    /**
+     * The resource number of the color.
+     */
     int color;
+
+
     ArrayList<Trip> trips;
 
     /**
-     *
-     * @param context
-     * @param itemResID
-     * @param json
+     * @param context   The context from which the adapter was created.
+     * @param itemResID The item resource ID used for layout inflation.
+     * @param json      The {@code JSONObject} that encapsulates data about the subway schedule.
      */
     public ScheduleAdapter(Context context, int itemResID, JSONObject json) {
         this.context = context;
@@ -72,6 +78,7 @@ public class ScheduleAdapter extends BaseAdapter {
 
     /**
      * Initializes the color of the TextView that displays the destination.
+     *
      * @param line The line color.
      */
     private void setColor(String line) {
@@ -86,6 +93,7 @@ public class ScheduleAdapter extends BaseAdapter {
 
     /**
      * Returns the sum of stops of all trips.
+     *
      * @return the sum of stops of all trips.
      */
     @Override
@@ -101,6 +109,7 @@ public class ScheduleAdapter extends BaseAdapter {
      * Returns the {@code Stop} (or {@code Trip}, if the {@code Stop}
      * ends on the completion of a {@code Trip}) that is a specified
      * number of {@code Stop}s away.
+     *
      * @param stopsAway The specified number of {@code Stop}s away.
      * @return the specified {@code Stop}, or null if none is found.
      */
@@ -122,6 +131,7 @@ public class ScheduleAdapter extends BaseAdapter {
 
     /**
      * A {@code Stop}'s ID is its position.
+     *
      * @param position The requested stop.
      * @return the position.
      */
@@ -133,6 +143,7 @@ public class ScheduleAdapter extends BaseAdapter {
     /**
      * Checks to see if a {@code Stop} at a specified index is enabled.
      * For now, you cannot click on the stops.
+     *
      * @param position The requested stop.
      * @return false.
      */
@@ -194,7 +205,6 @@ public class ScheduleAdapter extends BaseAdapter {
     }
 
     /**
-     *
      * @param s
      * @return
      */

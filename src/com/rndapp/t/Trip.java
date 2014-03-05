@@ -46,6 +46,7 @@ public class Trip implements Serializable {
 
     /**
      * Constructs a {@code Trip}.
+     *
      * @param trip The {@code JSONObject} that contains the {@code Trip}'s
      *             destination and a list of predictions.
      * @param line The {@code Trip}'s line color.
@@ -92,6 +93,7 @@ public class Trip implements Serializable {
                     // If the stops have the same destination...
                     if (predictedStop.equals(stop)) {
                         // Add the predicted seconds to get to the stop.
+                        // TODO - same as stops.seconds = predictedStop.seconds?
                         stop.seconds.add(prediction.getLong("Seconds"));
                         added = true;
                     }
@@ -107,6 +109,7 @@ public class Trip implements Serializable {
 
     /**
      * Returns this {@code Trip}'s list of stops.
+     *
      * @return this {@code Trip}'s list of stops.
      */
     public ArrayList<Stop> getStops() {
@@ -115,6 +118,7 @@ public class Trip implements Serializable {
 
     /**
      * Returns this {@code Trip}'s destination.
+     *
      * @return this {@code Trip}'s destination.
      */
     public String getDestination() {
@@ -140,40 +144,8 @@ public class Trip implements Serializable {
      */
     private void initStops() {
         String[][] lines = {
-                // BLUE
-                {"Wonderland",
-                        "Revere Beach",
-                        "Beachmont",
-                        "Suffolk Downs",
-                        "Orient Heights",
-                        "Wood Island",
-                        "Airport",
-                        "Maverick",
-                        "Aquarium",
-                        "State Street",
-                        "Government Center",
-                        "Bowdoin"},
-                // ORANGE
-                {"Oak Grove",
-                        "Malden Center",
-                        "Wellington",
-                        "Sullivan",
-                        "Community College",
-                        "North Station",
-                        "Haymarket",
-                        "State Street",
-                        "Downtown Crossing",
-                        "Chinatown",
-                        "Tufts Medical",
-                        "Back Bay",
-                        "Mass Ave",
-                        "Ruggles",
-                        "Roxbury Crossing",
-                        "Jackson Square",
-                        "Stony Brook",
-                        "Green Street",
-                        "Forest Hills"},
-                // RED
+                BLUE_LINE, ORANGE_LINE,
+                // RED - braintree to ashmont
                 {"Alewife",
                         "Davis",
                         "Porter Square",
@@ -196,7 +168,7 @@ public class Trip implements Serializable {
                         "Fields Corner",
                         "Shawmut",
                         "Ashmont"},
-                // RED
+                // RED - stops at braintree
                 {"Alewife",
                         "Davis",
                         "Porter Square",
@@ -215,7 +187,7 @@ public class Trip implements Serializable {
                         "Quincy Center",
                         "Quincy Adams",
                         "Braintree"},
-                // RED
+                // RED - straight to ashmont
                 {"Alewife",
                         "Davis",
                         "Porter Square",
@@ -233,6 +205,7 @@ public class Trip implements Serializable {
                         "Fields Corner",
                         "Shawmut",
                         "Ashmont"}};
+
         String[] list = {""};
         if (line.equalsIgnoreCase(BLUE)) {
             list = lines[0];
@@ -248,15 +221,53 @@ public class Trip implements Serializable {
             }
         }
 
-        if (!destination.equalsIgnoreCase(list[0])) {
-            for (int i = 0; i < list.length; i++) {
-                stops.add(new Stop(list[i]));
-            }
-        } else {
+        /* If we're going to the first stop, add stops in reverse. */
+        if (destination.equalsIgnoreCase(list[0])) {
             for (int i = 0; i < list.length; i++) {
                 stops.add(new Stop(list[list.length - 1 - i]));
             }
         }
 
+        /* If we're going to the last stop, add stops in normal order. */
+        else {
+            for (String stop : list) {
+                stops.add(new Stop(stop));
+            }
+        }
     }
+
+    private final static String[] ORANGE_LINE =
+            {"Oak Grove",
+                    "Malden Center",
+                    "Wellington",
+                    "Sullivan",
+                    "Community College",
+                    "North Station",
+                    "Haymarket",
+                    "State Street",
+                    "Downtown Crossing",
+                    "Chinatown",
+                    "Tufts Medical",
+                    "Back Bay",
+                    "Mass Ave",
+                    "Ruggles",
+                    "Roxbury Crossing",
+                    "Jackson Square",
+                    "Stony Brook",
+                    "Green Street",
+                    "Forest Hills"};
+
+    private final static String[] BLUE_LINE =
+            {"Wonderland",
+                    "Revere Beach",
+                    "Beachmont",
+                    "Suffolk Downs",
+                    "Orient Heights",
+                    "Wood Island",
+                    "Airport",
+                    "Maverick",
+                    "Aquarium",
+                    "State Street",
+                    "Government Center",
+                    "Bowdoin"};
 }

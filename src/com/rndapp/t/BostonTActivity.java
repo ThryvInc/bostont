@@ -46,10 +46,6 @@ import android.widget.ViewAnimator;
  */
 public class BostonTActivity extends MainActivity implements OnClickListener {
 
-    private final String ORANGE = "orange";
-    private final String RED = "red";
-    private final String BLUE = "blue";
-
     /**
      * The API key for this project.
      */
@@ -178,15 +174,15 @@ public class BostonTActivity extends MainActivity implements OnClickListener {
                 break;
 
             case R.id.orange_btn:
-                subwayLineButtonClicked(ORANGE);
+                subwayLineButtonClicked(Trip.ORANGE);
                 break;
 
             case R.id.red_btn:
-                subwayLineButtonClicked(RED);
+                subwayLineButtonClicked(Trip.RED);
                 break;
 
             case R.id.blue_btn:
-                subwayLineButtonClicked(BLUE);
+                subwayLineButtonClicked(Trip.BLUE);
                 break;
 
             // TODO - alternative... there's no json schedule for green line
