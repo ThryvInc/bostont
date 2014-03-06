@@ -40,9 +40,19 @@ public class Trip implements Serializable {
     private String destination;
 
     /**
-     * A list of stops along the way to the destination.
+     * A list of {@code Stop}s along the way to the destination.
      */
     private ArrayList<Stop> stops;
+
+    /**
+     * JSON key that maps to the {@code Trip}'s destination.
+     */
+    private final static String JSON_KEY_TRIP_DESTINATION = "Destination";
+
+    /**
+     * JSON key that maps to the {@code Trip}'s list of predicted ETAs for {@code Stop}s.
+     */
+    private final static String JSON_KEY_TRIP_PREDICTIONS = "Predictions";
 
     /**
      * Constructs a {@code Trip}.
@@ -57,9 +67,9 @@ public class Trip implements Serializable {
         this.line = line;
         stops = new ArrayList<Stop>();
         try {
-            this.destination = trip.getString("Destination");
+            this.destination = trip.getString(JSON_KEY_TRIP_DESTINATION);
             initStops();
-            incorporatePredictions(trip.getJSONArray("Predictions"));
+            incorporatePredictions(trip.getJSONArray(JSON_KEY_TRIP_PREDICTIONS));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -92,9 +102,8 @@ public class Trip implements Serializable {
                 try {
                     // If the stops have the same destination...
                     if (predictedStop.equals(stop)) {
-                        // Add the predicted seconds to get to the stop.
-                        // TODO - same as stops.seconds = predictedStop.seconds?
-                        stop.seconds.add(prediction.getLong("Seconds"));
+                        // Set the stop's predicted ETA.
+                        stop.setSeconds(prediction.getLong(Stop.JSON_KEY_STOP_ETA));
                         added = true;
                     }
                 } catch (JSONException e) {
@@ -160,12 +169,11 @@ public class Trip implements Serializable {
         } else if (line.equalsIgnoreCase(ORANGE)) {
             list = lines[1];
         } else if (line.equalsIgnoreCase(RED)) {
-            // TODO use equalsIgnoreCase?
-            if (destination.equals("Alewife")) {
+            if (destination.equalsIgnoreCase("Alewife")) {
                 list = lines[2];
-            } else if (destination.equals("Braintree")) {
+            } else if (destination.equalsIgnoreCase("Braintree")) {
                 list = lines[3];
-            } else if (destination.equals("Ashmont")) {
+            } else if (destination.equalsIgnoreCase("Ashmont")) {
                 list = lines[4];
             }
         }

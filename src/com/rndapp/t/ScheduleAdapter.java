@@ -186,7 +186,7 @@ public class ScheduleAdapter extends BaseAdapter {
             // destination is invisible since it's a stop...
             holder.destination.setVisibility(View.GONE);
             // display the name of the stop
-            holder.name.setText(s.name);
+            holder.name.setText(s.getName());
             // show the prediction for the next train
             holder.nextTrain.setText(formattedPredict(s));
         }
@@ -199,7 +199,7 @@ public class ScheduleAdapter extends BaseAdapter {
             holder.destination.setVisibility(View.VISIBLE);
             holder.destination.setBackgroundColor(color);
             // display name of the first stop
-            holder.name.setText(s.name);
+            holder.name.setText(s.getName());
             // show the prediction for the next train
             holder.nextTrain.setText(formattedPredict(s));
         }
@@ -214,7 +214,7 @@ public class ScheduleAdapter extends BaseAdapter {
     private String formattedPredict(Stop s) {
         String result = "";
         // time to get to next stop
-        long min = s.minSec();
+        long min = s.getSeconds();
         if (min != Long.MAX_VALUE) {
             long current = Calendar.getInstance().getTimeInMillis();
             // time is the triplist's current time in seconds

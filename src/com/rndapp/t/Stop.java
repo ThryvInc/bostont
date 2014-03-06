@@ -3,6 +3,7 @@ package com.rndapp.t;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 public class Stop implements Serializable {
@@ -10,58 +11,53 @@ public class Stop implements Serializable {
     /**
      * The name of the {@code Stop}.
      */
-    public String name;
+    private String name;
 
     /**
-     * A list of
+     * Seconds until the {@code Stop} is reached.
      */
-    public ArrayList<Long> seconds;
+    private Long seconds;
+
+    /**
+     * JSON key that maps to the {@code Stop}'s name.
+     */
+    final static String JSON_KEY_STOP_NAME = "Stop";
+
+    /**
+     * JSON key that maps to the {@code Stop}'s estimated time of arrival (in seconds).
+     */
+    final static String JSON_KEY_STOP_ETA = "Seconds";
 
     /**
      * Constructs a {@code Stop}.
+     *
      * @param name The name of the {@code Stop}.
      */
     public Stop(String name) {
         super();
-        seconds = new ArrayList<Long>();
         this.name = name;
     }
 
     /**
      * Constructs a {@code Stop} from a {@code JSONObject}.
      * Reads values for the {@code Stop}'s name and
+     *
      * @param stop The {@code JSONObject} that holds this {@code Stop}'s
      *             name and the duration to this {@code Stop}.
      */
     public Stop(JSONObject stop) {
         super();
-        seconds = new ArrayList<Long>();
         try {
-            this.name = stop.getString("Stop");
-            this.seconds.add(stop.getLong("Seconds"));
-        } catch (Exception e) {
+            this.name = stop.getString(JSON_KEY_STOP_NAME);
+            this.seconds = stop.getLong(JSON_KEY_STOP_ETA);
+        } catch (JSONException e) {
             e.printStackTrace();
         }
     }
 
     /**
-     * Returns the minimum time/duration in the list of seconds.
-     * @return the minimum time/duration in the list of seconds.
-     */
-    public long minSec() {
-        // TODO is this method necessary? When is there going to be more than one Long in seconds list?
-        long min = Long.MAX_VALUE;
-        for (int i = 0; i < seconds.size(); i++) {
-            Long l = seconds.get(i);
-            if (l < min) {
-                min = l;
-            }
-        }
-        return min;
-    }
-
-    /**
      * Checks if this {@code Stop} is equal to another {@code Stop}.
+     *
      * @param o The other {@code Stop}.
      * @return True if this {@code Stop} and the other {@code Stop}
      * have the same names.
@@ -72,5 +68,34 @@ public class Stop implements Serializable {
             return false;
         return ((Stop) o).name.equalsIgnoreCase(this.name);
     }
+
+    /**
+     * Returns the {@code Stop}'s name.
+     *
+     * @return the {@code Stop}'s name.
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * Returns the {@code Stop}'s estimated time of arrival in seconds.
+     *
+     * @return the {@code Stop}'s estimated time of arrival in seconds.
+     */
+    public Long getSeconds() {
+        return seconds;
+    }
+
+    /**
+     * Sets the {@code Stop}'s estimated time of arrival in seconds.
+     * If the ETA is already set, it takes the lesser (i.e., sooner) ETA.
+     *
+     * @param seconds the {@code Stop}'s new estimated time of arrival in seconds.
+     */
+    public void setSeconds(Long seconds) {
+        this.seconds = (this.seconds == null) ? seconds : Math.min(this.seconds, seconds);
+    }
+
 
 }
