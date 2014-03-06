@@ -144,67 +144,15 @@ public class Trip implements Serializable {
      */
     private void initStops() {
         String[][] lines = {
-                BLUE_LINE, ORANGE_LINE,
+                BLUE_LINE,
+                ORANGE_LINE,
                 // RED - braintree to ashmont
-                {"Alewife",
-                        "Davis",
-                        "Porter Square",
-                        "Harvard Square",
-                        "Central Square",
-                        "Kendall/MIT",
-                        "Charles/MGH",
-                        "Park Street",
-                        "Downtown Crossing",
-                        "South Station",
-                        "Broadway",
-                        "Andrew",
-                        "JFK/UMass",
-                        "North Quincy",
-                        "Wollaston",
-                        "Quincy Center",
-                        "Quincy Adams",
-                        "Braintree",
-                        "Savin Hill",
-                        "Fields Corner",
-                        "Shawmut",
-                        "Ashmont"},
+                RED_BRAINTREE_ASHMONT,
                 // RED - stops at braintree
-                {"Alewife",
-                        "Davis",
-                        "Porter Square",
-                        "Harvard Square",
-                        "Central Square",
-                        "Kendall/MIT",
-                        "Charles/MGH",
-                        "Park Street",
-                        "Downtown Crossing",
-                        "South Station",
-                        "Broadway",
-                        "Andrew",
-                        "JFK/UMass",
-                        "North Quincy",
-                        "Wollaston",
-                        "Quincy Center",
-                        "Quincy Adams",
-                        "Braintree"},
+                RED_BRAINTREE,
                 // RED - straight to ashmont
-                {"Alewife",
-                        "Davis",
-                        "Porter Square",
-                        "Harvard Square",
-                        "Central Square",
-                        "Kendall/MIT",
-                        "Charles/MGH",
-                        "Park Street",
-                        "Downtown Crossing",
-                        "South Station",
-                        "Broadway",
-                        "Andrew",
-                        "JFK/UMass",
-                        "Savin Hill",
-                        "Fields Corner",
-                        "Shawmut",
-                        "Ashmont"}};
+                RED_ASHMONT
+        };
 
         String[] list = {""};
         if (line.equalsIgnoreCase(BLUE)) {
@@ -212,6 +160,7 @@ public class Trip implements Serializable {
         } else if (line.equalsIgnoreCase(ORANGE)) {
             list = lines[1];
         } else if (line.equalsIgnoreCase(RED)) {
+            // TODO use equalsIgnoreCase?
             if (destination.equals("Alewife")) {
                 list = lines[2];
             } else if (destination.equals("Braintree")) {
@@ -236,6 +185,9 @@ public class Trip implements Serializable {
         }
     }
 
+    /**
+     * The entire orange line.
+     */
     private final static String[] ORANGE_LINE =
             {"Oak Grove",
                     "Malden Center",
@@ -257,6 +209,9 @@ public class Trip implements Serializable {
                     "Green Street",
                     "Forest Hills"};
 
+    /**
+     * The entire blue line.
+     */
     private final static String[] BLUE_LINE =
             {"Wonderland",
                     "Revere Beach",
@@ -270,4 +225,76 @@ public class Trip implements Serializable {
                     "State Street",
                     "Government Center",
                     "Bowdoin"};
+
+    /**
+     * Red line, from Alewife to Braintree, then to Ashmont.
+     */
+    private final static String[] RED_BRAINTREE_ASHMONT =
+            {"Alewife",
+                    "Davis",
+                    "Porter Square",
+                    "Harvard Square",
+                    "Central Square",
+                    "Kendall/MIT",
+                    "Charles/MGH",
+                    "Park Street",
+                    "Downtown Crossing",
+                    "South Station",
+                    "Broadway",
+                    "Andrew",
+                    "JFK/UMass",
+                    "North Quincy",
+                    "Wollaston",
+                    "Quincy Center",
+                    "Quincy Adams",
+                    "Braintree",
+                    "Savin Hill",
+                    "Fields Corner",
+                    "Shawmut",
+                    "Ashmont"};
+
+    /**
+     * Red line, from Alewife to Braintree.
+     */
+    private final static String[] RED_BRAINTREE =
+            {"Alewife",
+                    "Davis",
+                    "Porter Square",
+                    "Harvard Square",
+                    "Central Square",
+                    "Kendall/MIT",
+                    "Charles/MGH",
+                    "Park Street",
+                    "Downtown Crossing",
+                    "South Station",
+                    "Broadway",
+                    "Andrew",
+                    "JFK/UMass",
+                    "North Quincy",
+                    "Wollaston",
+                    "Quincy Center",
+                    "Quincy Adams",
+                    "Braintree"};
+
+    /**
+     * Red line, from Alewife to Ashmont.
+     */
+    private final static String[] RED_ASHMONT =
+            {"Alewife",
+                    "Davis",
+                    "Porter Square",
+                    "Harvard Square",
+                    "Central Square",
+                    "Kendall/MIT",
+                    "Charles/MGH",
+                    "Park Street",
+                    "Downtown Crossing",
+                    "South Station",
+                    "Broadway",
+                    "Andrew",
+                    "JFK/UMass",
+                    "Savin Hill",
+                    "Fields Corner",
+                    "Shawmut",
+                    "Ashmont"};
 }

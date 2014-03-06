@@ -45,16 +45,19 @@ public class ScheduleAdapter extends BaseAdapter {
     /**
      * @param context   The context from which the adapter was created.
      * @param itemResID The item resource ID used for layout inflation.
-     * @param json      The {@code JSONObject} that encapsulates data about the subway schedule.
+     * @param data      The {@code JSONObject} that encapsulates data about the subway schedule.
      */
-    public ScheduleAdapter(Context context, int itemResID, JSONObject json) {
+    public ScheduleAdapter(Context context, int itemResID, JSONObject data) {
         this.context = context;
         this.itemResID = itemResID;
         trips = new ArrayList<Trip>();
         try {
-            JSONObject tripList = json.getJSONObject("TripList");
+            // We only care about original JSONObject for the trip list
+            JSONObject tripList = data.getJSONObject("TripList");
+            // Get the time
             time = tripList.getLong("CurrentTime");
             setColor(tripList.getString("Line"));
+
             JSONArray trips = tripList.getJSONArray("Trips");
             for (int i = 0; i < trips.length(); i++) {
                 JSONObject jsontrip = trips.getJSONObject(i);

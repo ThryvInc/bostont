@@ -123,8 +123,8 @@ public class BostonTActivity extends MainActivity implements OnClickListener {
     }
 
     /**
-     *
-     * @param lineColor
+     * Fetches data from the web.
+     * @param lineColor The line to fetch data for.
      */
     private void subwayLineButtonClicked(final String lineColor) {
         pd = ProgressDialog.show(this, "", "Loading...", true, true);
@@ -187,6 +187,7 @@ public class BostonTActivity extends MainActivity implements OnClickListener {
 
             // TODO - alternative... there's no json schedule for green line
             case R.id.green_btn:
+                // this just displays Green Line unavailability notification
                 startActivity(new Intent(this, Notification.class));
                 break;
 

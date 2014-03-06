@@ -49,6 +49,7 @@ public class Stop implements Serializable {
      * @return the minimum time/duration in the list of seconds.
      */
     public long minSec() {
+        // TODO is this method necessary? When is there going to be more than one Long in seconds list?
         long min = Long.MAX_VALUE;
         for (int i = 0; i < seconds.size(); i++) {
             Long l = seconds.get(i);
