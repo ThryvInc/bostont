@@ -1,90 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
 <merger>
 
-    <dataSet config="BostontSubway_libUnspecified.aar" >
-        <source path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/BostontSubway_libUnspecified.aar/res" >
+    <dataSet config="unspecified" >
+        <source path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/bostont/subway_lib/unspecified/res" >
             <file
                 name="push_left_in"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/BostontSubway_libUnspecified.aar/res/anim/push_left_in.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/bostont/subway_lib/unspecified/res/anim/push_left_in.xml"
                 qualifiers=""
                 type="anim" />
             <file
                 name="push_left_out"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/BostontSubway_libUnspecified.aar/res/anim/push_left_out.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/bostont/subway_lib/unspecified/res/anim/push_left_out.xml"
                 qualifiers=""
                 type="anim" />
             <file
                 name="push_right_in"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/BostontSubway_libUnspecified.aar/res/anim/push_right_in.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/bostont/subway_lib/unspecified/res/anim/push_right_in.xml"
                 qualifiers=""
                 type="anim" />
             <file
                 name="push_right_out"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/BostontSubway_libUnspecified.aar/res/anim/push_right_out.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/bostont/subway_lib/unspecified/res/anim/push_right_out.xml"
                 qualifiers=""
                 type="anim" />
             <file
                 name="slide_left"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/BostontSubway_libUnspecified.aar/res/anim/slide_left.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/bostont/subway_lib/unspecified/res/anim/slide_left.xml"
                 qualifiers=""
                 type="anim" />
             <file
                 name="slide_right"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/BostontSubway_libUnspecified.aar/res/anim/slide_right.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/bostont/subway_lib/unspecified/res/anim/slide_right.xml"
                 qualifiers=""
                 type="anim" />
             <file
                 name="app_icon"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/BostontSubway_libUnspecified.aar/res/drawable/app_icon.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/bostont/subway_lib/unspecified/res/drawable/app_icon.png"
                 qualifiers=""
                 type="drawable" />
             <file
                 name="app_icon"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/BostontSubway_libUnspecified.aar/res/drawable-hdpi/app_icon.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/bostont/subway_lib/unspecified/res/drawable-hdpi/app_icon.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="app_icon"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/BostontSubway_libUnspecified.aar/res/drawable-ldpi/app_icon.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/bostont/subway_lib/unspecified/res/drawable-ldpi/app_icon.png"
                 qualifiers="ldpi"
                 type="drawable" />
             <file
                 name="app_icon"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/BostontSubway_libUnspecified.aar/res/drawable-mdpi/app_icon.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/bostont/subway_lib/unspecified/res/drawable-mdpi/app_icon.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="subway"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/BostontSubway_libUnspecified.aar/res/drawable-nodpi/subway.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/bostont/subway_lib/unspecified/res/drawable-nodpi/subway.png"
                 qualifiers="nodpi"
                 type="drawable" />
             <file
                 name="app_icon"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/BostontSubway_libUnspecified.aar/res/drawable-xhdpi/app_icon.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/bostont/subway_lib/unspecified/res/drawable-xhdpi/app_icon.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="item"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/BostontSubway_libUnspecified.aar/res/layout/item.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/bostont/subway_lib/unspecified/res/layout/item.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="main"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/BostontSubway_libUnspecified.aar/res/layout/main.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/bostont/subway_lib/unspecified/res/layout/main.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="notification"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/BostontSubway_libUnspecified.aar/res/layout/notification.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/bostont/subway_lib/unspecified/res/layout/notification.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="section"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/BostontSubway_libUnspecified.aar/res/layout/section.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/bostont/subway_lib/unspecified/res/layout/section.xml"
                 qualifiers=""
                 type="layout" />
             <file
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/BostontSubway_libUnspecified.aar/res/values/values.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/bostont/subway_lib/unspecified/res/values/values.xml"
                 qualifiers="" >
                 <color name="off_white" >#484848
                 </color>
@@ -117,1305 +117,1305 @@
             </file>
         </source>
     </dataSet>
-    <dataSet config="ComAndroidSupportAppcompatV71901.aar" >
-        <source path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res" >
+    <dataSet config="19.0.1" >
+        <source path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res" >
             <file
                 name="abc_fade_in"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/anim/abc_fade_in.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/anim/abc_fade_in.xml"
                 qualifiers=""
                 type="anim" />
             <file
                 name="abc_fade_out"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/anim/abc_fade_out.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/anim/abc_fade_out.xml"
                 qualifiers=""
                 type="anim" />
             <file
                 name="abc_slide_in_bottom"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/anim/abc_slide_in_bottom.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/anim/abc_slide_in_bottom.xml"
                 qualifiers=""
                 type="anim" />
             <file
                 name="abc_slide_in_top"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/anim/abc_slide_in_top.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/anim/abc_slide_in_top.xml"
                 qualifiers=""
                 type="anim" />
             <file
                 name="abc_slide_out_bottom"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/anim/abc_slide_out_bottom.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/anim/abc_slide_out_bottom.xml"
                 qualifiers=""
                 type="anim" />
             <file
                 name="abc_slide_out_top"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/anim/abc_slide_out_top.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/anim/abc_slide_out_top.xml"
                 qualifiers=""
                 type="anim" />
             <file
                 name="abc_search_url_text_holo"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/color/abc_search_url_text_holo.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/color/abc_search_url_text_holo.xml"
                 qualifiers=""
                 type="color" />
             <file
                 name="abc_ic_clear"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable/abc_ic_clear.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable/abc_ic_clear.xml"
                 qualifiers=""
                 type="drawable" />
             <file
                 name="abc_ic_clear_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable/abc_ic_clear_holo_light.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable/abc_ic_clear_holo_light.xml"
                 qualifiers=""
                 type="drawable" />
             <file
                 name="abc_item_background_holo_dark"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable/abc_item_background_holo_dark.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable/abc_item_background_holo_dark.xml"
                 qualifiers=""
                 type="drawable" />
             <file
                 name="abc_item_background_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable/abc_item_background_holo_light.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable/abc_item_background_holo_light.xml"
                 qualifiers=""
                 type="drawable" />
             <file
                 name="abc_list_selector_background_transition_holo_dark"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable/abc_list_selector_background_transition_holo_dark.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable/abc_list_selector_background_transition_holo_dark.xml"
                 qualifiers=""
                 type="drawable" />
             <file
                 name="abc_list_selector_background_transition_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable/abc_list_selector_background_transition_holo_light.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable/abc_list_selector_background_transition_holo_light.xml"
                 qualifiers=""
                 type="drawable" />
             <file
                 name="abc_list_selector_holo_dark"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable/abc_list_selector_holo_dark.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable/abc_list_selector_holo_dark.xml"
                 qualifiers=""
                 type="drawable" />
             <file
                 name="abc_list_selector_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable/abc_list_selector_holo_light.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable/abc_list_selector_holo_light.xml"
                 qualifiers=""
                 type="drawable" />
             <file
                 name="abc_search_dropdown_dark"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable/abc_search_dropdown_dark.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable/abc_search_dropdown_dark.xml"
                 qualifiers=""
                 type="drawable" />
             <file
                 name="abc_search_dropdown_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable/abc_search_dropdown_light.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable/abc_search_dropdown_light.xml"
                 qualifiers=""
                 type="drawable" />
             <file
                 name="abc_spinner_ab_holo_dark"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable/abc_spinner_ab_holo_dark.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable/abc_spinner_ab_holo_dark.xml"
                 qualifiers=""
                 type="drawable" />
             <file
                 name="abc_spinner_ab_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable/abc_spinner_ab_holo_light.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable/abc_spinner_ab_holo_light.xml"
                 qualifiers=""
                 type="drawable" />
             <file
                 name="abc_tab_indicator_ab_holo"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable/abc_tab_indicator_ab_holo.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable/abc_tab_indicator_ab_holo.xml"
                 qualifiers=""
                 type="drawable" />
             <file
                 name="abc_textfield_searchview_holo_dark"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable/abc_textfield_searchview_holo_dark.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable/abc_textfield_searchview_holo_dark.xml"
                 qualifiers=""
                 type="drawable" />
             <file
                 name="abc_textfield_searchview_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable/abc_textfield_searchview_holo_light.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable/abc_textfield_searchview_holo_light.xml"
                 qualifiers=""
                 type="drawable" />
             <file
                 name="abc_textfield_searchview_right_holo_dark"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable/abc_textfield_searchview_right_holo_dark.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable/abc_textfield_searchview_right_holo_dark.xml"
                 qualifiers=""
                 type="drawable" />
             <file
                 name="abc_textfield_searchview_right_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable/abc_textfield_searchview_right_holo_light.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable/abc_textfield_searchview_right_holo_light.xml"
                 qualifiers=""
                 type="drawable" />
             <file
                 name="abc_ab_bottom_solid_dark_holo"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-hdpi/abc_ab_bottom_solid_dark_holo.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-hdpi/abc_ab_bottom_solid_dark_holo.9.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="abc_ab_bottom_solid_light_holo"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-hdpi/abc_ab_bottom_solid_light_holo.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-hdpi/abc_ab_bottom_solid_light_holo.9.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="abc_ab_bottom_transparent_dark_holo"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-hdpi/abc_ab_bottom_transparent_dark_holo.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-hdpi/abc_ab_bottom_transparent_dark_holo.9.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="abc_ab_bottom_transparent_light_holo"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-hdpi/abc_ab_bottom_transparent_light_holo.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-hdpi/abc_ab_bottom_transparent_light_holo.9.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="abc_ab_share_pack_holo_dark"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-hdpi/abc_ab_share_pack_holo_dark.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-hdpi/abc_ab_share_pack_holo_dark.9.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="abc_ab_share_pack_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-hdpi/abc_ab_share_pack_holo_light.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-hdpi/abc_ab_share_pack_holo_light.9.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="abc_ab_solid_dark_holo"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-hdpi/abc_ab_solid_dark_holo.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-hdpi/abc_ab_solid_dark_holo.9.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="abc_ab_solid_light_holo"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-hdpi/abc_ab_solid_light_holo.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-hdpi/abc_ab_solid_light_holo.9.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="abc_ab_stacked_solid_dark_holo"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-hdpi/abc_ab_stacked_solid_dark_holo.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-hdpi/abc_ab_stacked_solid_dark_holo.9.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="abc_ab_stacked_solid_light_holo"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-hdpi/abc_ab_stacked_solid_light_holo.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-hdpi/abc_ab_stacked_solid_light_holo.9.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="abc_ab_stacked_transparent_dark_holo"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-hdpi/abc_ab_stacked_transparent_dark_holo.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-hdpi/abc_ab_stacked_transparent_dark_holo.9.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="abc_ab_stacked_transparent_light_holo"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-hdpi/abc_ab_stacked_transparent_light_holo.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-hdpi/abc_ab_stacked_transparent_light_holo.9.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="abc_ab_transparent_dark_holo"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-hdpi/abc_ab_transparent_dark_holo.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-hdpi/abc_ab_transparent_dark_holo.9.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="abc_ab_transparent_light_holo"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-hdpi/abc_ab_transparent_light_holo.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-hdpi/abc_ab_transparent_light_holo.9.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="abc_cab_background_bottom_holo_dark"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-hdpi/abc_cab_background_bottom_holo_dark.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-hdpi/abc_cab_background_bottom_holo_dark.9.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="abc_cab_background_bottom_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-hdpi/abc_cab_background_bottom_holo_light.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-hdpi/abc_cab_background_bottom_holo_light.9.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="abc_cab_background_top_holo_dark"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-hdpi/abc_cab_background_top_holo_dark.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-hdpi/abc_cab_background_top_holo_dark.9.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="abc_cab_background_top_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-hdpi/abc_cab_background_top_holo_light.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-hdpi/abc_cab_background_top_holo_light.9.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="abc_ic_ab_back_holo_dark"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-hdpi/abc_ic_ab_back_holo_dark.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-hdpi/abc_ic_ab_back_holo_dark.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="abc_ic_ab_back_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-hdpi/abc_ic_ab_back_holo_light.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-hdpi/abc_ic_ab_back_holo_light.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="abc_ic_cab_done_holo_dark"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-hdpi/abc_ic_cab_done_holo_dark.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-hdpi/abc_ic_cab_done_holo_dark.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="abc_ic_cab_done_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-hdpi/abc_ic_cab_done_holo_light.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-hdpi/abc_ic_cab_done_holo_light.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="abc_ic_clear_disabled"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-hdpi/abc_ic_clear_disabled.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-hdpi/abc_ic_clear_disabled.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="abc_ic_clear_normal"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-hdpi/abc_ic_clear_normal.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-hdpi/abc_ic_clear_normal.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="abc_ic_clear_search_api_disabled_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-hdpi/abc_ic_clear_search_api_disabled_holo_light.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-hdpi/abc_ic_clear_search_api_disabled_holo_light.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="abc_ic_clear_search_api_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-hdpi/abc_ic_clear_search_api_holo_light.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-hdpi/abc_ic_clear_search_api_holo_light.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="abc_ic_commit_search_api_holo_dark"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-hdpi/abc_ic_commit_search_api_holo_dark.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-hdpi/abc_ic_commit_search_api_holo_dark.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="abc_ic_commit_search_api_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-hdpi/abc_ic_commit_search_api_holo_light.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-hdpi/abc_ic_commit_search_api_holo_light.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="abc_ic_go"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-hdpi/abc_ic_go.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-hdpi/abc_ic_go.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="abc_ic_go_search_api_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-hdpi/abc_ic_go_search_api_holo_light.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-hdpi/abc_ic_go_search_api_holo_light.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="abc_ic_menu_moreoverflow_normal_holo_dark"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-hdpi/abc_ic_menu_moreoverflow_normal_holo_dark.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-hdpi/abc_ic_menu_moreoverflow_normal_holo_dark.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="abc_ic_menu_moreoverflow_normal_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-hdpi/abc_ic_menu_moreoverflow_normal_holo_light.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-hdpi/abc_ic_menu_moreoverflow_normal_holo_light.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="abc_ic_menu_share_holo_dark"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-hdpi/abc_ic_menu_share_holo_dark.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-hdpi/abc_ic_menu_share_holo_dark.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="abc_ic_menu_share_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-hdpi/abc_ic_menu_share_holo_light.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-hdpi/abc_ic_menu_share_holo_light.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="abc_ic_search"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-hdpi/abc_ic_search.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-hdpi/abc_ic_search.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="abc_ic_search_api_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-hdpi/abc_ic_search_api_holo_light.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-hdpi/abc_ic_search_api_holo_light.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="abc_ic_voice_search"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-hdpi/abc_ic_voice_search.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-hdpi/abc_ic_voice_search.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="abc_ic_voice_search_api_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-hdpi/abc_ic_voice_search_api_holo_light.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-hdpi/abc_ic_voice_search_api_holo_light.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="abc_list_divider_holo_dark"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-hdpi/abc_list_divider_holo_dark.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-hdpi/abc_list_divider_holo_dark.9.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="abc_list_divider_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-hdpi/abc_list_divider_holo_light.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-hdpi/abc_list_divider_holo_light.9.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="abc_list_focused_holo"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-hdpi/abc_list_focused_holo.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-hdpi/abc_list_focused_holo.9.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="abc_list_longpressed_holo"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-hdpi/abc_list_longpressed_holo.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-hdpi/abc_list_longpressed_holo.9.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="abc_list_pressed_holo_dark"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-hdpi/abc_list_pressed_holo_dark.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-hdpi/abc_list_pressed_holo_dark.9.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="abc_list_pressed_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-hdpi/abc_list_pressed_holo_light.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-hdpi/abc_list_pressed_holo_light.9.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="abc_list_selector_disabled_holo_dark"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-hdpi/abc_list_selector_disabled_holo_dark.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-hdpi/abc_list_selector_disabled_holo_dark.9.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="abc_list_selector_disabled_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-hdpi/abc_list_selector_disabled_holo_light.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-hdpi/abc_list_selector_disabled_holo_light.9.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="abc_menu_dropdown_panel_holo_dark"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-hdpi/abc_menu_dropdown_panel_holo_dark.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-hdpi/abc_menu_dropdown_panel_holo_dark.9.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="abc_menu_dropdown_panel_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-hdpi/abc_menu_dropdown_panel_holo_light.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-hdpi/abc_menu_dropdown_panel_holo_light.9.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="abc_menu_hardkey_panel_holo_dark"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-hdpi/abc_menu_hardkey_panel_holo_dark.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-hdpi/abc_menu_hardkey_panel_holo_dark.9.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="abc_menu_hardkey_panel_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-hdpi/abc_menu_hardkey_panel_holo_light.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-hdpi/abc_menu_hardkey_panel_holo_light.9.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="abc_spinner_ab_default_holo_dark"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-hdpi/abc_spinner_ab_default_holo_dark.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-hdpi/abc_spinner_ab_default_holo_dark.9.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="abc_spinner_ab_default_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-hdpi/abc_spinner_ab_default_holo_light.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-hdpi/abc_spinner_ab_default_holo_light.9.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="abc_spinner_ab_disabled_holo_dark"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-hdpi/abc_spinner_ab_disabled_holo_dark.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-hdpi/abc_spinner_ab_disabled_holo_dark.9.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="abc_spinner_ab_disabled_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-hdpi/abc_spinner_ab_disabled_holo_light.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-hdpi/abc_spinner_ab_disabled_holo_light.9.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="abc_spinner_ab_focused_holo_dark"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-hdpi/abc_spinner_ab_focused_holo_dark.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-hdpi/abc_spinner_ab_focused_holo_dark.9.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="abc_spinner_ab_focused_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-hdpi/abc_spinner_ab_focused_holo_light.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-hdpi/abc_spinner_ab_focused_holo_light.9.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="abc_spinner_ab_pressed_holo_dark"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-hdpi/abc_spinner_ab_pressed_holo_dark.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-hdpi/abc_spinner_ab_pressed_holo_dark.9.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="abc_spinner_ab_pressed_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-hdpi/abc_spinner_ab_pressed_holo_light.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-hdpi/abc_spinner_ab_pressed_holo_light.9.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="abc_tab_selected_focused_holo"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-hdpi/abc_tab_selected_focused_holo.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-hdpi/abc_tab_selected_focused_holo.9.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="abc_tab_selected_holo"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-hdpi/abc_tab_selected_holo.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-hdpi/abc_tab_selected_holo.9.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="abc_tab_selected_pressed_holo"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-hdpi/abc_tab_selected_pressed_holo.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-hdpi/abc_tab_selected_pressed_holo.9.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="abc_tab_unselected_pressed_holo"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-hdpi/abc_tab_unselected_pressed_holo.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-hdpi/abc_tab_unselected_pressed_holo.9.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="abc_textfield_search_default_holo_dark"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-hdpi/abc_textfield_search_default_holo_dark.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-hdpi/abc_textfield_search_default_holo_dark.9.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="abc_textfield_search_default_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-hdpi/abc_textfield_search_default_holo_light.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-hdpi/abc_textfield_search_default_holo_light.9.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="abc_textfield_search_right_default_holo_dark"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-hdpi/abc_textfield_search_right_default_holo_dark.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-hdpi/abc_textfield_search_right_default_holo_dark.9.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="abc_textfield_search_right_default_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-hdpi/abc_textfield_search_right_default_holo_light.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-hdpi/abc_textfield_search_right_default_holo_light.9.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="abc_textfield_search_right_selected_holo_dark"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-hdpi/abc_textfield_search_right_selected_holo_dark.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-hdpi/abc_textfield_search_right_selected_holo_dark.9.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="abc_textfield_search_right_selected_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-hdpi/abc_textfield_search_right_selected_holo_light.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-hdpi/abc_textfield_search_right_selected_holo_light.9.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="abc_textfield_search_selected_holo_dark"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-hdpi/abc_textfield_search_selected_holo_dark.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-hdpi/abc_textfield_search_selected_holo_dark.9.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="abc_textfield_search_selected_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-hdpi/abc_textfield_search_selected_holo_light.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-hdpi/abc_textfield_search_selected_holo_light.9.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="abc_ab_bottom_solid_dark_holo"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-mdpi/abc_ab_bottom_solid_dark_holo.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-mdpi/abc_ab_bottom_solid_dark_holo.9.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="abc_ab_bottom_solid_light_holo"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-mdpi/abc_ab_bottom_solid_light_holo.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-mdpi/abc_ab_bottom_solid_light_holo.9.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="abc_ab_bottom_transparent_dark_holo"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-mdpi/abc_ab_bottom_transparent_dark_holo.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-mdpi/abc_ab_bottom_transparent_dark_holo.9.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="abc_ab_bottom_transparent_light_holo"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-mdpi/abc_ab_bottom_transparent_light_holo.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-mdpi/abc_ab_bottom_transparent_light_holo.9.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="abc_ab_share_pack_holo_dark"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-mdpi/abc_ab_share_pack_holo_dark.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-mdpi/abc_ab_share_pack_holo_dark.9.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="abc_ab_share_pack_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-mdpi/abc_ab_share_pack_holo_light.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-mdpi/abc_ab_share_pack_holo_light.9.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="abc_ab_solid_dark_holo"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-mdpi/abc_ab_solid_dark_holo.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-mdpi/abc_ab_solid_dark_holo.9.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="abc_ab_solid_light_holo"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-mdpi/abc_ab_solid_light_holo.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-mdpi/abc_ab_solid_light_holo.9.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="abc_ab_stacked_solid_dark_holo"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-mdpi/abc_ab_stacked_solid_dark_holo.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-mdpi/abc_ab_stacked_solid_dark_holo.9.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="abc_ab_stacked_solid_light_holo"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-mdpi/abc_ab_stacked_solid_light_holo.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-mdpi/abc_ab_stacked_solid_light_holo.9.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="abc_ab_stacked_transparent_dark_holo"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-mdpi/abc_ab_stacked_transparent_dark_holo.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-mdpi/abc_ab_stacked_transparent_dark_holo.9.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="abc_ab_stacked_transparent_light_holo"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-mdpi/abc_ab_stacked_transparent_light_holo.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-mdpi/abc_ab_stacked_transparent_light_holo.9.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="abc_ab_transparent_dark_holo"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-mdpi/abc_ab_transparent_dark_holo.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-mdpi/abc_ab_transparent_dark_holo.9.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="abc_ab_transparent_light_holo"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-mdpi/abc_ab_transparent_light_holo.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-mdpi/abc_ab_transparent_light_holo.9.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="abc_cab_background_bottom_holo_dark"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-mdpi/abc_cab_background_bottom_holo_dark.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-mdpi/abc_cab_background_bottom_holo_dark.9.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="abc_cab_background_bottom_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-mdpi/abc_cab_background_bottom_holo_light.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-mdpi/abc_cab_background_bottom_holo_light.9.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="abc_cab_background_top_holo_dark"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-mdpi/abc_cab_background_top_holo_dark.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-mdpi/abc_cab_background_top_holo_dark.9.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="abc_cab_background_top_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-mdpi/abc_cab_background_top_holo_light.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-mdpi/abc_cab_background_top_holo_light.9.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="abc_ic_ab_back_holo_dark"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-mdpi/abc_ic_ab_back_holo_dark.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-mdpi/abc_ic_ab_back_holo_dark.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="abc_ic_ab_back_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-mdpi/abc_ic_ab_back_holo_light.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-mdpi/abc_ic_ab_back_holo_light.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="abc_ic_cab_done_holo_dark"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-mdpi/abc_ic_cab_done_holo_dark.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-mdpi/abc_ic_cab_done_holo_dark.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="abc_ic_cab_done_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-mdpi/abc_ic_cab_done_holo_light.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-mdpi/abc_ic_cab_done_holo_light.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="abc_ic_clear_disabled"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-mdpi/abc_ic_clear_disabled.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-mdpi/abc_ic_clear_disabled.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="abc_ic_clear_normal"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-mdpi/abc_ic_clear_normal.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-mdpi/abc_ic_clear_normal.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="abc_ic_clear_search_api_disabled_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-mdpi/abc_ic_clear_search_api_disabled_holo_light.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-mdpi/abc_ic_clear_search_api_disabled_holo_light.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="abc_ic_clear_search_api_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-mdpi/abc_ic_clear_search_api_holo_light.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-mdpi/abc_ic_clear_search_api_holo_light.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="abc_ic_commit_search_api_holo_dark"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-mdpi/abc_ic_commit_search_api_holo_dark.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-mdpi/abc_ic_commit_search_api_holo_dark.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="abc_ic_commit_search_api_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-mdpi/abc_ic_commit_search_api_holo_light.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-mdpi/abc_ic_commit_search_api_holo_light.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="abc_ic_go"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-mdpi/abc_ic_go.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-mdpi/abc_ic_go.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="abc_ic_go_search_api_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-mdpi/abc_ic_go_search_api_holo_light.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-mdpi/abc_ic_go_search_api_holo_light.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="abc_ic_menu_moreoverflow_normal_holo_dark"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-mdpi/abc_ic_menu_moreoverflow_normal_holo_dark.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-mdpi/abc_ic_menu_moreoverflow_normal_holo_dark.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="abc_ic_menu_moreoverflow_normal_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-mdpi/abc_ic_menu_moreoverflow_normal_holo_light.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-mdpi/abc_ic_menu_moreoverflow_normal_holo_light.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="abc_ic_menu_share_holo_dark"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-mdpi/abc_ic_menu_share_holo_dark.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-mdpi/abc_ic_menu_share_holo_dark.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="abc_ic_menu_share_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-mdpi/abc_ic_menu_share_holo_light.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-mdpi/abc_ic_menu_share_holo_light.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="abc_ic_search"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-mdpi/abc_ic_search.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-mdpi/abc_ic_search.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="abc_ic_search_api_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-mdpi/abc_ic_search_api_holo_light.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-mdpi/abc_ic_search_api_holo_light.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="abc_ic_voice_search"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-mdpi/abc_ic_voice_search.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-mdpi/abc_ic_voice_search.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="abc_ic_voice_search_api_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-mdpi/abc_ic_voice_search_api_holo_light.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-mdpi/abc_ic_voice_search_api_holo_light.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="abc_list_divider_holo_dark"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-mdpi/abc_list_divider_holo_dark.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-mdpi/abc_list_divider_holo_dark.9.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="abc_list_divider_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-mdpi/abc_list_divider_holo_light.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-mdpi/abc_list_divider_holo_light.9.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="abc_list_focused_holo"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-mdpi/abc_list_focused_holo.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-mdpi/abc_list_focused_holo.9.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="abc_list_longpressed_holo"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-mdpi/abc_list_longpressed_holo.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-mdpi/abc_list_longpressed_holo.9.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="abc_list_pressed_holo_dark"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-mdpi/abc_list_pressed_holo_dark.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-mdpi/abc_list_pressed_holo_dark.9.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="abc_list_pressed_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-mdpi/abc_list_pressed_holo_light.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-mdpi/abc_list_pressed_holo_light.9.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="abc_list_selector_disabled_holo_dark"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-mdpi/abc_list_selector_disabled_holo_dark.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-mdpi/abc_list_selector_disabled_holo_dark.9.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="abc_list_selector_disabled_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-mdpi/abc_list_selector_disabled_holo_light.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-mdpi/abc_list_selector_disabled_holo_light.9.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="abc_menu_dropdown_panel_holo_dark"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-mdpi/abc_menu_dropdown_panel_holo_dark.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-mdpi/abc_menu_dropdown_panel_holo_dark.9.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="abc_menu_dropdown_panel_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-mdpi/abc_menu_dropdown_panel_holo_light.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-mdpi/abc_menu_dropdown_panel_holo_light.9.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="abc_menu_hardkey_panel_holo_dark"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-mdpi/abc_menu_hardkey_panel_holo_dark.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-mdpi/abc_menu_hardkey_panel_holo_dark.9.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="abc_menu_hardkey_panel_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-mdpi/abc_menu_hardkey_panel_holo_light.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-mdpi/abc_menu_hardkey_panel_holo_light.9.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="abc_spinner_ab_default_holo_dark"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-mdpi/abc_spinner_ab_default_holo_dark.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-mdpi/abc_spinner_ab_default_holo_dark.9.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="abc_spinner_ab_default_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-mdpi/abc_spinner_ab_default_holo_light.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-mdpi/abc_spinner_ab_default_holo_light.9.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="abc_spinner_ab_disabled_holo_dark"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-mdpi/abc_spinner_ab_disabled_holo_dark.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-mdpi/abc_spinner_ab_disabled_holo_dark.9.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="abc_spinner_ab_disabled_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-mdpi/abc_spinner_ab_disabled_holo_light.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-mdpi/abc_spinner_ab_disabled_holo_light.9.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="abc_spinner_ab_focused_holo_dark"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-mdpi/abc_spinner_ab_focused_holo_dark.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-mdpi/abc_spinner_ab_focused_holo_dark.9.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="abc_spinner_ab_focused_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-mdpi/abc_spinner_ab_focused_holo_light.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-mdpi/abc_spinner_ab_focused_holo_light.9.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="abc_spinner_ab_pressed_holo_dark"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-mdpi/abc_spinner_ab_pressed_holo_dark.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-mdpi/abc_spinner_ab_pressed_holo_dark.9.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="abc_spinner_ab_pressed_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-mdpi/abc_spinner_ab_pressed_holo_light.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-mdpi/abc_spinner_ab_pressed_holo_light.9.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="abc_tab_selected_focused_holo"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-mdpi/abc_tab_selected_focused_holo.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-mdpi/abc_tab_selected_focused_holo.9.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="abc_tab_selected_holo"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-mdpi/abc_tab_selected_holo.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-mdpi/abc_tab_selected_holo.9.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="abc_tab_selected_pressed_holo"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-mdpi/abc_tab_selected_pressed_holo.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-mdpi/abc_tab_selected_pressed_holo.9.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="abc_tab_unselected_pressed_holo"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-mdpi/abc_tab_unselected_pressed_holo.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-mdpi/abc_tab_unselected_pressed_holo.9.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="abc_textfield_search_default_holo_dark"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-mdpi/abc_textfield_search_default_holo_dark.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-mdpi/abc_textfield_search_default_holo_dark.9.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="abc_textfield_search_default_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-mdpi/abc_textfield_search_default_holo_light.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-mdpi/abc_textfield_search_default_holo_light.9.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="abc_textfield_search_right_default_holo_dark"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-mdpi/abc_textfield_search_right_default_holo_dark.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-mdpi/abc_textfield_search_right_default_holo_dark.9.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="abc_textfield_search_right_default_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-mdpi/abc_textfield_search_right_default_holo_light.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-mdpi/abc_textfield_search_right_default_holo_light.9.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="abc_textfield_search_right_selected_holo_dark"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-mdpi/abc_textfield_search_right_selected_holo_dark.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-mdpi/abc_textfield_search_right_selected_holo_dark.9.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="abc_textfield_search_right_selected_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-mdpi/abc_textfield_search_right_selected_holo_light.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-mdpi/abc_textfield_search_right_selected_holo_light.9.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="abc_textfield_search_selected_holo_dark"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-mdpi/abc_textfield_search_selected_holo_dark.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-mdpi/abc_textfield_search_selected_holo_dark.9.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="abc_textfield_search_selected_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-mdpi/abc_textfield_search_selected_holo_light.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-mdpi/abc_textfield_search_selected_holo_light.9.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="abc_ab_bottom_solid_dark_holo"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-xhdpi/abc_ab_bottom_solid_dark_holo.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-xhdpi/abc_ab_bottom_solid_dark_holo.9.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="abc_ab_bottom_solid_light_holo"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-xhdpi/abc_ab_bottom_solid_light_holo.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-xhdpi/abc_ab_bottom_solid_light_holo.9.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="abc_ab_bottom_transparent_dark_holo"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-xhdpi/abc_ab_bottom_transparent_dark_holo.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-xhdpi/abc_ab_bottom_transparent_dark_holo.9.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="abc_ab_bottom_transparent_light_holo"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-xhdpi/abc_ab_bottom_transparent_light_holo.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-xhdpi/abc_ab_bottom_transparent_light_holo.9.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="abc_ab_share_pack_holo_dark"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-xhdpi/abc_ab_share_pack_holo_dark.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-xhdpi/abc_ab_share_pack_holo_dark.9.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="abc_ab_share_pack_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-xhdpi/abc_ab_share_pack_holo_light.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-xhdpi/abc_ab_share_pack_holo_light.9.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="abc_ab_solid_dark_holo"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-xhdpi/abc_ab_solid_dark_holo.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-xhdpi/abc_ab_solid_dark_holo.9.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="abc_ab_solid_light_holo"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-xhdpi/abc_ab_solid_light_holo.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-xhdpi/abc_ab_solid_light_holo.9.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="abc_ab_stacked_solid_dark_holo"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-xhdpi/abc_ab_stacked_solid_dark_holo.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-xhdpi/abc_ab_stacked_solid_dark_holo.9.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="abc_ab_stacked_solid_light_holo"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-xhdpi/abc_ab_stacked_solid_light_holo.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-xhdpi/abc_ab_stacked_solid_light_holo.9.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="abc_ab_stacked_transparent_dark_holo"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-xhdpi/abc_ab_stacked_transparent_dark_holo.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-xhdpi/abc_ab_stacked_transparent_dark_holo.9.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="abc_ab_stacked_transparent_light_holo"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-xhdpi/abc_ab_stacked_transparent_light_holo.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-xhdpi/abc_ab_stacked_transparent_light_holo.9.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="abc_ab_transparent_dark_holo"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-xhdpi/abc_ab_transparent_dark_holo.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-xhdpi/abc_ab_transparent_dark_holo.9.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="abc_ab_transparent_light_holo"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-xhdpi/abc_ab_transparent_light_holo.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-xhdpi/abc_ab_transparent_light_holo.9.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="abc_cab_background_bottom_holo_dark"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-xhdpi/abc_cab_background_bottom_holo_dark.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-xhdpi/abc_cab_background_bottom_holo_dark.9.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="abc_cab_background_bottom_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-xhdpi/abc_cab_background_bottom_holo_light.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-xhdpi/abc_cab_background_bottom_holo_light.9.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="abc_cab_background_top_holo_dark"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-xhdpi/abc_cab_background_top_holo_dark.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-xhdpi/abc_cab_background_top_holo_dark.9.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="abc_cab_background_top_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-xhdpi/abc_cab_background_top_holo_light.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-xhdpi/abc_cab_background_top_holo_light.9.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="abc_ic_ab_back_holo_dark"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-xhdpi/abc_ic_ab_back_holo_dark.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-xhdpi/abc_ic_ab_back_holo_dark.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="abc_ic_ab_back_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-xhdpi/abc_ic_ab_back_holo_light.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-xhdpi/abc_ic_ab_back_holo_light.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="abc_ic_cab_done_holo_dark"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-xhdpi/abc_ic_cab_done_holo_dark.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-xhdpi/abc_ic_cab_done_holo_dark.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="abc_ic_cab_done_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-xhdpi/abc_ic_cab_done_holo_light.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-xhdpi/abc_ic_cab_done_holo_light.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="abc_ic_clear_disabled"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-xhdpi/abc_ic_clear_disabled.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-xhdpi/abc_ic_clear_disabled.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="abc_ic_clear_search_api_disabled_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-xhdpi/abc_ic_clear_search_api_disabled_holo_light.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-xhdpi/abc_ic_clear_search_api_disabled_holo_light.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="abc_ic_clear_search_api_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-xhdpi/abc_ic_clear_search_api_holo_light.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-xhdpi/abc_ic_clear_search_api_holo_light.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="abc_ic_commit_search_api_holo_dark"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-xhdpi/abc_ic_commit_search_api_holo_dark.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-xhdpi/abc_ic_commit_search_api_holo_dark.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="abc_ic_commit_search_api_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-xhdpi/abc_ic_commit_search_api_holo_light.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-xhdpi/abc_ic_commit_search_api_holo_light.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="abc_ic_go"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-xhdpi/abc_ic_go.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-xhdpi/abc_ic_go.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="abc_ic_go_search_api_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-xhdpi/abc_ic_go_search_api_holo_light.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-xhdpi/abc_ic_go_search_api_holo_light.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="abc_ic_menu_moreoverflow_normal_holo_dark"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-xhdpi/abc_ic_menu_moreoverflow_normal_holo_dark.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-xhdpi/abc_ic_menu_moreoverflow_normal_holo_dark.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="abc_ic_menu_moreoverflow_normal_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-xhdpi/abc_ic_menu_moreoverflow_normal_holo_light.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-xhdpi/abc_ic_menu_moreoverflow_normal_holo_light.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="abc_ic_menu_share_holo_dark"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-xhdpi/abc_ic_menu_share_holo_dark.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-xhdpi/abc_ic_menu_share_holo_dark.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="abc_ic_menu_share_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-xhdpi/abc_ic_menu_share_holo_light.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-xhdpi/abc_ic_menu_share_holo_light.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="abc_ic_search"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-xhdpi/abc_ic_search.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-xhdpi/abc_ic_search.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="abc_ic_search_api_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-xhdpi/abc_ic_search_api_holo_light.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-xhdpi/abc_ic_search_api_holo_light.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="abc_ic_voice_search"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-xhdpi/abc_ic_voice_search.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-xhdpi/abc_ic_voice_search.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="abc_ic_voice_search_api_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-xhdpi/abc_ic_voice_search_api_holo_light.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-xhdpi/abc_ic_voice_search_api_holo_light.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="abc_list_divider_holo_dark"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-xhdpi/abc_list_divider_holo_dark.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-xhdpi/abc_list_divider_holo_dark.9.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="abc_list_divider_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-xhdpi/abc_list_divider_holo_light.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-xhdpi/abc_list_divider_holo_light.9.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="abc_list_focused_holo"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-xhdpi/abc_list_focused_holo.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-xhdpi/abc_list_focused_holo.9.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="abc_list_longpressed_holo"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-xhdpi/abc_list_longpressed_holo.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-xhdpi/abc_list_longpressed_holo.9.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="abc_list_pressed_holo_dark"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-xhdpi/abc_list_pressed_holo_dark.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-xhdpi/abc_list_pressed_holo_dark.9.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="abc_list_pressed_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-xhdpi/abc_list_pressed_holo_light.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-xhdpi/abc_list_pressed_holo_light.9.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="abc_list_selector_disabled_holo_dark"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-xhdpi/abc_list_selector_disabled_holo_dark.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-xhdpi/abc_list_selector_disabled_holo_dark.9.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="abc_list_selector_disabled_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-xhdpi/abc_list_selector_disabled_holo_light.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-xhdpi/abc_list_selector_disabled_holo_light.9.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="abc_menu_dropdown_panel_holo_dark"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-xhdpi/abc_menu_dropdown_panel_holo_dark.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-xhdpi/abc_menu_dropdown_panel_holo_dark.9.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="abc_menu_dropdown_panel_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-xhdpi/abc_menu_dropdown_panel_holo_light.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-xhdpi/abc_menu_dropdown_panel_holo_light.9.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="abc_menu_hardkey_panel_holo_dark"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-xhdpi/abc_menu_hardkey_panel_holo_dark.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-xhdpi/abc_menu_hardkey_panel_holo_dark.9.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="abc_menu_hardkey_panel_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-xhdpi/abc_menu_hardkey_panel_holo_light.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-xhdpi/abc_menu_hardkey_panel_holo_light.9.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="abc_spinner_ab_default_holo_dark"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-xhdpi/abc_spinner_ab_default_holo_dark.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-xhdpi/abc_spinner_ab_default_holo_dark.9.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="abc_spinner_ab_default_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-xhdpi/abc_spinner_ab_default_holo_light.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-xhdpi/abc_spinner_ab_default_holo_light.9.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="abc_spinner_ab_disabled_holo_dark"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-xhdpi/abc_spinner_ab_disabled_holo_dark.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-xhdpi/abc_spinner_ab_disabled_holo_dark.9.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="abc_spinner_ab_disabled_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-xhdpi/abc_spinner_ab_disabled_holo_light.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-xhdpi/abc_spinner_ab_disabled_holo_light.9.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="abc_spinner_ab_focused_holo_dark"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-xhdpi/abc_spinner_ab_focused_holo_dark.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-xhdpi/abc_spinner_ab_focused_holo_dark.9.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="abc_spinner_ab_focused_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-xhdpi/abc_spinner_ab_focused_holo_light.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-xhdpi/abc_spinner_ab_focused_holo_light.9.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="abc_spinner_ab_pressed_holo_dark"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-xhdpi/abc_spinner_ab_pressed_holo_dark.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-xhdpi/abc_spinner_ab_pressed_holo_dark.9.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="abc_spinner_ab_pressed_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-xhdpi/abc_spinner_ab_pressed_holo_light.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-xhdpi/abc_spinner_ab_pressed_holo_light.9.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="abc_tab_selected_focused_holo"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-xhdpi/abc_tab_selected_focused_holo.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-xhdpi/abc_tab_selected_focused_holo.9.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="abc_tab_selected_holo"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-xhdpi/abc_tab_selected_holo.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-xhdpi/abc_tab_selected_holo.9.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="abc_tab_selected_pressed_holo"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-xhdpi/abc_tab_selected_pressed_holo.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-xhdpi/abc_tab_selected_pressed_holo.9.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="abc_tab_unselected_pressed_holo"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-xhdpi/abc_tab_unselected_pressed_holo.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-xhdpi/abc_tab_unselected_pressed_holo.9.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="abc_textfield_search_default_holo_dark"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-xhdpi/abc_textfield_search_default_holo_dark.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-xhdpi/abc_textfield_search_default_holo_dark.9.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="abc_textfield_search_default_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-xhdpi/abc_textfield_search_default_holo_light.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-xhdpi/abc_textfield_search_default_holo_light.9.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="abc_textfield_search_right_default_holo_dark"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-xhdpi/abc_textfield_search_right_default_holo_dark.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-xhdpi/abc_textfield_search_right_default_holo_dark.9.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="abc_textfield_search_right_default_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-xhdpi/abc_textfield_search_right_default_holo_light.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-xhdpi/abc_textfield_search_right_default_holo_light.9.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="abc_textfield_search_right_selected_holo_dark"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-xhdpi/abc_textfield_search_right_selected_holo_dark.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-xhdpi/abc_textfield_search_right_selected_holo_dark.9.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="abc_textfield_search_right_selected_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-xhdpi/abc_textfield_search_right_selected_holo_light.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-xhdpi/abc_textfield_search_right_selected_holo_light.9.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="abc_textfield_search_selected_holo_dark"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-xhdpi/abc_textfield_search_selected_holo_dark.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-xhdpi/abc_textfield_search_selected_holo_dark.9.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="abc_textfield_search_selected_holo_light"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/drawable-xhdpi/abc_textfield_search_selected_holo_light.9.png"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/drawable-xhdpi/abc_textfield_search_selected_holo_light.9.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="abc_action_bar_decor"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/layout/abc_action_bar_decor.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/layout/abc_action_bar_decor.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="abc_action_bar_decor_include"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/layout/abc_action_bar_decor_include.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/layout/abc_action_bar_decor_include.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="abc_action_bar_decor_overlay"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/layout/abc_action_bar_decor_overlay.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/layout/abc_action_bar_decor_overlay.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="abc_action_bar_home"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/layout/abc_action_bar_home.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/layout/abc_action_bar_home.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="abc_action_bar_tab"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/layout/abc_action_bar_tab.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/layout/abc_action_bar_tab.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="abc_action_bar_tabbar"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/layout/abc_action_bar_tabbar.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/layout/abc_action_bar_tabbar.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="abc_action_bar_title_item"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/layout/abc_action_bar_title_item.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/layout/abc_action_bar_title_item.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="abc_action_bar_view_list_nav_layout"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/layout/abc_action_bar_view_list_nav_layout.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/layout/abc_action_bar_view_list_nav_layout.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="abc_action_menu_item_layout"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/layout/abc_action_menu_item_layout.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/layout/abc_action_menu_item_layout.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="abc_action_menu_layout"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/layout/abc_action_menu_layout.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/layout/abc_action_menu_layout.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="abc_action_mode_bar"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/layout/abc_action_mode_bar.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/layout/abc_action_mode_bar.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="abc_action_mode_close_item"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/layout/abc_action_mode_close_item.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/layout/abc_action_mode_close_item.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="abc_activity_chooser_view"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/layout/abc_activity_chooser_view.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/layout/abc_activity_chooser_view.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="abc_activity_chooser_view_include"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/layout/abc_activity_chooser_view_include.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/layout/abc_activity_chooser_view_include.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="abc_activity_chooser_view_list_item"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/layout/abc_activity_chooser_view_list_item.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/layout/abc_activity_chooser_view_list_item.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="abc_expanded_menu_layout"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/layout/abc_expanded_menu_layout.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/layout/abc_expanded_menu_layout.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="abc_list_menu_item_checkbox"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/layout/abc_list_menu_item_checkbox.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/layout/abc_list_menu_item_checkbox.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="abc_list_menu_item_icon"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/layout/abc_list_menu_item_icon.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/layout/abc_list_menu_item_icon.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="abc_list_menu_item_layout"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/layout/abc_list_menu_item_layout.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/layout/abc_list_menu_item_layout.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="abc_list_menu_item_radio"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/layout/abc_list_menu_item_radio.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/layout/abc_list_menu_item_radio.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="abc_popup_menu_item_layout"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/layout/abc_popup_menu_item_layout.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/layout/abc_popup_menu_item_layout.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="abc_search_dropdown_item_icons_2line"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/layout/abc_search_dropdown_item_icons_2line.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/layout/abc_search_dropdown_item_icons_2line.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="abc_search_view"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/layout/abc_search_view.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/layout/abc_search_view.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="support_simple_spinner_dropdown_item"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/layout/support_simple_spinner_dropdown_item.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/layout/support_simple_spinner_dropdown_item.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="abc_action_bar_decor"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/layout-v11/abc_action_bar_decor.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/layout-v11/abc_action_bar_decor.xml"
                 qualifiers="v11"
                 type="layout" />
             <file
                 name="abc_activity_chooser_view"
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/layout-v14/abc_activity_chooser_view.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/layout-v14/abc_activity_chooser_view.xml"
                 qualifiers="v14"
                 type="layout" />
             <file
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values/values.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values/values.xml"
                 qualifiers="" >
 
                 <style
@@ -3856,7 +3856,7 @@ useLogo|showHome|showTitle
                 </style>
             </file>
             <file
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values-af/values.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values-af/values.xml"
                 qualifiers="af" >
                 <string
                     name="abc_searchview_description_search"
@@ -3912,7 +3912,7 @@ useLogo|showHome|showTitle
                 </string>
             </file>
             <file
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values-am/values.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values-am/values.xml"
                 qualifiers="am" >
                 <string
                     name="abc_searchview_description_clear"
@@ -3968,7 +3968,7 @@ useLogo|showHome|showTitle
                 </string>
             </file>
             <file
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values-ar/values.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values-ar/values.xml"
                 qualifiers="ar" >
                 <string
                     name="abc_searchview_description_voice"
@@ -4024,7 +4024,7 @@ useLogo|showHome|showTitle
                 </string>
             </file>
             <file
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values-bg/values.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values-bg/values.xml"
                 qualifiers="bg" >
                 <string
                     name="abc_shareactionprovider_share_with_application"
@@ -4080,7 +4080,7 @@ useLogo|showHome|showTitle
                 </string>
             </file>
             <file
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values-ca/values.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values-ca/values.xml"
                 qualifiers="ca" >
                 <string
                     name="abc_searchview_description_voice"
@@ -4136,7 +4136,7 @@ useLogo|showHome|showTitle
                 </string>
             </file>
             <file
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values-cs/values.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values-cs/values.xml"
                 qualifiers="cs" >
                 <string
                     name="abc_searchview_description_submit"
@@ -4192,7 +4192,7 @@ useLogo|showHome|showTitle
                 </string>
             </file>
             <file
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values-da/values.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values-da/values.xml"
                 qualifiers="da" >
                 <string
                     name="abc_action_bar_home_description"
@@ -4248,7 +4248,7 @@ useLogo|showHome|showTitle
                 </string>
             </file>
             <file
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values-de/values.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values-de/values.xml"
                 qualifiers="de" >
                 <string
                     name="abc_shareactionprovider_share_with_application"
@@ -4304,7 +4304,7 @@ useLogo|showHome|showTitle
                 </string>
             </file>
             <file
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values-el/values.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values-el/values.xml"
                 qualifiers="el" >
                 <string
                     name="abc_searchview_description_submit"
@@ -4360,7 +4360,7 @@ useLogo|showHome|showTitle
                 </string>
             </file>
             <file
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values-en-rGB/values.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values-en-rGB/values.xml"
                 qualifiers="en-rGB" >
                 <string
                     name="abc_searchview_description_search"
@@ -4416,7 +4416,7 @@ useLogo|showHome|showTitle
                 </string>
             </file>
             <file
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values-en-rIN/values.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values-en-rIN/values.xml"
                 qualifiers="en-rIN" >
                 <string
                     name="abc_searchview_description_clear"
@@ -4472,7 +4472,7 @@ useLogo|showHome|showTitle
                 </string>
             </file>
             <file
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values-es/values.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values-es/values.xml"
                 qualifiers="es" >
                 <string
                     name="abc_activitychooserview_choose_application"
@@ -4528,7 +4528,7 @@ useLogo|showHome|showTitle
                 </string>
             </file>
             <file
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values-es-rUS/values.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values-es-rUS/values.xml"
                 qualifiers="es-rUS" >
                 <string
                     name="abc_action_bar_up_description"
@@ -4584,7 +4584,7 @@ useLogo|showHome|showTitle
                 </string>
             </file>
             <file
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values-et-rEE/values.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values-et-rEE/values.xml"
                 qualifiers="et-rEE" >
                 <string
                     name="abc_searchview_description_submit"
@@ -4640,7 +4640,7 @@ useLogo|showHome|showTitle
                 </string>
             </file>
             <file
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values-fa/values.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values-fa/values.xml"
                 qualifiers="fa" >
                 <string
                     name="abc_action_bar_home_description"
@@ -4696,7 +4696,7 @@ useLogo|showHome|showTitle
                 </string>
             </file>
             <file
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values-fi/values.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values-fi/values.xml"
                 qualifiers="fi" >
                 <string
                     name="abc_searchview_description_query"
@@ -4752,7 +4752,7 @@ useLogo|showHome|showTitle
                 </string>
             </file>
             <file
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values-fr/values.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values-fr/values.xml"
                 qualifiers="fr" >
                 <string
                     name="abc_action_bar_home_description"
@@ -4808,7 +4808,7 @@ useLogo|showHome|showTitle
                 </string>
             </file>
             <file
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values-fr-rCA/values.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values-fr-rCA/values.xml"
                 qualifiers="fr-rCA" >
                 <string
                     name="abc_shareactionprovider_share_with"
@@ -4864,7 +4864,7 @@ useLogo|showHome|showTitle
                 </string>
             </file>
             <file
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values-hi/values.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values-hi/values.xml"
                 qualifiers="hi" >
                 <string
                     name="abc_activity_chooser_view_see_all"
@@ -4920,7 +4920,7 @@ useLogo|showHome|showTitle
                 </string>
             </file>
             <file
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values-hr/values.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values-hr/values.xml"
                 qualifiers="hr" >
                 <string
                     name="abc_shareactionprovider_share_with_application"
@@ -4976,7 +4976,7 @@ useLogo|showHome|showTitle
                 </string>
             </file>
             <file
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values-hu/values.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values-hu/values.xml"
                 qualifiers="hu" >
                 <string
                     name="abc_action_menu_overflow_description"
@@ -5032,7 +5032,7 @@ useLogo|showHome|showTitle
                 </string>
             </file>
             <file
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values-hy-rAM/values.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values-hy-rAM/values.xml"
                 qualifiers="hy-rAM" >
                 <string
                     name="abc_activitychooserview_choose_application"
@@ -5088,7 +5088,7 @@ useLogo|showHome|showTitle
                 </string>
             </file>
             <file
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values-in/values.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values-in/values.xml"
                 qualifiers="in" >
                 <string
                     name="abc_shareactionprovider_share_with_application"
@@ -5144,7 +5144,7 @@ useLogo|showHome|showTitle
                 </string>
             </file>
             <file
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values-it/values.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values-it/values.xml"
                 qualifiers="it" >
                 <string
                     name="abc_searchview_description_voice"
@@ -5200,7 +5200,7 @@ useLogo|showHome|showTitle
                 </string>
             </file>
             <file
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values-iw/values.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values-iw/values.xml"
                 qualifiers="iw" >
                 <string
                     name="abc_shareactionprovider_share_with_application"
@@ -5256,7 +5256,7 @@ useLogo|showHome|showTitle
                 </string>
             </file>
             <file
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values-ja/values.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values-ja/values.xml"
                 qualifiers="ja" >
                 <string
                     name="abc_searchview_description_clear"
@@ -5312,7 +5312,7 @@ useLogo|showHome|showTitle
                 </string>
             </file>
             <file
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values-ka-rGE/values.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values-ka-rGE/values.xml"
                 qualifiers="ka-rGE" >
                 <string
                     name="abc_action_menu_overflow_description"
@@ -5368,7 +5368,7 @@ useLogo|showHome|showTitle
                 </string>
             </file>
             <file
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values-km-rKH/values.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values-km-rKH/values.xml"
                 qualifiers="km-rKH" >
                 <string
                     name="abc_searchview_description_search"
@@ -5424,7 +5424,7 @@ useLogo|showHome|showTitle
                 </string>
             </file>
             <file
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values-ko/values.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values-ko/values.xml"
                 qualifiers="ko" >
                 <string
                     name="abc_searchview_description_query"
@@ -5480,7 +5480,7 @@ useLogo|showHome|showTitle
                 </string>
             </file>
             <file
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values-land/values.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values-land/values.xml"
                 qualifiers="land" >
                 <dimen name="abc_action_bar_title_text_size" >16dp
                 </dimen>
@@ -5512,7 +5512,7 @@ false
                 </bool>
             </file>
             <file
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values-large/values.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values-large/values.xml"
                 qualifiers="large" >
                 <dimen name="abc_config_prefDialogWidth" >440dp
                 </dimen>
@@ -5536,7 +5536,7 @@ true
                 </bool>
             </file>
             <file
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values-lo-rLA/values.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values-lo-rLA/values.xml"
                 qualifiers="lo-rLA" >
                 <string
                     name="abc_action_bar_home_description"
@@ -5592,7 +5592,7 @@ true
                 </string>
             </file>
             <file
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values-lt/values.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values-lt/values.xml"
                 qualifiers="lt" >
                 <string
                     name="abc_searchview_description_clear"
@@ -5648,7 +5648,7 @@ true
                 </string>
             </file>
             <file
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values-lv/values.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values-lv/values.xml"
                 qualifiers="lv" >
                 <string
                     name="abc_action_menu_overflow_description"
@@ -5704,7 +5704,7 @@ true
                 </string>
             </file>
             <file
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values-mn-rMN/values.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values-mn-rMN/values.xml"
                 qualifiers="mn-rMN" >
                 <string
                     name="abc_activitychooserview_choose_application"
@@ -5760,7 +5760,7 @@ true
                 </string>
             </file>
             <file
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values-ms-rMY/values.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values-ms-rMY/values.xml"
                 qualifiers="ms-rMY" >
                 <string
                     name="abc_action_bar_home_description"
@@ -5816,7 +5816,7 @@ true
                 </string>
             </file>
             <file
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values-nb/values.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values-nb/values.xml"
                 qualifiers="nb" >
                 <string
                     name="abc_activity_chooser_view_see_all"
@@ -5872,7 +5872,7 @@ true
                 </string>
             </file>
             <file
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values-nl/values.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values-nl/values.xml"
                 qualifiers="nl" >
                 <string
                     name="abc_searchview_description_clear"
@@ -5928,7 +5928,7 @@ true
                 </string>
             </file>
             <file
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values-pl/values.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values-pl/values.xml"
                 qualifiers="pl" >
                 <string
                     name="abc_activity_chooser_view_see_all"
@@ -5984,7 +5984,7 @@ true
                 </string>
             </file>
             <file
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values-pt/values.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values-pt/values.xml"
                 qualifiers="pt" >
                 <string
                     name="abc_shareactionprovider_share_with_application"
@@ -6040,7 +6040,7 @@ true
                 </string>
             </file>
             <file
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values-pt-rPT/values.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values-pt-rPT/values.xml"
                 qualifiers="pt-rPT" >
                 <string
                     name="abc_activity_chooser_view_see_all"
@@ -6096,7 +6096,7 @@ true
                 </string>
             </file>
             <file
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values-ro/values.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values-ro/values.xml"
                 qualifiers="ro" >
                 <string
                     name="abc_shareactionprovider_share_with"
@@ -6152,7 +6152,7 @@ true
                 </string>
             </file>
             <file
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values-ru/values.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values-ru/values.xml"
                 qualifiers="ru" >
                 <string
                     name="abc_shareactionprovider_share_with"
@@ -6208,7 +6208,7 @@ true
                 </string>
             </file>
             <file
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values-sk/values.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values-sk/values.xml"
                 qualifiers="sk" >
                 <string
                     name="abc_action_bar_up_description"
@@ -6264,7 +6264,7 @@ true
                 </string>
             </file>
             <file
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values-sl/values.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values-sl/values.xml"
                 qualifiers="sl" >
                 <string
                     name="abc_action_bar_up_description"
@@ -6320,7 +6320,7 @@ true
                 </string>
             </file>
             <file
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values-sr/values.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values-sr/values.xml"
                 qualifiers="sr" >
                 <string
                     name="abc_searchview_description_query"
@@ -6376,7 +6376,7 @@ true
                 </string>
             </file>
             <file
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values-sv/values.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values-sv/values.xml"
                 qualifiers="sv" >
                 <string
                     name="abc_shareactionprovider_share_with_application"
@@ -6432,7 +6432,7 @@ true
                 </string>
             </file>
             <file
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values-sw/values.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values-sw/values.xml"
                 qualifiers="sw" >
                 <string
                     name="abc_action_bar_up_description"
@@ -6488,7 +6488,7 @@ true
                 </string>
             </file>
             <file
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values-sw600dp/values.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values-sw600dp/values.xml"
                 qualifiers="sw600dp" >
                 <dimen name="abc_action_bar_default_height" >56dip
                 </dimen>
@@ -6511,7 +6511,7 @@ true
                 </dimen>
             </file>
             <file
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values-th/values.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values-th/values.xml"
                 qualifiers="th" >
                 <string
                     name="abc_shareactionprovider_share_with"
@@ -6567,7 +6567,7 @@ true
                 </string>
             </file>
             <file
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values-tl/values.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values-tl/values.xml"
                 qualifiers="tl" >
                 <string
                     name="abc_searchview_description_search"
@@ -6623,7 +6623,7 @@ true
                 </string>
             </file>
             <file
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values-tr/values.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values-tr/values.xml"
                 qualifiers="tr" >
                 <string
                     name="abc_action_menu_overflow_description"
@@ -6679,7 +6679,7 @@ true
                 </string>
             </file>
             <file
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values-uk/values.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values-uk/values.xml"
                 qualifiers="uk" >
                 <string
                     name="abc_action_mode_done"
@@ -6735,7 +6735,7 @@ true
                 </string>
             </file>
             <file
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values-v11/values.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values-v11/values.xml"
                 qualifiers="v11" >
 
                 <style
@@ -6799,7 +6799,7 @@ false
                     parent="android:Widget.Holo.ProgressBar.Horizontal" />
             </file>
             <file
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values-v14/values.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values-v14/values.xml"
                 qualifiers="v14" >
 
                 <style
@@ -7196,7 +7196,7 @@ middle
                     parent="android:Widget.Holo.ActionButton.Overflow" />
             </file>
             <file
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values-vi/values.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values-vi/values.xml"
                 qualifiers="vi" >
                 <string
                     name="abc_shareactionprovider_share_with"
@@ -7252,14 +7252,14 @@ middle
                 </string>
             </file>
             <file
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values-w360dp/values.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values-w360dp/values.xml"
                 qualifiers="w360dp" >
                 <integer name="abc_max_action_buttons" >
 3
                 </integer>
             </file>
             <file
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values-w480dp/values.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values-w480dp/values.xml"
                 qualifiers="w480dp" >
                 <bool name="abc_config_allowActionMenuItemTextWithIcon" >
 true
@@ -7272,14 +7272,14 @@ true
                 </bool>
             </file>
             <file
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values-w500dp/values.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values-w500dp/values.xml"
                 qualifiers="w500dp" >
                 <integer name="abc_max_action_buttons" >
 4
                 </integer>
             </file>
             <file
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values-w600dp/values.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values-w600dp/values.xml"
                 qualifiers="w600dp" >
                 <dimen name="abc_action_bar_subtitle_top_margin" >-3dp
                 </dimen>
@@ -7304,14 +7304,14 @@ true
                 </dimen>
             </file>
             <file
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values-w720dp/values.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values-w720dp/values.xml"
                 qualifiers="w720dp" >
                 <bool name="abc_action_bar_expanded_action_views_exclusive" >
 false
                 </bool>
             </file>
             <file
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values-xlarge/values.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values-xlarge/values.xml"
                 qualifiers="xlarge" >
                 <dimen name="abc_search_view_text_min_width" >192dip
                 </dimen>
@@ -7341,7 +7341,7 @@ false
                 </dimen>
             </file>
             <file
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values-zh-rCN/values.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values-zh-rCN/values.xml"
                 qualifiers="zh-rCN" >
                 <string
                     name="abc_action_mode_done"
@@ -7397,7 +7397,7 @@ false
                 </string>
             </file>
             <file
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values-zh-rHK/values.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values-zh-rHK/values.xml"
                 qualifiers="zh-rHK" >
                 <string
                     name="abc_searchview_description_search"
@@ -7453,7 +7453,7 @@ false
                 </string>
             </file>
             <file
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values-zh-rTW/values.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values-zh-rTW/values.xml"
                 qualifiers="zh-rTW" >
                 <string
                     name="abc_searchview_description_search"
@@ -7509,7 +7509,7 @@ false
                 </string>
             </file>
             <file
-                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values-zu/values.xml"
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values-zu/values.xml"
                 qualifiers="zu" >
                 <string
                     name="abc_action_mode_done"
@@ -7683,6 +7683,36 @@ false
                 <style
                     name="AppTheme"
                     parent="android:Theme.Light" />
+            </file>
+            <file
+                path="/Users/kmchen1/AndroidStudioProjects/bostont/res/values/themes.xml"
+                qualifiers="" >
+
+                <style
+                    name="MyActionBar"
+                    parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse" >
+
+                    <!-- <item name="android:background">@drawable/actionbar_background</item> -->
+
+
+                    <!-- Support library compatibility -->
+                    <item name="background">
+@drawable/actionbar_background
+                    </item>
+                </style>
+
+                <style
+                    name="CustomActionBarTheme"
+                    parent="@style/Theme.AppCompat.Light.DarkActionBar" >
+
+                    <!-- <item name="android:actionBarStyle">@style/MyActionBar</item> -->
+
+
+                    <!-- Support library compatibility -->
+                    <item name="actionBarStyle">
+@style/MyActionBar
+                    </item>
+                </style>
             </file>
         </source>
         <source path="/Users/kmchen1/AndroidStudioProjects/bostont/build/res/rs/debug" />

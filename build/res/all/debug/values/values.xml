@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- From: file:/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values/values.xml -->
+    <!-- From: file:/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values/values.xml -->
     <eat-comment />
 
     <attr name="actionBarDivider" format="reference" />
@@ -89,7 +89,7 @@
     <color name="orange">#f90</color>
     <color name="red">#f00</color>
     <color name="transparent">#00000000</color>
-    <!-- From: file:/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values/values.xml -->
+    <!-- From: file:/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values/values.xml -->
     <eat-comment />
 
     <declare-styleable name="ActionBar">
@@ -527,7 +527,27 @@
     <eat-comment />
 
     <style name="AppTheme" parent="android:Theme.Light" />
-    <!-- From: file:/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/res/values/values.xml -->
+    <!-- From: file:/Users/kmchen1/AndroidStudioProjects/bostont/res/values/themes.xml -->
+    <eat-comment />
+
+    <style name="CustomActionBarTheme" parent="@style/Theme.AppCompat.Light.DarkActionBar">
+
+        <!-- <item name="android:actionBarStyle">@style/MyActionBar</item> -->
+
+
+        <!-- Support library compatibility -->
+        <item name="actionBarStyle">@style/MyActionBar</item>
+    </style>
+
+    <style name="MyActionBar" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
+
+        <!-- <item name="android:background">@drawable/actionbar_background</item> -->
+
+
+        <!-- Support library compatibility -->
+        <item name="background">@drawable/actionbar_background</item>
+    </style>
+    <!-- From: file:/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values/values.xml -->
     <eat-comment />
 
     <style name="TextAppearance.AppCompat.Base.CompactMenu.Dialog" parent="android:TextAppearance.Medium">

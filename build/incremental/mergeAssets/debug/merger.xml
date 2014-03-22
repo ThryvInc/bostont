@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <merger>
 
-    <dataSet config="BostontSubway_libUnspecified.aar" >
-        <source path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/BostontSubway_libUnspecified.aar/assets" />
+    <dataSet config="unspecified" >
+        <source path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/bostont/subway_lib/unspecified/assets" />
     </dataSet>
-    <dataSet config="ComAndroidSupportAppcompatV71901.aar" >
-        <source path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-bundles/ComAndroidSupportAppcompatV71901.aar/assets" />
+    <dataSet config="19.0.1" >
+        <source path="/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/assets" />
     </dataSet>
     <dataSet config="main" >
         <source path="/Users/kmchen1/AndroidStudioProjects/bostont/assets" />
