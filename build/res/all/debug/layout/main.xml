@@ -4,7 +4,32 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:gravity="center"
-    android:orientation="vertical">
+    android:orientation="horizontal">
+
+    <ViewAnimator
+        android:id="@+id/chooser_anim"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <fragment
+            android:id="@+id/map_fragment"
+            class="com.rndapp.t.fragments.MapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <fragment
+            android:id="@+id/lines_fragment"
+            class="com.rndapp.t.fragments.LinesFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <fragment
+            android:id="@+id/stops_fragment"
+            class="com.rndapp.t.fragments.StopsFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </ViewAnimator>
 
     <com.google.ads.AdView
         android:id="@+id/ad"
@@ -15,135 +40,5 @@
         ads:loadAdOnCreate="true"
         ads:testDevices="TEST_EMULATOR,TEST_DEVICE_ID_GOES_HERE" />
 
-    <ViewAnimator
-        android:id="@+id/chooser_anim"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
 
-        <LinearLayout
-            android:id="@+id/mapll"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <Button
-                android:id="@+id/see_sched"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dip"
-                android:text="See Schedules"
-                android:textColor="#fff"
-                android:textStyle="bold" />
-
-            <com.rndapp.subway_lib.TouchImageView
-                android:id="@+id/touchImg"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:id="@+id/schedll"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:orientation="vertical">
-
-            <Button
-                android:id="@+id/see_map"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginBottom="10dip"
-                android:layout_marginLeft="5dip"
-                android:layout_marginRight="5dip"
-                android:layout_marginTop="10dip"
-                android:text="See Map"
-                android:textColor="#fff"
-                android:textStyle="bold" />
-
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <Button
-                        android:id="@+id/blue_btn"
-                        android:layout_width="fill_parent"
-                        android:layout_height="160dip"
-                        android:layout_marginBottom="10dip"
-                        android:layout_marginLeft="5dip"
-                        android:layout_marginRight="5dip"
-                        android:text="Blue Line"
-                        android:textColor="#fff"
-                        android:textStyle="bold" />
-
-                    <Button
-                        android:id="@+id/orange_btn"
-                        android:layout_width="fill_parent"
-                        android:layout_height="160dip"
-                        android:layout_marginLeft="5dip"
-                        android:layout_marginRight="5dip"
-                        android:text="Orange Line"
-                        android:textColor="#fff"
-                        android:textStyle="bold" />
-
-                </LinearLayout>
-
-                <Button
-                    android:id="@+id/red_btn"
-                    android:layout_width="fill_parent"
-                    android:layout_height="330dip"
-                    android:layout_marginBottom="10dip"
-                    android:layout_marginLeft="5dip"
-                    android:layout_marginRight="5dip"
-                    android:layout_weight="1"
-                    android:text="Red Line"
-                    android:textColor="#fff"
-                    android:textStyle="bold" />
-
-            </LinearLayout>
-
-            <Button
-                android:id="@+id/green_btn"
-                android:layout_width="fill_parent"
-                android:layout_height="60dip"
-                android:layout_marginLeft="5dip"
-                android:layout_marginRight="5dip"
-                android:text="Looking for the Green Line?"
-                android:textColor="#fff"
-                android:textStyle="bold" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linell"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:orientation="vertical">
-
-            <Button
-                android:id="@+id/back_to_sched"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginBottom="10dip"
-                android:layout_marginTop="5dip"
-                android:text="Back to Schedules"
-                android:textColor="#fff"
-                android:textStyle="bold" />
-
-            <ListView
-                android:id="@+id/line_list"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent" />
-
-        </LinearLayout>
-    </ViewAnimator>
 </LinearLayout><!-- From: file:/Users/kmchen1/AndroidStudioProjects/bostont/res/layout/main.xml -->

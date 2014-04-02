@@ -1,4 +1,4 @@
-package com.rndapp.t;
+package com.rndapp.t.adapters;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -15,55 +15,63 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.rndapp.t.R;
+import com.rndapp.t.models.Stop;
+import com.rndapp.t.models.Trip;
+
 public class ScheduleAdapter extends BaseAdapter {
 
     /**
-     * The context from which the adapter was created.
+     * The mContext from which the adapter was created.
      * Used for getting resources and views.
      */
-    Context context;
+    private Context mContext;
 
     /**
      * The item resource ID. Used for layout inflation.
      */
-    int itemResID;
+    private int mItemResID;
 
     /**
      * When this {@code ScheduleAdapter} was constructed
      * (i.e., when the schedule was looked up).
      */
-    long time;
+    private long mTime;
 
     /**
      * The resource number of the color.
      */
-    int color;
-
-
-    ArrayList<Trip> trips;
+    private int mColor;
 
     /**
+     * The list of trips.
+     */
+    private ArrayList<Trip> mTrips;
+
+    /**
+     * Constructs a {@code ScheduleAdapter}.
+     *
      * @param context   The context from which the adapter was created.
      * @param itemResID The item resource ID used for layout inflation.
      * @param data      The {@code JSONObject} that encapsulates data about the subway schedule.
      */
-    public ScheduleAdapter(Context context, int itemResID, JSONObject data) {
-        this.context = context;
-        this.itemResID = itemResID;
-        trips = new ArrayList<Trip>();
+    public ScheduleAdapter(final Context context, final int itemResID, final JSONObject data) {
+        this.mContext = context;
+        this.mItemResID = itemResID;
+        mTrips = new ArrayList<Trip>();
         try {
             // We only care about original JSONObject for the trip list
             JSONObject tripList = data.getJSONObject("TripList");
             // Get the time
-            time = tripList.getLong("CurrentTime");
+            mTime = tripList.getLong("CurrentTime");
             setColor(tripList.getString("Line"));
 
             JSONArray trips = tripList.getJSONArray("Trips");
             for (int i = 0; i < trips.length(); i++) {
                 JSONObject jsontrip = trips.getJSONObject(i);
                 boolean added = false;
-                for (int j = 0; j < this.trips.size(); j++) {
-                    Trip trip = this.trips.get(j);
+                for (int j = 0; j < this.mTrips.size(); j++) {
+                    Trip trip = this.mTrips.get(j);
                     if (trip.getDestination().equalsIgnoreCase(jsontrip.getString("Destination"))) {
                         trip.incorporatePredictions(jsontrip.getJSONArray("Predictions"));
                         added = true;
@@ -71,7 +79,7 @@ public class ScheduleAdapter extends BaseAdapter {
                 }
                 if (!added) {
                     Trip t = new Trip(jsontrip, tripList.getString("Line"));
-                    this.trips.add(t);
+                    this.mTrips.add(t);
                 }
             }
         } catch (JSONException e) {
@@ -84,13 +92,13 @@ public class ScheduleAdapter extends BaseAdapter {
      *
      * @param line The line color.
      */
-    private void setColor(String line) {
+    private void setColor(final String line) {
         if (line.equalsIgnoreCase(Trip.BLUE)) {
-            color = context.getResources().getColor(R.color.blue);
+            mColor = mContext.getResources().getColor(R.color.blue);
         } else if (line.equalsIgnoreCase(Trip.ORANGE)) {
-            color = context.getResources().getColor(R.color.orange);
+            mColor = mContext.getResources().getColor(R.color.orange);
         } else if (line.equalsIgnoreCase(Trip.RED)) {
-            color = context.getResources().getColor(R.color.red);
+            mColor = mContext.getResources().getColor(R.color.red);
         }
     }
 
@@ -102,7 +110,7 @@ public class ScheduleAdapter extends BaseAdapter {
     @Override
     public int getCount() {
         int result = 0;
-        for (Trip trip : trips) {
+        for (Trip trip : mTrips) {
             result += trip.getStops().size();
         }
         return result;
@@ -117,9 +125,9 @@ public class ScheduleAdapter extends BaseAdapter {
      * @return the specified {@code Stop}, or null if none is found.
      */
     @Override
-    public Object getItem(int stopsAway) {
+    public Object getItem(final int stopsAway) {
         int stopCount = 0;
-        for (Trip trip : trips) {
+        for (Trip trip : mTrips) {
             ArrayList<Stop> stops = trip.getStops();
             for (int j = 0; j < stops.size(); j++) {
                 Stop stop = stops.get(j);
@@ -154,19 +162,36 @@ public class ScheduleAdapter extends BaseAdapter {
         return false;
     }
 
+    /**
+     * A class that holds three TextViews.
+     */
+    static class StopHolder {
+        TextView destination;
+        TextView name;
+        TextView nextTrain;
+    }
+
+    /**
+     * Returns the view of a trip or stop.
+     *
+     * @param position    Index of selected trip or stop.
+     * @param convertView The view that is populated and returned.
+     * @param parent      The parent group.
+     * @return The view of a trip or stop.
+     */
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
         // The trip or stop in question
         Object o = getItem(position);
 
-        // holds TextViews
+        // holds 3 TextViews: destination, name, next train
         StopHolder holder;
 
         // If we're initializing view for the first time, set TextViews...
         if (convertView == null) {
-            LayoutInflater inflater = ((Activity) context).getLayoutInflater();
-            convertView = inflater.inflate(itemResID, parent, false);
+            LayoutInflater inflater = ((Activity) mContext).getLayoutInflater();
+            convertView = inflater.inflate(mItemResID, parent, false);
 
             holder = new StopHolder();
             holder.destination = (TextView) convertView.findViewById(R.id.trip_name);
@@ -185,9 +210,9 @@ public class ScheduleAdapter extends BaseAdapter {
             Stop s = (Stop) o;
             // destination is invisible since it's a stop...
             holder.destination.setVisibility(View.GONE);
-            // display the name of the stop
+            // show name of the stop
             holder.name.setText(s.getName());
-            // show the prediction for the next train
+            // show prediction for the next train
             holder.nextTrain.setText(formattedPredict(s));
         }
         // If it's a trip...
@@ -197,7 +222,7 @@ public class ScheduleAdapter extends BaseAdapter {
             // display trip's destination w/ line color
             holder.destination.setText("To " + t.getDestination());
             holder.destination.setVisibility(View.VISIBLE);
-            holder.destination.setBackgroundColor(color);
+            holder.destination.setBackgroundColor(mColor);
             // display name of the first stop
             holder.name.setText(s.getName());
             // show the prediction for the next train
@@ -211,27 +236,19 @@ public class ScheduleAdapter extends BaseAdapter {
      * @param s
      * @return
      */
-    private String formattedPredict(Stop s) {
+    private String formattedPredict(final Stop s) {
         String result = "";
-        // time to get to next stop
+        // mTime to get to next stop
         long min = s.getSeconds();
         if (min != Long.MAX_VALUE) {
             long current = Calendar.getInstance().getTimeInMillis();
-            // time is the triplist's current time in seconds
+            // mTime is the triplist's current time in seconds
             // offset is the elapsed seconds since start of triplist
-            long elapsedSinceStart = current / 1000 - time;
+            long elapsedSinceStart = current / 1000 - mTime;
             long secondsLeft = (min - elapsedSinceStart) / 60;
             result = Long.toString(secondsLeft) + " min.";
         }
         return result;
     }
 
-    /**
-     * A class that holds three TextViews.
-     */
-    static class StopHolder {
-        TextView destination;
-        TextView name;
-        TextView nextTrain;
-    }
 }

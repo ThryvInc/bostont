@@ -1,10 +1,10 @@
 <!-- From: file:/Users/kmchen1/AndroidStudioProjects/bostont/AndroidManifest.xml --><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="9" android:versionName="3.3" package="com.rndapp.t">
 
-    <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="19"/>
+    <uses-sdk android:minSdkVersion="11" android:targetSdkVersion="19"/>
 	<uses-permission android:name="android.permission.INTERNET"/>
       <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <application android:icon="@drawable/app_icon" android:label="@string/app_name">
-        <activity android:label="@string/app_name" android:name="com.rndapp.t.BostonTActivity">
+        <activity android:label="@string/app_name" android:name="com.rndapp.t.activities.BostonTActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

@@ -1,22 +1,24 @@
-package com.rndapp.t;
+package com.rndapp.t.models;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+/**
+ * A class to store a stop's name and the seconds until the stop is reached.
+ */
 public class Stop implements Serializable {
 
     /**
      * The name of the {@code Stop}.
      */
-    private String name;
+    private String mName;
 
     /**
      * Seconds until the {@code Stop} is reached.
      */
-    private Long seconds;
+    private Long mSeconds;
 
     /**
      * JSON key that maps to the {@code Stop}'s name.
@@ -33,9 +35,9 @@ public class Stop implements Serializable {
      *
      * @param name The name of the {@code Stop}.
      */
-    public Stop(String name) {
+    public Stop(final String name) {
         super();
-        this.name = name;
+        this.mName = name;
     }
 
     /**
@@ -48,8 +50,8 @@ public class Stop implements Serializable {
     public Stop(JSONObject stop) {
         super();
         try {
-            this.name = stop.getString(JSON_KEY_STOP_NAME);
-            this.seconds = stop.getLong(JSON_KEY_STOP_ETA);
+            this.mName = stop.getString(JSON_KEY_STOP_NAME);
+            this.mSeconds = stop.getLong(JSON_KEY_STOP_ETA);
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -66,7 +68,7 @@ public class Stop implements Serializable {
     public boolean equals(Object o) {
         if (o.getClass() != Stop.class)
             return false;
-        return ((Stop) o).name.equalsIgnoreCase(this.name);
+        return ((Stop) o).mName.equalsIgnoreCase(this.mName);
     }
 
     /**
@@ -75,7 +77,7 @@ public class Stop implements Serializable {
      * @return the {@code Stop}'s name.
      */
     public String getName() {
-        return name;
+        return mName;
     }
 
     /**
@@ -84,7 +86,7 @@ public class Stop implements Serializable {
      * @return the {@code Stop}'s estimated time of arrival in seconds.
      */
     public Long getSeconds() {
-        return seconds;
+        return mSeconds;
     }
 
     /**
@@ -94,7 +96,7 @@ public class Stop implements Serializable {
      * @param seconds the {@code Stop}'s new estimated time of arrival in seconds.
      */
     public void setSeconds(Long seconds) {
-        this.seconds = (this.seconds == null) ? seconds : Math.min(this.seconds, seconds);
+        this.mSeconds = (this.mSeconds == null) ? seconds : Math.min(this.mSeconds, seconds);
     }
 
 

@@ -1,4 +1,4 @@
-package com.rndapp.t;
+package com.rndapp.t.models;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -7,6 +7,10 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+/**
+ * A class to store a trip's line color, destination, and stops along the way to said destination.
+ * For now, trip sequences are stored as private final static String arrays.
+ */
 public class Trip implements Serializable {
 
     /**
@@ -32,17 +36,7 @@ public class Trip implements Serializable {
     /**
      * The subway line the trip is on.
      */
-    private String line;
-
-    /**
-     * The trip's destination.
-     */
-    private String destination;
-
-    /**
-     * A list of {@code Stop}s along the way to the destination.
-     */
-    private ArrayList<Stop> stops;
+    private String mLine;
 
     /**
      * JSON key that maps to the {@code Trip}'s destination.
@@ -55,19 +49,29 @@ public class Trip implements Serializable {
     private final static String JSON_KEY_TRIP_PREDICTIONS = "Predictions";
 
     /**
+     * The trip's destination.
+     */
+    private String mDestination;
+
+    /**
+     * A list of {@code Stop}s along the way to the destination.
+     */
+    private ArrayList<Stop> mStops;
+
+    /**
      * Constructs a {@code Trip}.
      *
      * @param trip The {@code JSONObject} that contains the {@code Trip}'s
      *             destination and a list of predictions.
      * @param line The {@code Trip}'s line color.
      */
-    public Trip(JSONObject trip, String line) {
+    public Trip(final JSONObject trip, final String line) {
         super();
-        destination = "";
-        this.line = line;
-        stops = new ArrayList<Stop>();
+        mDestination = "";
+        this.mLine = line;
+        mStops = new ArrayList<Stop>();
         try {
-            this.destination = trip.getString(JSON_KEY_TRIP_DESTINATION);
+            this.mDestination = trip.getString(JSON_KEY_TRIP_DESTINATION);
             initStops();
             incorporatePredictions(trip.getJSONArray(JSON_KEY_TRIP_PREDICTIONS));
         } catch (Exception e) {
@@ -75,7 +79,14 @@ public class Trip implements Serializable {
         }
     }
 
-    private JSONObject getJSONObjectFromArray(JSONArray array, int index) {
+    /**
+     * Returns a specified JSONObject from a JSONArray.
+     *
+     * @param array The given JSONArray.
+     * @param index The index of the JSONObject to retrieve.
+     * @return a specified JSONObject from a JSONArray.
+     */
+    private JSONObject getJSONObjectFromArray(final JSONArray array, final int index) {
         JSONObject obj = null;
         try {
             obj = array.getJSONObject(index);
@@ -86,19 +97,20 @@ public class Trip implements Serializable {
     }
 
     /**
+     * Updates this {@code Trip}'s stops from an array of predictions.
      * @param predictions An array of stops and their predicted seconds.
      */
-    public void incorporatePredictions(JSONArray predictions) {
+    public void incorporatePredictions(final JSONArray predictions) {
         // For each prediction...
         for (int i = 0; i < predictions.length(); i++) {
 
             // We haven't added the prediction yet...
             boolean added = false;
 
-            JSONObject prediction = getJSONObjectFromArray(predictions, i);
-            Stop predictedStop = new Stop(prediction);
+            final JSONObject prediction = getJSONObjectFromArray(predictions, i);
+            final Stop predictedStop = new Stop(prediction);
 
-            for (Stop stop : stops) {
+            for (Stop stop : mStops) {
                 try {
                     // If the stops have the same destination...
                     if (predictedStop.equals(stop)) {
@@ -111,7 +123,7 @@ public class Trip implements Serializable {
                 }
             }
             if (!added) {
-                stops.add(predictedStop);
+                mStops.add(predictedStop);
             }
         }
     }
@@ -122,7 +134,7 @@ public class Trip implements Serializable {
      * @return this {@code Trip}'s list of stops.
      */
     public ArrayList<Stop> getStops() {
-        return stops;
+        return mStops;
     }
 
     /**
@@ -131,7 +143,7 @@ public class Trip implements Serializable {
      * @return this {@code Trip}'s destination.
      */
     public String getDestination() {
-        return destination;
+        return mDestination;
     }
 
     /**
@@ -145,7 +157,7 @@ public class Trip implements Serializable {
     public boolean equals(Object o) {
         if (o.getClass() != Trip.class)
             return false;
-        return ((Trip) o).destination.equalsIgnoreCase(this.destination);
+        return ((Trip) o).mDestination.equalsIgnoreCase(this.mDestination);
     }
 
     /**
@@ -164,31 +176,31 @@ public class Trip implements Serializable {
         };
 
         String[] list = {""};
-        if (line.equalsIgnoreCase(BLUE)) {
+        if (mLine.equalsIgnoreCase(BLUE)) {
             list = lines[0];
-        } else if (line.equalsIgnoreCase(ORANGE)) {
+        } else if (mLine.equalsIgnoreCase(ORANGE)) {
             list = lines[1];
-        } else if (line.equalsIgnoreCase(RED)) {
-            if (destination.equalsIgnoreCase("Alewife")) {
+        } else if (mLine.equalsIgnoreCase(RED)) {
+            if (mDestination.equalsIgnoreCase("Alewife")) {
                 list = lines[2];
-            } else if (destination.equalsIgnoreCase("Braintree")) {
+            } else if (mDestination.equalsIgnoreCase("Braintree")) {
                 list = lines[3];
-            } else if (destination.equalsIgnoreCase("Ashmont")) {
+            } else if (mDestination.equalsIgnoreCase("Ashmont")) {
                 list = lines[4];
             }
         }
 
         /* If we're going to the first stop, add stops in reverse. */
-        if (destination.equalsIgnoreCase(list[0])) {
+        if (mDestination.equalsIgnoreCase(list[0])) {
             for (int i = 0; i < list.length; i++) {
-                stops.add(new Stop(list[list.length - 1 - i]));
+                mStops.add(new Stop(list[list.length - 1 - i]));
             }
         }
 
         /* If we're going to the last stop, add stops in normal order. */
         else {
             for (String stop : list) {
-                stops.add(new Stop(stop));
+                mStops.add(new Stop(stop));
             }
         }
     }

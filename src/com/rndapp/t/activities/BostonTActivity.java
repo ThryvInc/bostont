@@ -1,31 +1,8 @@
-package com.rndapp.t;
+package com.rndapp.t.activities;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.Volley;
-import com.rndapp.subway_lib.MainActivity;
-import com.rndapp.subway_lib.Notification;
-
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.StatusLine;
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.json.JSONObject;
-
-import com.flurry.android.FlurryAgent;
-
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -37,6 +14,21 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
+import com.flurry.android.FlurryAgent;
+import com.rndapp.subway_lib.MainActivity;
+import com.rndapp.subway_lib.Notification;
+import com.rndapp.t.R;
+import com.rndapp.t.adapters.ScheduleAdapter;
+import com.rndapp.t.models.Trip;
+
+import org.json.JSONObject;
+
 /**
  * A subclass of MainActivity in the subway_lib submodule.
  * Responsible for fetching JSON files from the Boston T website.
@@ -44,9 +36,14 @@ import android.widget.Toast;
 public class BostonTActivity extends MainActivity implements OnClickListener {
 
     /**
+     * The path to the Boston T schedule JSON files.
+     */
+    private final String JSON_URL_PATH = "http://developer.mbta.com/lib/rthr/";
+
+    /**
      * Queue of Volley requests.
      */
-    private final RequestQueue requestQueue = Volley.newRequestQueue(this);
+    private final RequestQueue mRequestQueue = Volley.newRequestQueue(this);
 
     /**
      * The API key for this project.
@@ -57,12 +54,12 @@ public class BostonTActivity extends MainActivity implements OnClickListener {
      * A modifiable set of name/value mappings.
      * Holds the schedule String.
      */
-    private JSONObject fetchedData;
+    private JSONObject mFetchedData;
 
     /**
      * Shows a "Loading..." message when user clicks a subway line button.
      */
-    private ProgressDialog pd;
+    private ProgressDialog mProgressDialog;
 
     /**
      * Allows us to schedule {@code Message}s and {@code Runnable}s
@@ -70,21 +67,19 @@ public class BostonTActivity extends MainActivity implements OnClickListener {
      * will be called by the current thread's {@code MessageQueue}
      * when they are received.
      */
-    private Handler handler = new Handler() {
+    private Handler mHandler = new Handler() {
         /**
          * Populates the ListView.
          * @param msg The received message (usually just a blank 0).
          */
         @Override
         public void handleMessage(Message msg) {
-            pd.dismiss();
-            if (fetchedData != null) {
-                ListView lv = (ListView) findViewById(R.id.line_list);
-                ScheduleAdapter sa = new ScheduleAdapter(context, R.layout.item, fetchedData);
+            mProgressDialog.dismiss();
+            if (mFetchedData != null) {
+                final ScheduleAdapter sa = new ScheduleAdapter(context, R.layout.item, mFetchedData);
+                final ListView lv = (ListView) findViewById(R.id.line_list);
                 lv.setAdapter(sa);
-                va.setInAnimation(slideLeftIn);
-                va.setOutAnimation(slideLeftOut);
-                va.showNext();
+                // TODO send fetchedData to Fragment
             } else {
                 Toast.makeText(context, "Please make sure you are connected to the internet.", Toast.LENGTH_LONG).show();
             }
@@ -103,16 +98,16 @@ public class BostonTActivity extends MainActivity implements OnClickListener {
     }
 
     /**
-     * Assigns a background color and {@code OnClickListener} to each of the buttons.
+     * Assigns a background color and {@code OnClickListener} to each of the subway line buttons.
      */
     @Override
     protected void setXML() {
         super.setXML();
 
-        Button red = (Button) findViewById(R.id.red_btn);
-        Button blue = (Button) findViewById(R.id.blue_btn);
-        Button orange = (Button) findViewById(R.id.orange_btn);
-        Button green = (Button) findViewById(R.id.green_btn);
+        final Button red = (Button) findViewById(R.id.red_btn);
+        final Button blue = (Button) findViewById(R.id.blue_btn);
+        final Button orange = (Button) findViewById(R.id.orange_btn);
+        final Button green = (Button) findViewById(R.id.green_btn);
 
         red.setOnClickListener(this);
         red.setBackgroundColor(getResources().getColor(R.color.red));
@@ -133,44 +128,38 @@ public class BostonTActivity extends MainActivity implements OnClickListener {
     public void onClick(View v) {
         super.onClick(v);
 
+        final FragmentManager fm = getFragmentManager();
+        final FragmentTransaction ft = fm.beginTransaction();
+        Fragment newFragment = null;
+
         switch (v.getId()) {
-
             case R.id.see_map:
-                va.setInAnimation(slideRightIn);
-                va.setOutAnimation(slideRightOut);
-                va.showPrevious();
+                newFragment = fm.findFragmentById(R.id.map_fragment);
+                ft.setCustomAnimations(R.anim.push_left_in, R.anim.push_right_out);
                 break;
-
             case R.id.see_sched:
-                va.setInAnimation(slideLeftIn);
-                va.setOutAnimation(slideLeftOut);
-                va.showNext();
+                // shows the schedule (i.e., the stops for each line)
+                newFragment = fm.findFragmentById(R.id.stops_fragment);
+                ft.setCustomAnimations(R.anim.push_right_in, R.anim.push_left_out);
                 break;
+            case R.id.back_to_lines:
+                // TODO pop from backstack
 
-            case R.id.back_to_sched:
-                va.setInAnimation(slideRightIn);
-                va.setOutAnimation(slideRightOut);
-                va.showPrevious();
                 break;
-
             case R.id.orange_btn:
                 fetchData(Trip.ORANGE);
                 break;
-
             case R.id.red_btn:
                 fetchData(Trip.RED);
                 break;
-
             case R.id.blue_btn:
                 fetchData(Trip.BLUE);
                 break;
-
             // TODO - alternative... there's no json schedule for green line
             case R.id.green_btn:
                 // this just displays Green Line unavailability notification
                 startActivity(new Intent(this, Notification.class));
                 break;
-
             default:
                 Toast.makeText(this, "What other View was clicked?", Toast.LENGTH_LONG).show();
                 break;
@@ -183,14 +172,14 @@ public class BostonTActivity extends MainActivity implements OnClickListener {
      * @param lineColor The line to fetch data for.
      */
     private void fetchData(final String lineColor) {
-        pd = ProgressDialog.show(this, "", "Loading...", true, true);
+        mProgressDialog = ProgressDialog.show(this, "", "Loading...", true, true);
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
-                fetchedData = null;
+                mFetchedData = null;
                 getSchedule(lineColor);
-                // Invokes handler's handleMessage, which creates new ScheduleAdapter
-                handler.sendEmptyMessage(0);
+                // Invokes mHandler's handleMessage, which creates new ScheduleAdapter
+                mHandler.sendEmptyMessage(0);
             }
         });
         thread.start();
@@ -204,7 +193,7 @@ public class BostonTActivity extends MainActivity implements OnClickListener {
      * returns "http://developer.mbta.com/lib/rthr/orange.json".
      */
     public String getURL(final String line) {
-        return "http://developer.mbta.com/lib/rthr/" + line + ".json";
+        return JSON_URL_PATH + line + ".json";
     }
 
     /**
@@ -218,51 +207,18 @@ public class BostonTActivity extends MainActivity implements OnClickListener {
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject fetchedData) {
-                        BostonTActivity.this.fetchedData = fetchedData;
+                        BostonTActivity.this.mFetchedData = fetchedData;
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError volleyError) {
                         System.out.println(volleyError.getMessage());
+                        BostonTActivity.this.mFetchedData = null;
                     }
                 }
         );
-        requestQueue.add(request);
-    }
-
-    /**
-     * Returns the subway schedule for a given subway line.
-     * The schedule is requested from a json file on the web.
-     *
-     * @param line The color of the subway line to retrieve (e.g., "orange").
-     * @return A string containing the schedule.
-     */
-    private String getScheduleWithHttp(final String line) {
-        StringBuilder builder = new StringBuilder();
-        HttpClient client = new DefaultHttpClient();
-        HttpGet httpGet = new HttpGet(getURL(line));
-        try {
-            HttpResponse response = client.execute(httpGet);
-            StatusLine statusLine = response.getStatusLine();
-            int statusCode = statusLine.getStatusCode();
-            if (statusCode == HttpURLConnection.HTTP_OK) {
-                HttpEntity entity = response.getEntity();
-                InputStream content = entity.getContent();
-                BufferedReader reader = new BufferedReader(new InputStreamReader(content));
-                String l;
-                while ((l = reader.readLine()) != null) {
-                    builder.append(l);
-                }
-            } else {
-                //Log.e(ParseJSON.class.toString(), "Failed to download file");
-            }
-        } catch (ClientProtocolException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return builder.toString();
+        mRequestQueue.add(request);
     }
 
     /**
