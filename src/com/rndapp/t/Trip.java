@@ -75,6 +75,16 @@ public class Trip implements Serializable {
         }
     }
 
+    private JSONObject getJSONObjectFromArray(JSONArray array, int index) {
+        JSONObject obj = null;
+        try {
+            obj = array.getJSONObject(index);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return obj;
+    }
+
     /**
      * @param predictions An array of stops and their predicted seconds.
      */
@@ -85,20 +95,10 @@ public class Trip implements Serializable {
             // We haven't added the prediction yet...
             boolean added = false;
 
-            // Get the prediction
-            JSONObject prediction = null;
-            try {
-                prediction = predictions.getJSONObject(i);
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-
-            // Predicted stop
+            JSONObject prediction = getJSONObjectFromArray(predictions, i);
             Stop predictedStop = new Stop(prediction);
 
-            // For each stop...
-            for (int j = 0; j < stops.size(); j++) {
-                Stop stop = stops.get(j);
+            for (Stop stop : stops) {
                 try {
                     // If the stops have the same destination...
                     if (predictedStop.equals(stop)) {

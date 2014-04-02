@@ -6,9 +6,14 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 import com.rndapp.subway_lib.MainActivity;
 import com.rndapp.subway_lib.Notification;
-import com.rndapp.subway_lib.TouchImageView;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -21,30 +26,27 @@ import org.json.JSONObject;
 
 import com.flurry.android.FlurryAgent;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.BitmapFactory.Options;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.view.animation.Animation.AnimationListener;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
-import android.widget.ViewAnimator;
 
 /**
  * A subclass of MainActivity in the subway_lib submodule.
+ * Responsible for fetching JSON files from the Boston T website.
  */
 public class BostonTActivity extends MainActivity implements OnClickListener {
+
+    /**
+     * Queue of Volley requests.
+     */
+    private final RequestQueue requestQueue = Volley.newRequestQueue(this);
 
     /**
      * The API key for this project.
@@ -123,28 +125,6 @@ public class BostonTActivity extends MainActivity implements OnClickListener {
     }
 
     /**
-     * Fetches data from the web.
-     * @param lineColor The line to fetch data for.
-     */
-    private void subwayLineButtonClicked(final String lineColor) {
-        pd = ProgressDialog.show(this, "", "Loading...", true, true);
-        Thread thread = new Thread(new Runnable() {
-            public void run() {
-                fetchedData = null;
-                String sched = getSchedule(lineColor);
-                try {
-                    fetchedData = new JSONObject(sched);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-                // Invokes handler's handleMessage, which creates new ScheduleAdapter
-                handler.sendEmptyMessage(0);
-            }
-        });
-        thread.start();
-    }
-
-    /**
      * Manages all clicks on Views.
      *
      * @param v The view that was clicked.
@@ -174,15 +154,15 @@ public class BostonTActivity extends MainActivity implements OnClickListener {
                 break;
 
             case R.id.orange_btn:
-                subwayLineButtonClicked(Trip.ORANGE);
+                fetchData(Trip.ORANGE);
                 break;
 
             case R.id.red_btn:
-                subwayLineButtonClicked(Trip.RED);
+                fetchData(Trip.RED);
                 break;
 
             case R.id.blue_btn:
-                subwayLineButtonClicked(Trip.BLUE);
+                fetchData(Trip.BLUE);
                 break;
 
             // TODO - alternative... there's no json schedule for green line
@@ -198,16 +178,70 @@ public class BostonTActivity extends MainActivity implements OnClickListener {
     }
 
     /**
+     * Fetches data from the web. Called when a subway line is pressed.
+     *
+     * @param lineColor The line to fetch data for.
+     */
+    private void fetchData(final String lineColor) {
+        pd = ProgressDialog.show(this, "", "Loading...", true, true);
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                fetchedData = null;
+                getSchedule(lineColor);
+                // Invokes handler's handleMessage, which creates new ScheduleAdapter
+                handler.sendEmptyMessage(0);
+            }
+        });
+        thread.start();
+    }
+
+    /**
+     * Returns the URL of a specific subway line.
+     *
+     * @param line The color of the subway line to retrieve (e.g., "orange").
+     * @return the URL of the given line's JSON schedule. If line is "orange", then this method
+     * returns "http://developer.mbta.com/lib/rthr/orange.json".
+     */
+    public String getURL(final String line) {
+        return "http://developer.mbta.com/lib/rthr/" + line + ".json";
+    }
+
+    /**
+     * Volley makes a GET request for JSON file and then saves the fetched JSON object.
+     *
+     * @param line The color of the subway line to retrieve (e.g., "orange").
+     */
+    private void getSchedule(final String line) {
+        final JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, getURL(line),
+                null,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject fetchedData) {
+                        BostonTActivity.this.fetchedData = fetchedData;
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError volleyError) {
+                        System.out.println(volleyError.getMessage());
+                    }
+                }
+        );
+        requestQueue.add(request);
+    }
+
+    /**
      * Returns the subway schedule for a given subway line.
      * The schedule is requested from a json file on the web.
      *
      * @param line The color of the subway line to retrieve (e.g., "orange").
      * @return A string containing the schedule.
      */
-    protected String getSchedule(String line) {
+    private String getScheduleWithHttp(final String line) {
         StringBuilder builder = new StringBuilder();
         HttpClient client = new DefaultHttpClient();
-        HttpGet httpGet = new HttpGet("http://developer.mbta.com/lib/rthr/" + line + ".json");
+        HttpGet httpGet = new HttpGet(getURL(line));
         try {
             HttpResponse response = client.execute(httpGet);
             StatusLine statusLine = response.getStatusLine();

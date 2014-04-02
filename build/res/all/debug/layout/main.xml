@@ -22,19 +22,19 @@
 
         <LinearLayout
             android:id="@+id/mapll"
-            android:orientation="vertical"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:gravity="center">
+            android:gravity="center"
+            android:orientation="vertical">
 
             <Button
                 android:id="@+id/see_sched"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
                 android:layout_marginTop="5dip"
+                android:text="See Schedules"
                 android:textColor="#fff"
-                android:text="See Schedules" />
+                android:textStyle="bold" />
 
             <com.rndapp.subway_lib.TouchImageView
                 android:id="@+id/touchImg"
@@ -46,22 +46,22 @@
 
         <LinearLayout
             android:id="@+id/schedll"
-            android:orientation="vertical"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
 
             <Button
                 android:id="@+id/see_map"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
+                android:layout_gravity="center"
                 android:layout_marginBottom="10dip"
                 android:layout_marginLeft="5dip"
                 android:layout_marginRight="5dip"
                 android:layout_marginTop="10dip"
+                android:text="See Map"
                 android:textColor="#fff"
-                android:layout_gravity="center"
-                android:text="See Map" />
+                android:textStyle="bold" />
 
             <LinearLayout
                 android:layout_width="fill_parent"
@@ -71,19 +71,19 @@
                 <LinearLayout
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_weight="1">
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
                     <Button
                         android:id="@+id/blue_btn"
                         android:layout_width="fill_parent"
                         android:layout_height="160dip"
+                        android:layout_marginBottom="10dip"
                         android:layout_marginLeft="5dip"
                         android:layout_marginRight="5dip"
-                        android:textStyle="bold"
+                        android:text="Blue Line"
                         android:textColor="#fff"
-                        android:layout_marginBottom="10dip"
-                        android:text="Blue Line" />
+                        android:textStyle="bold" />
 
                     <Button
                         android:id="@+id/orange_btn"
@@ -91,9 +91,9 @@
                         android:layout_height="160dip"
                         android:layout_marginLeft="5dip"
                         android:layout_marginRight="5dip"
-                        android:textStyle="bold"
+                        android:text="Orange Line"
                         android:textColor="#fff"
-                        android:text="Orange Line" />
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
@@ -101,13 +101,13 @@
                     android:id="@+id/red_btn"
                     android:layout_width="fill_parent"
                     android:layout_height="330dip"
-                    android:layout_weight="1"
+                    android:layout_marginBottom="10dip"
                     android:layout_marginLeft="5dip"
                     android:layout_marginRight="5dip"
-                    android:layout_marginBottom="10dip"
-                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:text="Red Line"
                     android:textColor="#fff"
-                    android:text="Red Line" />
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -117,27 +117,27 @@
                 android:layout_height="60dip"
                 android:layout_marginLeft="5dip"
                 android:layout_marginRight="5dip"
+                android:text="Looking for the Green Line?"
                 android:textColor="#fff"
-                android:textStyle="bold"
-                android:text="Looking for the Green Line?" />
+                android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/linell"
-            android:orientation="vertical"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
 
             <Button
                 android:id="@+id/back_to_sched"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:layout_marginTop="5dip"
-                android:textColor="#fff"
-                android:layout_marginBottom="10dip"
                 android:layout_gravity="center"
-                android:text="Back to Schedules" />
+                android:layout_marginBottom="10dip"
+                android:layout_marginTop="5dip"
+                android:text="Back to Schedules"
+                android:textColor="#fff"
+                android:textStyle="bold" />
 
             <ListView
                 android:id="@+id/line_list"

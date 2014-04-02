@@ -6,6 +6,15 @@
     android:gravity="center"
     android:orientation="vertical">
 
+    <com.google.ads.AdView
+        android:id="@+id/ad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        ads:adSize="BANNER"
+        ads:adUnitId="a1506c661ee8042"
+        ads:loadAdOnCreate="true"
+        ads:testDevices="TEST_EMULATOR,TEST_DEVICE_ID_GOES_HERE" />
+
     <ViewAnimator
         android:id="@+id/chooser_anim"
         android:layout_width="fill_parent"
@@ -18,11 +27,6 @@
             android:gravity="center"
             android:orientation="vertical">
 
-            <com.rndapp.subway_lib.TouchImageView
-                android:id="@+id/touchImg"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
             <Button
                 android:id="@+id/see_sched"
                 android:layout_width="fill_parent"
@@ -32,6 +36,11 @@
                 android:textColor="#fff"
                 android:textStyle="bold" />
 
+            <com.rndapp.subway_lib.TouchImageView
+                android:id="@+id/touchImg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
         </LinearLayout>
 
 
@@ -40,6 +49,19 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:orientation="vertical">
+
+            <Button
+                android:id="@+id/see_map"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dip"
+                android:layout_marginLeft="5dip"
+                android:layout_marginRight="5dip"
+                android:layout_marginTop="10dip"
+                android:text="See Map"
+                android:textColor="#fff"
+                android:textStyle="bold" />
 
             <LinearLayout
                 android:layout_width="fill_parent"
@@ -98,20 +120,6 @@
                 android:text="Looking for the Green Line?"
                 android:textColor="#fff"
                 android:textStyle="bold" />
-
-            <Button
-                android:id="@+id/see_map"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginBottom="10dip"
-                android:layout_marginLeft="5dip"
-                android:layout_marginRight="5dip"
-                android:layout_marginTop="10dip"
-                android:text="See Map"
-                android:textColor="#fff"
-                android:textStyle="bold" />
-
         </LinearLayout>
 
         <LinearLayout
@@ -138,15 +146,4 @@
 
         </LinearLayout>
     </ViewAnimator>
-
-    <com.google.ads.AdView
-        android:id="@+id/ad"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        ads:adSize="BANNER"
-        ads:adUnitId="a1506c661ee8042"
-        ads:loadAdOnCreate="true"
-        ads:testDevices="TEST_EMULATOR,TEST_DEVICE_ID_GOES_HERE" />
-
-
 </LinearLayout>
