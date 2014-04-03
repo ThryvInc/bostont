@@ -25,13 +25,14 @@ import com.rndapp.subway_lib.MainActivity;
 import com.rndapp.subway_lib.Notification;
 import com.rndapp.t.R;
 import com.rndapp.t.adapters.ScheduleAdapter;
+import com.rndapp.t.fragments.StopsFragment;
 import com.rndapp.t.models.Trip;
 
 import org.json.JSONObject;
 
 /**
- * A subclass of MainActivity in the subway_lib submodule.
- * Responsible for fetching JSON files from the Boston T website.
+ * A subclass of MainActivity in the subway_lib submodule. Responsible for fetching JSON files from
+ * the Boston T website.
  */
 public class BostonTActivity extends MainActivity implements OnClickListener {
 
@@ -51,8 +52,7 @@ public class BostonTActivity extends MainActivity implements OnClickListener {
     private static final String API_KEY = "G9S4S9H9JXBK884NW625";
 
     /**
-     * A modifiable set of name/value mappings.
-     * Holds the schedule String.
+     * A modifiable set of name/value mappings. Holds the schedule String.
      */
     private JSONObject mFetchedData;
 
@@ -62,10 +62,9 @@ public class BostonTActivity extends MainActivity implements OnClickListener {
     private ProgressDialog mProgressDialog;
 
     /**
-     * Allows us to schedule {@code Message}s and {@code Runnable}s
-     * to be executed at some point in the future. Enqueued objects
-     * will be called by the current thread's {@code MessageQueue}
-     * when they are received.
+     * Allows us to schedule {@code Message}s and {@code Runnable}s to be executed at some point in
+     * the future. Enqueued objects will be called by the current thread's {@code MessageQueue} when
+     * they are received.
      */
     private Handler mHandler = new Handler() {
         /**
@@ -85,6 +84,14 @@ public class BostonTActivity extends MainActivity implements OnClickListener {
             }
         }
     };
+
+    /**
+     * Returns the {@code JSONObject} schedule that was fetched.
+     * @return The {@code JSONObject} schedule that was fetched for a given subway line.
+     */
+    public JSONObject getFetchedData() {
+        return mFetchedData;
+    }
 
     /**
      * Called when the activity is first created.
@@ -178,6 +185,7 @@ public class BostonTActivity extends MainActivity implements OnClickListener {
                 break;
         }
         ft.commit();
+
     }
 
     /**
@@ -236,8 +244,8 @@ public class BostonTActivity extends MainActivity implements OnClickListener {
     }
 
     /**
-     * When this Activity starts, it also starts or continues
-     * a Flurry session for the project denoted by the API key.
+     * When this Activity starts, it also starts or continues a Flurry session for the project
+     * denoted by the API key.
      */
     @Override
     protected void onStart() {
