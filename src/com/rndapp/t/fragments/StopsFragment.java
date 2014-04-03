@@ -12,15 +12,15 @@ import com.rndapp.t.adapters.ScheduleAdapter;
 import org.json.JSONObject;
 
 /**
- * Displays the list of stops for a specific line.
- * Created by kmchen1 on 4/2/14.
+ * Displays the list of stops for a specific line. Created by kmchen1 on 4/2/14.
  */
 public class StopsFragment extends ListFragment {
 
     private BostonTActivity mCallback;
 
     /**
-     * Lifecycle step 1
+     * Lifecycle step 1.
+     *
      * @param activity
      */
     @Override
@@ -34,15 +34,24 @@ public class StopsFragment extends ListFragment {
     }
 
     /**
-     * Lifecycle step 4
+     * Updates the underlying adapter given a JSONObject.
+     * @param fetchedData The JSONObject used to create the underlying ScheduleAdapter.
+     */
+    public void updateListAdapter(JSONObject fetchedData) {
+        setListAdapter(new ScheduleAdapter(getActivity(), R.layout.item, fetchedData));
+    }
+
+    /**
+     * Lifecycle step 4. Populate list with an array of stops
+     *
      * @param savedInstanceState
      */
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        // Populate list with an array of stops
         final JSONObject fetchedData = mCallback.getFetchedData();
-        setListAdapter(new ScheduleAdapter(getActivity(), R.layout.item, fetchedData));
+        updateListAdapter(fetchedData);
+
     }
 
 }

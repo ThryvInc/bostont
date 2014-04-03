@@ -3,15 +3,13 @@ package com.rndapp.t.activities;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.app.ListFragment;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.ListView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -25,6 +23,7 @@ import com.rndapp.subway_lib.MainActivity;
 import com.rndapp.subway_lib.Notification;
 import com.rndapp.t.R;
 import com.rndapp.t.adapters.ScheduleAdapter;
+import com.rndapp.t.fragments.StopsFragment;
 import com.rndapp.t.models.Trip;
 
 import org.json.JSONObject;
@@ -61,7 +60,14 @@ public class BostonTActivity extends MainActivity implements OnClickListener {
     private ProgressDialog mProgressDialog;
 
     /**
+     * The last line color fetched. See {@link Trip#BLUE}, {@link Trip#GREEN}, etc. This can also be
+     * used as a tag when dealing with fragment transactions.
+     */
+    private String mlastLineColorFetched;
+
+    /**
      * Returns the {@code JSONObject} schedule that was fetched.
+     *
      * @return The {@code JSONObject} schedule that was fetched for a given subway line.
      */
     public JSONObject getFetchedData() {
@@ -77,6 +83,13 @@ public class BostonTActivity extends MainActivity implements OnClickListener {
         setContentView(R.layout.main);
         context = this;
         setXML();
+    }
+
+    // TODO - can't cast Fragment as StopsFragment
+    public void refresh() {
+        fetchData(mlastLineColorFetched);
+        final Fragment fragment = getFragmentManager().findFragmentByTag(mlastLineColorFetched);
+        ((StopsFragment) fragment).updateListAdapter(mFetchedData);
     }
 
     /**
@@ -113,6 +126,7 @@ public class BostonTActivity extends MainActivity implements OnClickListener {
         final FragmentManager fm = getFragmentManager();
         final FragmentTransaction ft = fm.beginTransaction();
         Fragment newFragment = null;
+        String newFragmentTag = null;
 
         switch (v.getId()) {
 
@@ -135,17 +149,20 @@ public class BostonTActivity extends MainActivity implements OnClickListener {
              * passes it to the fragment responsible for showing stops.
              */
             case R.id.btn_orange:
+                newFragmentTag = Trip.ORANGE;
                 fetchData(Trip.ORANGE);
                 ft.setCustomAnimations(R.anim.push_right_in, R.anim.push_left_out);
                 ft.addToBackStack(null);
                 break;
             case R.id.btn_red:
                 fetchData(Trip.RED);
+                newFragmentTag = Trip.RED;
                 ft.setCustomAnimations(R.anim.push_right_in, R.anim.push_left_out);
                 ft.addToBackStack(null);
                 break;
             case R.id.btn_blue:
                 fetchData(Trip.BLUE);
+                newFragmentTag = Trip.BLUE;
                 ft.setCustomAnimations(R.anim.push_right_in, R.anim.push_left_out);
                 ft.addToBackStack(null);
                 break;
@@ -159,17 +176,18 @@ public class BostonTActivity extends MainActivity implements OnClickListener {
                 Toast.makeText(this, "What other View was clicked?", Toast.LENGTH_LONG).show();
                 break;
         }
-        ft.commit();
-
+        // TODO apparently you can only replace fragments that were dynamically added
+        // TODO so we have to remove <fragment> tags from main.xml...?
+        ft.replace(R.id.frame_layout_main, newFragment, newFragmentTag).commit();
     }
 
     /**
-     * Fetches data from the web and stores it in a field.
-     * Called when a subway line is pressed.
+     * Fetches data from the web and stores it in a field. Called when a subway line is pressed.
      *
      * @param lineColor The line to fetch data for.
      */
     private void fetchData(final String lineColor) {
+        mlastLineColorFetched = lineColor;
         mProgressDialog = ProgressDialog.show(this, "", "Loading...", true, true);
         Thread thread = new Thread(new Runnable() {
             @Override
