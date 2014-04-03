@@ -36,8 +36,8 @@ import org.json.JSONObject;
 public class BostonTActivity extends MainActivity
         implements OnClickListener,
         MapFragment.OnMapLineSelectedListener,
-        StopsFragment.OnStopSelectedListener,
-        LinesFragment.OnLineSelectedListener {
+        LinesFragment.OnLineSelectedListener,
+        StopsFragment.OnStopSelectedListener {
 
     /**
      * The path to the Boston T schedule JSON files.
@@ -104,13 +104,6 @@ public class BostonTActivity extends MainActivity
         setXML();
     }
 
-    // TODO - can't cast Fragment as StopsFragment
-    public void refresh() {
-        fetchData(mlastLineColorFetched);
-        final Fragment fragment = getFragmentManager().findFragmentByTag(mlastLineColorFetched);
-        //((StopsFragment) fragment).updateListAdapter(mFetchedData);
-    }
-
     /**
      * Assigns a background color and {@code OnClickListener} to each of the subway line buttons.
      */
@@ -118,6 +111,7 @@ public class BostonTActivity extends MainActivity
     protected void setXML() {
         super.setXML();
 
+        // TODO this will probably throw tons of NPEs since IDs won't be found
         final Button red = (Button) findViewById(R.id.btn_red);
         final Button blue = (Button) findViewById(R.id.btn_blue);
         final Button orange = (Button) findViewById(R.id.btn_orange);
@@ -145,6 +139,7 @@ public class BostonTActivity extends MainActivity
         final FragmentManager fragmentManager = getFragmentManager();
         final FragmentTransaction transaction = fragmentManager.beginTransaction();
         Fragment newFragment = null;
+        // TODO Used for FragmentManager.BackStackEntry APIs
         String newFragmentTag = null;
 
         switch (v.getId()) {
@@ -168,21 +163,21 @@ public class BostonTActivity extends MainActivity
              * passes it to the fragment responsible for showing stops.
              */
             case R.id.btn_orange:
-                newFragment = new StopsFragment();
+                newFragment = StopsFragment.newInstance(Trip.ORANGE);
                 newFragmentTag = Trip.ORANGE;
                 fetchData(Trip.ORANGE);
                 transaction.setCustomAnimations(R.anim.push_right_in, R.anim.push_left_out);
                 transaction.addToBackStack(null);
                 break;
             case R.id.btn_red:
-                newFragment = new StopsFragment();
+                newFragment = StopsFragment.newInstance(Trip.RED);
                 newFragmentTag = Trip.RED;
                 fetchData(Trip.RED);
                 transaction.setCustomAnimations(R.anim.push_right_in, R.anim.push_left_out);
                 transaction.addToBackStack(null);
                 break;
             case R.id.btn_blue:
-                newFragment = new StopsFragment();
+                newFragment = StopsFragment.newInstance(Trip.BLUE);
                 newFragmentTag = Trip.BLUE;
                 fetchData(Trip.BLUE);
                 transaction.setCustomAnimations(R.anim.push_right_in, R.anim.push_left_out);
@@ -291,13 +286,25 @@ public class BostonTActivity extends MainActivity
     }
 
     /**
+     * Allows the {@link com.rndapp.t.fragments.LinesFragment} to communicate with this {@code
+     * Activity}.
+     *
+     * @param lineColor The line the user selected, e.g., {@link com.rndapp.t.models.Trip#ORANGE}.
+     */
+    @Override
+    public void onLineSelected(final String lineColor) {
+        // TODO what happens when user presses a color-coded subway button
+        StopsFragment stopsFragment = (StopsFragment) getFragmentManager().findFragmentById(R.id.fragment_stops);
+    }
+
+    /**
      * Allows the {@link com.rndapp.t.fragments.StopsFragment} to communicate with this {@code
      * Activity}.
      *
      * @param stop The selected {@code Stop}.
      */
     @Override
-    public void onStopSelected(Stop stop) {
+    public void onStopSelected(final Stop stop) {
         // TODO for future, when we want to create another stop-info fragment (re: tourists)
     }
 
@@ -313,13 +320,18 @@ public class BostonTActivity extends MainActivity
     }
 
     /**
-     * Allows the {@link com.rndapp.t.fragments.LinesFragment} to communicate with this {@code
-     * Activity}.
+     * Used by {@link com.rndapp.t.fragments.StopsFragment} to re-fetch data.
      *
-     * @param lineColor The line the user selected, e.g., {@link com.rndapp.t.models.Trip#ORANGE}.
+     * @param lineColor Passed by fragment so this activity knows what data to fetch.
      */
     @Override
-    public void onLineSelected(String lineColor) {
-        // TODO what happens when user presses a color-coded subway button
+    public void refresh(final String lineColor) {
+        // Updates the instance variable with newly fetched data
+        fetchData(mlastLineColorFetched);
+        // Update the fragment with this data
+        final Fragment fragment = getFragmentManager().findFragmentByTag(mlastLineColorFetched);
+        ((StopsFragment) fragment).updateListAdapter(mFetchedData);
+
     }
+
 }
