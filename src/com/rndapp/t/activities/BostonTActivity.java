@@ -25,7 +25,6 @@ import com.rndapp.subway_lib.MainActivity;
 import com.rndapp.subway_lib.Notification;
 import com.rndapp.t.R;
 import com.rndapp.t.adapters.ScheduleAdapter;
-import com.rndapp.t.fragments.StopsFragment;
 import com.rndapp.t.models.Trip;
 
 import org.json.JSONObject;
@@ -60,30 +59,6 @@ public class BostonTActivity extends MainActivity implements OnClickListener {
      * Shows a "Loading..." message when user clicks a subway line button.
      */
     private ProgressDialog mProgressDialog;
-
-    /**
-     * Allows us to schedule {@code Message}s and {@code Runnable}s to be executed at some point in
-     * the future. Enqueued objects will be called by the current thread's {@code MessageQueue} when
-     * they are received.
-     */
-    private Handler mHandler = new Handler() {
-        /**
-         * Populates the ListView.
-         * @param msg The received message (usually just a blank 0).
-         */
-        @Override
-        public void handleMessage(Message msg) {
-            mProgressDialog.dismiss();
-            if (mFetchedData != null) {
-                final ScheduleAdapter sa = new ScheduleAdapter(context, R.layout.item, mFetchedData);
-                final ListView lv = (ListView) findViewById(R.id.line_list);
-                lv.setAdapter(sa);
-                // TODO send fetchedData to Fragment
-            } else {
-                Toast.makeText(context, "Please make sure you are connected to the internet.", Toast.LENGTH_LONG).show();
-            }
-        }
-    };
 
     /**
      * Returns the {@code JSONObject} schedule that was fetched.
@@ -189,7 +164,8 @@ public class BostonTActivity extends MainActivity implements OnClickListener {
     }
 
     /**
-     * Fetches data from the web. Called when a subway line is pressed.
+     * Fetches data from the web and stores it in a field.
+     * Called when a subway line is pressed.
      *
      * @param lineColor The line to fetch data for.
      */
@@ -200,8 +176,6 @@ public class BostonTActivity extends MainActivity implements OnClickListener {
             public void run() {
                 mFetchedData = null;
                 getSchedule(lineColor);
-                // Invokes mHandler's handleMessage, which creates new ScheduleAdapter
-                mHandler.sendEmptyMessage(0);
             }
         });
         thread.start();

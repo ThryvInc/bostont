@@ -17,7 +17,7 @@ import org.json.JSONObject;
  */
 public class StopsFragment extends ListFragment {
 
-    BostonTActivity mCallback;
+    private BostonTActivity mCallback;
 
     /**
      * Lifecycle step 1
