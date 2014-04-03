@@ -1,36 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:gravity="center"
-    android:orientation="horizontal"
-    android:id="@+id/frame_layout_main">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:gravity="center"
+              android:orientation="vertical"
+              android:id="@+id/linear_layout_main">
 
-    <ViewAnimator
-        android:id="@+id/chooser_anim"
+    <FrameLayout
+        android:id="@+id/frame_layout_main"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
-
-        <fragment
-            android:id="@+id/map_fragment"
-            class="com.rndapp.t.fragments.MapFragment"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-        <fragment
-            android:id="@+id/lines_fragment"
-            class="com.rndapp.t.fragments.LinesFragment"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-        <fragment
-            android:id="@+id/stops_fragment"
-            class="com.rndapp.t.fragments.StopsFragment"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-    </ViewAnimator>
+        android:layout_height="0dp"
+        android:layout_weight="1">
+    </FrameLayout>
 
     <com.google.ads.AdView
         android:id="@+id/ad"
@@ -39,7 +21,8 @@
         ads:adSize="BANNER"
         ads:adUnitId="a1506c661ee8042"
         ads:loadAdOnCreate="true"
-        ads:testDevices="TEST_EMULATOR,TEST_DEVICE_ID_GOES_HERE" />
+        ads:testDevices="TEST_EMULATOR,TEST_DEVICE_ID_GOES_HERE"/>
 
+</LinearLayout>
 
-</FrameLayout><!-- From: file:/Users/kmchen1/AndroidStudioProjects/bostont/res/layout/main.xml -->
+<!-- From: file:/Users/kevinchen/AndroidStudioProjects/bostont/res/layout/main.xml -->

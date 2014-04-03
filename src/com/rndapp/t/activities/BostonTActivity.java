@@ -21,7 +21,10 @@ import com.flurry.android.FlurryAgent;
 import com.rndapp.subway_lib.MainActivity;
 import com.rndapp.subway_lib.Notification;
 import com.rndapp.t.R;
+import com.rndapp.t.fragments.LinesFragment;
+import com.rndapp.t.fragments.MapFragment;
 import com.rndapp.t.fragments.StopsFragment;
+import com.rndapp.t.models.Stop;
 import com.rndapp.t.models.Trip;
 
 import org.json.JSONObject;
@@ -30,7 +33,11 @@ import org.json.JSONObject;
  * A subclass of MainActivity in the subway_lib submodule. Responsible for fetching JSON files from
  * the Boston T website.
  */
-public class BostonTActivity extends MainActivity implements OnClickListener {
+public class BostonTActivity extends MainActivity
+        implements OnClickListener,
+        MapFragment.OnMapLineSelectedListener,
+        StopsFragment.OnStopSelectedListener,
+        LinesFragment.OnLineSelectedListener {
 
     /**
      * The path to the Boston T schedule JSON files.
@@ -64,21 +71,35 @@ public class BostonTActivity extends MainActivity implements OnClickListener {
     private String mlastLineColorFetched;
 
     /**
-     * Returns the {@code JSONObject} schedule that was fetched.
-     *
-     * @return The {@code JSONObject} schedule that was fetched for a given subway line.
-     */
-    public JSONObject getFetchedData() {
-        return mFetchedData;
-    }
-
-    /**
      * Called when the activity is first created.
      */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+
+        // Check that the activity is using the layout version with the fragment_container FrameLayout
+        if (findViewById(R.id.fragment_container) != null) {
+
+            // However, if we're being restored from a previous state,
+            // then we don't need to do anything and should return or else
+            // we could end up with overlapping fragments.
+            if (savedInstanceState != null) {
+                return;
+            }
+
+            // The initial fragment - MapFragment - to be placed in the activity layout
+            MapFragment mapFragment = new MapFragment();
+
+            // In case this activity was started with special instructions from an
+            // Intent, pass the Intent's extras to the fragment as arguments
+            mapFragment.setArguments(getIntent().getExtras());
+
+            // Add the fragment to the 'fragment_container' FrameLayout
+            getFragmentManager().beginTransaction().add(R.id.fragment_container, mapFragment).commit();
+
+        }
+
         context = this;
         setXML();
     }
@@ -113,7 +134,7 @@ public class BostonTActivity extends MainActivity implements OnClickListener {
     }
 
     /**
-     * Manages all clicks on Views.
+     * Manages all clicks on Views. This is where Fragment transactions occur.
      *
      * @param v The view that was clicked.
      */
@@ -121,8 +142,8 @@ public class BostonTActivity extends MainActivity implements OnClickListener {
     public void onClick(View v) {
         super.onClick(v);
 
-        final FragmentManager fm = getFragmentManager();
-        final FragmentTransaction ft = fm.beginTransaction();
+        final FragmentManager fragmentManager = getFragmentManager();
+        final FragmentTransaction transaction = fragmentManager.beginTransaction();
         Fragment newFragment = null;
         String newFragmentTag = null;
 
@@ -131,15 +152,15 @@ public class BostonTActivity extends MainActivity implements OnClickListener {
             /* The See Schedules button is shown above the ImageView of the BostonT. */
             case R.id.btn_see_schedules:
                 // shows the schedule (i.e., the stops for each line)
-                newFragment = fm.findFragmentById(R.id.stops_fragment);
-                ft.setCustomAnimations(R.anim.push_right_in, R.anim.push_left_out);
-                ft.addToBackStack(null);
+                newFragment = new LinesFragment();
+                transaction.setCustomAnimations(R.anim.push_right_in, R.anim.push_left_out);
+                transaction.addToBackStack(null);
                 break;
 
             /* The See Map button is shown above the colorful buttons of each subway line. */
             case R.id.btn_see_map:
-                newFragment = fm.findFragmentById(R.id.map_fragment);
-                ft.setCustomAnimations(R.anim.push_left_in, R.anim.push_right_out);
+                newFragment = new MapFragment();
+                transaction.setCustomAnimations(R.anim.push_left_in, R.anim.push_right_out);
                 break;
 
             /*
@@ -147,25 +168,28 @@ public class BostonTActivity extends MainActivity implements OnClickListener {
              * passes it to the fragment responsible for showing stops.
              */
             case R.id.btn_orange:
+                newFragment = new StopsFragment();
                 newFragmentTag = Trip.ORANGE;
                 fetchData(Trip.ORANGE);
-                ft.setCustomAnimations(R.anim.push_right_in, R.anim.push_left_out);
-                ft.addToBackStack(null);
+                transaction.setCustomAnimations(R.anim.push_right_in, R.anim.push_left_out);
+                transaction.addToBackStack(null);
                 break;
             case R.id.btn_red:
-                fetchData(Trip.RED);
+                newFragment = new StopsFragment();
                 newFragmentTag = Trip.RED;
-                ft.setCustomAnimations(R.anim.push_right_in, R.anim.push_left_out);
-                ft.addToBackStack(null);
+                fetchData(Trip.RED);
+                transaction.setCustomAnimations(R.anim.push_right_in, R.anim.push_left_out);
+                transaction.addToBackStack(null);
                 break;
             case R.id.btn_blue:
-                fetchData(Trip.BLUE);
+                newFragment = new StopsFragment();
                 newFragmentTag = Trip.BLUE;
-                ft.setCustomAnimations(R.anim.push_right_in, R.anim.push_left_out);
-                ft.addToBackStack(null);
+                fetchData(Trip.BLUE);
+                transaction.setCustomAnimations(R.anim.push_right_in, R.anim.push_left_out);
+                transaction.addToBackStack(null);
                 break;
 
-            // TODO - alternative... there's no json schedule for green line
+            // TODO PLUG IN GREEN LINE
             case R.id.btn_green:
                 // this just displays Green Line unavailability notification
                 startActivity(new Intent(this, Notification.class));
@@ -174,15 +198,14 @@ public class BostonTActivity extends MainActivity implements OnClickListener {
                 Toast.makeText(this, "What other View was clicked?", Toast.LENGTH_LONG).show();
                 break;
         }
-        // TODO apparently you can only replace fragments that were dynamically added
-        // TODO so we have to remove <fragment> tags from main.xml...?
-        ft.replace(R.id.frame_layout_main, newFragment, newFragmentTag).commit();
+        transaction.replace(R.id.fragment_container, newFragment, newFragmentTag).commit();
     }
 
     /**
      * Fetches data from the web and stores it in a field. Called when a subway line is pressed.
+     * This method calls {@link com.rndapp.t.activities.BostonTActivity#getSchedule(String)}.
      *
-     * @param lineColor The line to fetch data for.
+     * @param lineColor The line to fetch data for. See {@link Trip#ORANGE}, e.g.
      */
     private void fetchData(final String lineColor) {
         mlastLineColorFetched = lineColor;
@@ -200,7 +223,8 @@ public class BostonTActivity extends MainActivity implements OnClickListener {
     /**
      * Returns the URL of a specific subway line.
      *
-     * @param line The color of the subway line to retrieve (e.g., "orange").
+     * @param line The color of the subway line to retrieve (e.g., {@link Trip#ORANGE}, or
+     *             "orange").
      * @return the URL of the given line's JSON schedule. If line is "orange", then this method
      * returns "http://developer.mbta.com/lib/rthr/orange.json".
      */
@@ -211,7 +235,7 @@ public class BostonTActivity extends MainActivity implements OnClickListener {
     /**
      * Volley makes a GET request for JSON file and then saves the fetched JSON object.
      *
-     * @param line The color of the subway line to retrieve (e.g., "orange").
+     * @param line The color of the subway line to retrieve. See {@link Trip#ORANGE}, e.g.
      */
     private void getSchedule(final String line) {
         final JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, getURL(line),
@@ -253,5 +277,49 @@ public class BostonTActivity extends MainActivity implements OnClickListener {
     protected void onStop() {
         super.onStop();
         FlurryAgent.onEndSession(this);
+    }
+
+    /**
+     * Allows the {@link com.rndapp.t.fragments.MapFragment} to communicate with this {@code
+     * Activity}.
+     *
+     * @param lineColor The line the user selected, e.g., {@link com.rndapp.t.models.Trip#ORANGE}.
+     */
+    @Override
+    public void onMapLineSelected(final String lineColor) {
+        // TODO for future, when we have a subway-line-highlightable imageview
+    }
+
+    /**
+     * Allows the {@link com.rndapp.t.fragments.StopsFragment} to communicate with this {@code
+     * Activity}.
+     *
+     * @param stop The selected {@code Stop}.
+     */
+    @Override
+    public void onStopSelected(Stop stop) {
+        // TODO for future, when we want to create another stop-info fragment (re: tourists)
+    }
+
+    /**
+     * Returns the {@code JSONObject} schedule that was last fetched. Used by {@link
+     * com.rndapp.t.fragments.StopsFragment}.
+     *
+     * @return The {@code JSONObject} schedule that was fetched for a given subway line.
+     */
+    @Override
+    public JSONObject getFetchedData() {
+        return mFetchedData;
+    }
+
+    /**
+     * Allows the {@link com.rndapp.t.fragments.LinesFragment} to communicate with this {@code
+     * Activity}.
+     *
+     * @param lineColor The line the user selected, e.g., {@link com.rndapp.t.models.Trip#ORANGE}.
+     */
+    @Override
+    public void onLineSelected(String lineColor) {
+        // TODO what happens when user presses a color-coded subway button
     }
 }
