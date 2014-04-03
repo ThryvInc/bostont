@@ -104,10 +104,10 @@ public class BostonTActivity extends MainActivity implements OnClickListener {
     protected void setXML() {
         super.setXML();
 
-        final Button red = (Button) findViewById(R.id.red_btn);
-        final Button blue = (Button) findViewById(R.id.blue_btn);
-        final Button orange = (Button) findViewById(R.id.orange_btn);
-        final Button green = (Button) findViewById(R.id.green_btn);
+        final Button red = (Button) findViewById(R.id.btn_red);
+        final Button blue = (Button) findViewById(R.id.btn_blue);
+        final Button orange = (Button) findViewById(R.id.btn_orange);
+        final Button green = (Button) findViewById(R.id.btn_green);
 
         red.setOnClickListener(this);
         red.setBackgroundColor(getResources().getColor(R.color.red));
@@ -141,22 +141,19 @@ public class BostonTActivity extends MainActivity implements OnClickListener {
                 // shows the schedule (i.e., the stops for each line)
                 newFragment = fm.findFragmentById(R.id.stops_fragment);
                 ft.setCustomAnimations(R.anim.push_right_in, R.anim.push_left_out);
+                ft.addToBackStack(null);
                 break;
-            case R.id.back_to_lines:
-                // TODO pop from backstack
-
-                break;
-            case R.id.orange_btn:
+            case R.id.btn_orange:
                 fetchData(Trip.ORANGE);
                 break;
-            case R.id.red_btn:
+            case R.id.btn_red:
                 fetchData(Trip.RED);
                 break;
-            case R.id.blue_btn:
+            case R.id.btn_blue:
                 fetchData(Trip.BLUE);
                 break;
             // TODO - alternative... there's no json schedule for green line
-            case R.id.green_btn:
+            case R.id.btn_green:
                 // this just displays Green Line unavailability notification
                 startActivity(new Intent(this, Notification.class));
                 break;

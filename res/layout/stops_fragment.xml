@@ -5,17 +5,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <Button
-        android:id="@+id/back_to_lines"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginBottom="10dip"
-        android:layout_marginTop="5dip"
-        android:text="Back to Schedules"
-        android:textColor="#fff"
-        android:textStyle="bold" />
-
     <ListView
         android:id="@+id/line_list"
         android:layout_width="fill_parent"
