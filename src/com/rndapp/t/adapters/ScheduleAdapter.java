@@ -1,12 +1,5 @@
 package com.rndapp.t.adapters;
 
-import java.util.ArrayList;
-import java.util.Calendar;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -19,11 +12,17 @@ import com.rndapp.t.R;
 import com.rndapp.t.models.Stop;
 import com.rndapp.t.models.Trip;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.Calendar;
+
 public class ScheduleAdapter extends BaseAdapter {
 
     /**
-     * The mContext from which the adapter was created.
-     * Used for getting resources and views.
+     * The mContext from which the adapter was created. Used for getting resources and views.
      */
     private Context mContext;
 
@@ -33,8 +32,7 @@ public class ScheduleAdapter extends BaseAdapter {
     private int mItemResID;
 
     /**
-     * When this {@code ScheduleAdapter} was constructed
-     * (i.e., when the schedule was looked up).
+     * When this {@code ScheduleAdapter} was constructed (i.e., when the schedule was looked up).
      */
     private long mTime;
 
@@ -117,9 +115,8 @@ public class ScheduleAdapter extends BaseAdapter {
     }
 
     /**
-     * Returns the {@code Stop} (or {@code Trip}, if the {@code Stop}
-     * ends on the completion of a {@code Trip}) that is a specified
-     * number of {@code Stop}s away.
+     * Returns the {@code Stop} (or {@code Trip}, if the {@code Stop} ends on the completion of a
+     * {@code Trip}) that is a specified number of {@code Stop}s away.
      *
      * @param stopsAway The specified number of {@code Stop}s away.
      * @return the specified {@code Stop}, or null if none is found.
@@ -152,8 +149,8 @@ public class ScheduleAdapter extends BaseAdapter {
     }
 
     /**
-     * Checks to see if a {@code Stop} at a specified index is enabled.
-     * For now, you cannot click on the stops.
+     * Checks to see if a {@code Stop} at a specified index is enabled. For now, you cannot click on
+     * the stops.
      *
      * @param position The requested stop.
      * @return false.

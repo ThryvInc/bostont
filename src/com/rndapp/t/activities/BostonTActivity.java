@@ -3,7 +3,6 @@ package com.rndapp.t.activities;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
-import android.app.ListFragment;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -22,7 +21,6 @@ import com.flurry.android.FlurryAgent;
 import com.rndapp.subway_lib.MainActivity;
 import com.rndapp.subway_lib.Notification;
 import com.rndapp.t.R;
-import com.rndapp.t.adapters.ScheduleAdapter;
 import com.rndapp.t.fragments.StopsFragment;
 import com.rndapp.t.models.Trip;
 
@@ -89,7 +87,7 @@ public class BostonTActivity extends MainActivity implements OnClickListener {
     public void refresh() {
         fetchData(mlastLineColorFetched);
         final Fragment fragment = getFragmentManager().findFragmentByTag(mlastLineColorFetched);
-        ((StopsFragment) fragment).updateListAdapter(mFetchedData);
+        //((StopsFragment) fragment).updateListAdapter(mFetchedData);
     }
 
     /**
@@ -222,6 +220,7 @@ public class BostonTActivity extends MainActivity implements OnClickListener {
                     @Override
                     public void onResponse(JSONObject fetchedData) {
                         BostonTActivity.this.mFetchedData = fetchedData;
+                        mProgressDialog.dismiss();
                     }
                 },
                 new Response.ErrorListener() {
@@ -229,6 +228,8 @@ public class BostonTActivity extends MainActivity implements OnClickListener {
                     public void onErrorResponse(VolleyError volleyError) {
                         System.out.println(volleyError.getMessage());
                         BostonTActivity.this.mFetchedData = null;
+                        Toast.makeText(BostonTActivity.this, "VolleyError", Toast.LENGTH_SHORT).show();
+                        mProgressDialog.dismiss();
                     }
                 }
         );

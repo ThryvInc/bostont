@@ -35,6 +35,7 @@ public class StopsFragment extends ListFragment {
 
     /**
      * Updates the underlying adapter given a JSONObject.
+     *
      * @param fetchedData The JSONObject used to create the underlying ScheduleAdapter.
      */
     public void updateListAdapter(JSONObject fetchedData) {
