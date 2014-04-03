@@ -133,25 +133,41 @@ public class BostonTActivity extends MainActivity implements OnClickListener {
         Fragment newFragment = null;
 
         switch (v.getId()) {
-            case R.id.see_map:
-                newFragment = fm.findFragmentById(R.id.map_fragment);
-                ft.setCustomAnimations(R.anim.push_left_in, R.anim.push_right_out);
-                break;
-            case R.id.see_sched:
+
+            /* The See Schedules button is shown above the ImageView of the BostonT. */
+            case R.id.btn_see_schedules:
                 // shows the schedule (i.e., the stops for each line)
                 newFragment = fm.findFragmentById(R.id.stops_fragment);
                 ft.setCustomAnimations(R.anim.push_right_in, R.anim.push_left_out);
                 ft.addToBackStack(null);
                 break;
+
+            /* The See Map button is shown above the colorful buttons of each subway line. */
+            case R.id.btn_see_map:
+                newFragment = fm.findFragmentById(R.id.map_fragment);
+                ft.setCustomAnimations(R.anim.push_left_in, R.anim.push_right_out);
+                break;
+
+            /*
+             * Pressing a subway line button fetches schedule data and
+             * passes it to the fragment responsible for showing stops.
+             */
             case R.id.btn_orange:
                 fetchData(Trip.ORANGE);
+                ft.setCustomAnimations(R.anim.push_right_in, R.anim.push_left_out);
+                ft.addToBackStack(null);
                 break;
             case R.id.btn_red:
                 fetchData(Trip.RED);
+                ft.setCustomAnimations(R.anim.push_right_in, R.anim.push_left_out);
+                ft.addToBackStack(null);
                 break;
             case R.id.btn_blue:
                 fetchData(Trip.BLUE);
+                ft.setCustomAnimations(R.anim.push_right_in, R.anim.push_left_out);
+                ft.addToBackStack(null);
                 break;
+
             // TODO - alternative... there's no json schedule for green line
             case R.id.btn_green:
                 // this just displays Green Line unavailability notification
@@ -161,6 +177,7 @@ public class BostonTActivity extends MainActivity implements OnClickListener {
                 Toast.makeText(this, "What other View was clicked?", Toast.LENGTH_LONG).show();
                 break;
         }
+        ft.commit();
     }
 
     /**
