@@ -2,6 +2,7 @@ package com.rndapp.t.fragments;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.widget.Button;
 
 import com.rndapp.subway_lib.TouchImageView;
 
@@ -18,23 +19,28 @@ public class MapFragment extends Fragment {
 
     /**
      * The {@link com.rndapp.subway_lib.TouchImageView} that allows users to interact with the map
-     * and select subway lines. Once a line is highlighted, user may press See Schedules button
-     * to view the stops, which is shown by the {@link com.rndapp.t.fragments.StopsFragment}.
+     * and select subway lines. Once a line is highlighted, user may press See Schedules button to
+     * view the stops, which is shown by the {@link com.rndapp.t.fragments.StopsFragment}.
      */
-    TouchImageView subwayMap;
+    TouchImageView mSubwayMap;
 
     /**
-     * TODO this is for the future. User can highlight/select a color-coded subway line on the
-     * interactive image, which then tells the activity to load schedules for that line. This could
-     * potentially eliminate the need for the middle {@link com.rndapp.t.fragments.LinesFragment},
-     * which originally displayed the color-coded buttons for all the subway lines.
+     * If a line is highlighted, takes user to {@link com.rndapp.t.fragments.StopsFragment}. If no
+     * subway line is highlighted, takes user to {@link com.rndapp.t.fragments.LinesFragment}.
+     */
+    Button mSeeSchedulesButton;
+
+    /**
+     * {@link com.rndapp.t.activities.BostonTActivity} will implement this interface.
      */
     public interface OnMapLineSelectedListener {
         /**
-         * The user highlights a subway line on the interactive map, and then presses See Schedules,
-         * which takes user directly to the {@link com.rndapp.t.fragments.StopsFragment}, which
+         * Called when the user has highlighted a subway line on {@link
+         * com.rndapp.t.fragments.MapFragment#mSubwayMap} and has pressed {@link
+         * com.rndapp.t.fragments.MapFragment#mSeeSchedulesButton}. The managing callback should
+         * then take the user directly to the {@link com.rndapp.t.fragments.StopsFragment}, which
          * shows a list of all the {@link com.rndapp.t.models.Trip}s and {@link
-         * com.rndapp.t.models.Stop}s along that line.
+         * com.rndapp.t.models.Stop}s along selected subway line.
          *
          * @param lineColor The line the user selected, e.g., {@link com.rndapp.t.models.Trip#ORANGE}.
          */

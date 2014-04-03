@@ -8,7 +8,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Button;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -99,32 +98,6 @@ public class BostonTActivity extends MainActivity
             getFragmentManager().beginTransaction().add(R.id.fragment_container, mapFragment).commit();
 
         }
-
-        context = this;
-        setXML();
-    }
-
-    /**
-     * Assigns a background color and {@code OnClickListener} to each of the subway line buttons.
-     */
-    @Override
-    protected void setXML() {
-        super.setXML();
-
-        // TODO this will probably throw tons of NPEs since IDs won't be found
-        final Button red = (Button) findViewById(R.id.btn_red);
-        final Button blue = (Button) findViewById(R.id.btn_blue);
-        final Button orange = (Button) findViewById(R.id.btn_orange);
-        final Button green = (Button) findViewById(R.id.btn_green);
-
-        red.setOnClickListener(this);
-        red.setBackgroundColor(getResources().getColor(R.color.red));
-        blue.setOnClickListener(this);
-        blue.setBackgroundColor(getResources().getColor(R.color.blue));
-        orange.setOnClickListener(this);
-        orange.setBackgroundColor(getResources().getColor(R.color.orange));
-        green.setOnClickListener(this);
-        green.setBackgroundColor(getResources().getColor(R.color.green));
     }
 
     /**

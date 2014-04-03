@@ -1,9 +1,13 @@
 package com.rndapp.t.fragments;
 
-
 import android.app.Activity;
 import android.app.Fragment;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ListView;
 
 import com.rndapp.t.R;
 import com.rndapp.t.adapters.ScheduleAdapter;
@@ -28,10 +32,20 @@ public class StopsFragment extends Fragment {
     OnStopSelectedListener mCallback;
 
     /**
-     * The subway line color of the {@code Stop}s being shown.
+     * The subway line color of the {@code Stop}s being shown. Discovered via {@code Bundle} args.
      */
-    //TODO this maybe can be part of Bundle args somewhere...?
-    String lineColor;
+    String mLineColor;
+
+    /**
+     * The adapter that controls this fragment's list of {@code Stop}s.
+     */
+    ScheduleAdapter mScheduleAdapter;
+
+    /**
+     * When pressed, will ask callback activity to re-fetch data.
+     */
+    // TODO refresh button here? is it even a button? or in menu?
+    Button mButtonRefresh;
 
     /**
      * An interface for allowing this fragment to communicate with its callback activity. When a
@@ -53,7 +67,6 @@ public class StopsFragment extends Fragment {
          *
          * @return JSON schedule retrieved from the managing callback activity.
          */
-        //TODO is it appropriate to put this in a listener interface? Not sure...
         public JSONObject getFetchedData();
 
         /**
@@ -64,22 +77,7 @@ public class StopsFragment extends Fragment {
          * @param lineColor This fragment passes the callback the subway line color, so it knows
          *                  what data to retrieve.
          */
-        //TODO seems appropriate - basically all functionality for fragment goes in this interface
         public void refresh(String lineColor);
-    }
-
-    /**
-     * Creates a fragment that displays {@code Stop}s for a given line color.
-     *
-     * @param lineColor The given line color.
-     * @return a fragment that displays {@code Stop}s for a given line color.
-     */
-    public static StopsFragment newInstance(final String lineColor) {
-        StopsFragment stopsFragment = new StopsFragment();
-        Bundle args = new Bundle();
-        args.putString(LINE_COLOR, lineColor);
-        stopsFragment.setArguments(args);
-        return stopsFragment;
     }
 
     /**
@@ -98,13 +96,29 @@ public class StopsFragment extends Fragment {
     }
 
     /**
-     * Updates the underlying adapter given a JSONObject. The managing callback activity calls this
-     * method.
+     * Lifecycle Step 2.
      *
-     * @param fetchedData The JSONObject used to create the underlying ScheduleAdapter.
+     * @param savedInstanceState
      */
-    public void updateListAdapter(JSONObject fetchedData) {
-        setListAdapter(new ScheduleAdapter(getActivity(), R.layout.item_stop, fetchedData));
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        mLineColor = getArguments().getString(LINE_COLOR);
+    }
+
+    /**
+     * Lifecycle Step 3.
+     *
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        //final View v = inflater.inflate(R.layout.fragment_stops, container, false);
+        //final ListView lv = (ListView) v.findViewById(R.id.line_list);
+        return super.onCreateView(inflater, container, savedInstanceState);
     }
 
     /**
@@ -118,5 +132,30 @@ public class StopsFragment extends Fragment {
         final JSONObject fetchedData = mCallback.getFetchedData();
         updateListAdapter(fetchedData);
     }
+
+    /**
+     * Updates the underlying adapter given a JSONObject. The managing callback activity calls this
+     * method.
+     *
+     * @param fetchedData The JSONObject used to create the underlying ScheduleAdapter.
+     */
+    public void updateListAdapter(JSONObject fetchedData) {
+        mScheduleAdapter = new ScheduleAdapter(getActivity(), R.layout.item_stop, fetchedData);
+    }
+
+    /**
+     * Creates a fragment that displays {@code Stop}s for a given line color.
+     *
+     * @param lineColor The given line color.
+     * @return a fragment that displays {@code Stop}s for a given line color.
+     */
+    public static StopsFragment newInstance(final String lineColor) {
+        StopsFragment stopsFragment = new StopsFragment();
+        Bundle args = new Bundle();
+        args.putString(LINE_COLOR, lineColor);
+        stopsFragment.setArguments(args);
+        return stopsFragment;
+    }
+
 
 }
