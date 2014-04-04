@@ -203,7 +203,7 @@ public class BostonTActivity extends ActionBarActivity implements
         final Fragment fragment = new LinesFragment();
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
         transaction.replace(R.id.fragment_container, fragment);
-        transaction.setCustomAnimations(R.anim.push_right_in, R.anim.push_left_out);
+        //transaction.setCustomAnimations(R.anim.push_right_in, R.anim.push_left_out);
         transaction.commit();
     }
 
@@ -234,7 +234,7 @@ public class BostonTActivity extends ActionBarActivity implements
         final String newFragmentTag = lineColor;
 
         fetchData(Trip.BLUE);
-        transaction.setCustomAnimations(R.anim.push_right_in, R.anim.push_left_out);
+        //transaction.setCustomAnimations(R.anim.push_right_in, R.anim.push_left_out);
         transaction.addToBackStack(null);
         transaction.replace(R.id.fragment_container, newFragment, newFragmentTag).commit();
     }
@@ -248,7 +248,7 @@ public class BostonTActivity extends ActionBarActivity implements
         final FragmentManager fragmentManager = getFragmentManager();
         FragmentTransaction transaction = fragmentManager.beginTransaction();
         final Fragment newFragment = new MapFragment();
-        transaction.setCustomAnimations(R.anim.push_left_in, R.anim.push_right_out);
+        //transaction.setCustomAnimations(R.anim.push_left_in, R.anim.push_right_out);
         transaction.replace(R.id.fragment_container, newFragment).commit();
     }
 

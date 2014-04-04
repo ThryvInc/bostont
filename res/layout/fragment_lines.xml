@@ -14,7 +14,7 @@
         android:layout_marginLeft="5dip"
         android:layout_marginRight="5dip"
         android:layout_marginTop="10dip"
-        android:text="See Map"
+        android:text="@string/see_map"
         android:textColor="#fff"
         android:textStyle="bold" />
 
@@ -36,7 +36,7 @@
                 android:layout_marginBottom="10dip"
                 android:layout_marginLeft="5dip"
                 android:layout_marginRight="5dip"
-                android:text="Blue Line"
+                android:text="@string/blue_line"
                 android:textColor="#fff"
                 android:textStyle="bold" />
 
@@ -46,7 +46,7 @@
                 android:layout_height="160dip"
                 android:layout_marginLeft="5dip"
                 android:layout_marginRight="5dip"
-                android:text="Orange Line"
+                android:text="@string/orange_line"
                 android:textColor="#fff"
                 android:textStyle="bold" />
 
@@ -60,7 +60,7 @@
             android:layout_marginLeft="5dip"
             android:layout_marginRight="5dip"
             android:layout_weight="1"
-            android:text="Red Line"
+            android:text="@string/red_line"
             android:textColor="#fff"
             android:textStyle="bold" />
 
@@ -72,7 +72,7 @@
         android:layout_height="60dip"
         android:layout_marginLeft="5dip"
         android:layout_marginRight="5dip"
-        android:text="Looking for the Green Line?"
+        android:text="@string/green_line"
         android:textColor="#fff"
         android:textStyle="bold" />
 

@@ -524,6 +524,8 @@
     <string name="app_name">Boston T Map</string>
     <string name="hello">Hello World, BostonTActivity!</string>
     <string name="help">Help</string>
+    <string name="refresh">Refresh</string>
+    <string name="see_map">See Map</string>
     <string name="see_schedules">See Schedules</string>
     <!-- From: file:/Users/kevinchen/AndroidStudioProjects/bostont/res/values/styles.xml -->
     <eat-comment />

@@ -5,5 +5,11 @@
     <string name="app_name">Boston T Map</string>
     <string name="see_schedules">See Schedules</string>
     <string name="help">Help</string>
+    <string name="refresh">Refresh</string>
+    <string name="see_map">See Map</string>
+    <string name="blue_line">Blue Line</string>
+    <string name="orange_line">Orange Line</string>
+    <string name="red_line">Red Line</string>
+    <string name="green_line">Looking for the Green Line?</string>
 
 </resources>

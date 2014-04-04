@@ -103,6 +103,9 @@ public class StopsFragment extends Fragment {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
+            case R.id.menu_item_refresh:
+                mCallback.refresh(mLineColor);
+                break;
             case R.id.menu_item_help:
                 Toast.makeText((Activity) mCallback, "StopsFrag - TODO", Toast.LENGTH_SHORT).show();
                 break;
@@ -164,8 +167,7 @@ public class StopsFragment extends Fragment {
     }
 
     /**
-     * Updates the underlying adapter given a JSONObject. The managing callback activity calls this
-     * method.
+     * Updates the underlying adapter given a JSONObject. Called by callback activity.
      *
      * @param fetchedData The JSONObject used to create the underlying ScheduleAdapter.
      */

@@ -4,7 +4,7 @@
 
     <item
         android:id="@+id/menu_item_see_map"
-        android:title="@string/see_schedules"
+        android:title="@string/see_map"
         android:showAsAction="ifRoom"
         />
 
