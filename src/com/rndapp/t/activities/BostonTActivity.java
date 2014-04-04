@@ -284,7 +284,6 @@ public class BostonTActivity extends ActionBarActivity implements
         // Update the fragment with this data
         final Fragment fragment = getFragmentManager().findFragmentByTag(mlastLineColorFetched);
         ((StopsFragment) fragment).updateListAdapter(mFetchedData);
-
     }
 
 }

@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -128,8 +130,7 @@ public class StopsFragment extends Fragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        final JSONObject fetchedData = mCallback.getFetchedData();
-        updateListAdapter(fetchedData);
+        updateListAdapter(mCallback.getFetchedData());
     }
 
     /**
@@ -139,7 +140,9 @@ public class StopsFragment extends Fragment {
      * @param fetchedData The JSONObject used to create the underlying ScheduleAdapter.
      */
     public void updateListAdapter(JSONObject fetchedData) {
-        mScheduleAdapter = new ScheduleAdapter(getActivity(), R.layout.item_stop, fetchedData);
+        if (fetchedData != null) {
+            mScheduleAdapter = new ScheduleAdapter(getActivity(), R.layout.item_stop, fetchedData);
+        }
     }
 
     /**
@@ -155,6 +158,12 @@ public class StopsFragment extends Fragment {
         stopsFragment.setArguments(args);
         return stopsFragment;
     }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
 
 
 }
