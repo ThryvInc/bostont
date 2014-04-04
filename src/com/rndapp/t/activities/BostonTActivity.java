@@ -96,7 +96,9 @@ public class BostonTActivity extends ActionBarActivity implements
             MapFragment mapFragment = new MapFragment();
 
             Log.d(TAG, "Adding the fragment to fragment_container...");
-            getFragmentManager().beginTransaction().add(R.id.fragment_container, mapFragment).commit();
+            FragmentTransaction ft = getFragmentManager().beginTransaction().add(R.id.fragment_container, mapFragment);
+            ft.addToBackStack(null);
+            ft.commit();
 
         }
     }

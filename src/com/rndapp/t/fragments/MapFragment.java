@@ -2,6 +2,8 @@ package com.rndapp.t.fragments;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -97,6 +99,14 @@ public class MapFragment extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View v = inflater.inflate(R.layout.fragment_map, container, false);
+
+        // Set the image
+        mSubwayMap = (TouchImageView) v.findViewById(R.id.touchImg);
+        BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inScaled = false;
+        Bitmap subway = BitmapFactory.decodeResource(getResources(), com.rndapp.subway_lib.R.drawable.subway, options);
+        mSubwayMap.setImageBitmap(subway);
+
         mSeeSchedulesButton = (Button) v.findViewById(R.id.btn_see_schedules);
         mSeeSchedulesButton.setOnClickListener(this);
         return v;
