@@ -2,7 +2,6 @@ package com.rndapp.t.fragments;
 
 import android.app.Activity;
 import android.app.Fragment;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -17,6 +16,11 @@ import com.rndapp.t.models.Trip;
  * Displays the buttons for each subway line color. Created by kmchen1 on 4/2/14.
  */
 public class LinesFragment extends Fragment implements View.OnClickListener {
+
+    /**
+     * Button for the Subway Map.
+     */
+    Button mButtonSeeMap;
 
     /**
      * Button for the Green Line.
@@ -53,6 +57,11 @@ public class LinesFragment extends Fragment implements View.OnClickListener {
          * @param lineColor The color of the clicked button/subway line.
          */
         public void onLineSelected(final String lineColor);
+
+        /**
+         * Tells callback activity to switch to the {@link com.rndapp.t.fragments.MapFragment}.
+         */
+        public void showMap();
     }
 
     /**
@@ -63,6 +72,9 @@ public class LinesFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            case R.id.btn_see_map:
+                mCallback.showMap();
+                break;
             case R.id.btn_blue:
                 mCallback.onLineSelected(Trip.BLUE);
                 break;
@@ -120,11 +132,13 @@ public class LinesFragment extends Fragment implements View.OnClickListener {
         mButtonGreen = (Button) v.findViewById(R.id.btn_green);
         mButtonOrange = (Button) v.findViewById(R.id.btn_orange);
         mButtonRed = (Button) v.findViewById(R.id.btn_red);
+        mButtonSeeMap = (Button) v.findViewById(R.id.btn_see_map);
 
         mButtonBlue.setOnClickListener(this);
         mButtonGreen.setOnClickListener(this);
         mButtonOrange.setOnClickListener(this);
         mButtonRed.setOnClickListener(this);
+        mButtonSeeMap.setOnClickListener(this);
 
         mButtonBlue.setBackgroundColor(getResources().getColor(R.color.blue));
         mButtonGreen.setBackgroundColor(getResources().getColor(R.color.green));

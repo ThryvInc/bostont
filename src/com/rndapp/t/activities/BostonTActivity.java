@@ -4,10 +4,8 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.app.ProgressDialog;
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.view.View.OnClickListener;
+import android.support.v7.app.ActionBarActivity;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -17,8 +15,6 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.flurry.android.FlurryAgent;
-import com.rndapp.subway_lib.MainActivity;
-import com.rndapp.subway_lib.Notification;
 import com.rndapp.t.R;
 import com.rndapp.t.fragments.LinesFragment;
 import com.rndapp.t.fragments.MapFragment;
@@ -29,11 +25,10 @@ import com.rndapp.t.models.Trip;
 import org.json.JSONObject;
 
 /**
- * A subclass of MainActivity in the subway_lib submodule. Responsible for fetching JSON files from
- * the Boston T website.
+ * Controls fragments. Fetches JSON schedule data from Boston T site. Subclasses ActionBarActivity,
+ * which is a FragmentActivity.
  */
-public class BostonTActivity extends MainActivity
-        implements OnClickListener,
+public class BostonTActivity extends ActionBarActivity implements
         MapFragment.OnMapLineSelectedListener,
         LinesFragment.OnLineSelectedListener,
         StopsFragment.OnStopSelectedListener {
@@ -98,75 +93,6 @@ public class BostonTActivity extends MainActivity
             getFragmentManager().beginTransaction().add(R.id.fragment_container, mapFragment).commit();
 
         }
-    }
-
-    /**
-     * Manages all clicks on Views. This is where Fragment transactions occur.
-     *
-     * @param v The view that was clicked.
-     */
-    @Override
-    public void onClick(View v) {
-        super.onClick(v);
-
-        final FragmentManager fragmentManager = getFragmentManager();
-        final FragmentTransaction transaction = fragmentManager.beginTransaction();
-        Fragment newFragment = null;
-        // TODO Used for FragmentManager.BackStackEntry APIs
-        String newFragmentTag = null;
-
-        switch (v.getId()) {
-
-            /* The See Schedules button is shown above the ImageView of the BostonT. */
-            case R.id.btn_see_schedules:
-                // shows the schedule (i.e., the stops for each line)
-                newFragment = new LinesFragment();
-                transaction.setCustomAnimations(R.anim.push_right_in, R.anim.push_left_out);
-                transaction.addToBackStack(null);
-                break;
-
-            /* The See Map button is shown above the colorful buttons of each subway line. */
-            case R.id.btn_see_map:
-                newFragment = new MapFragment();
-                transaction.setCustomAnimations(R.anim.push_left_in, R.anim.push_right_out);
-                break;
-
-            /*
-             * Pressing a subway line button fetches schedule data and
-             * passes it to the fragment responsible for showing stops.
-             */
-            case R.id.btn_orange:
-                newFragment = StopsFragment.newInstance(Trip.ORANGE);
-                newFragmentTag = Trip.ORANGE;
-                fetchData(Trip.ORANGE);
-                transaction.setCustomAnimations(R.anim.push_right_in, R.anim.push_left_out);
-                transaction.addToBackStack(null);
-                break;
-            case R.id.btn_red:
-                newFragment = StopsFragment.newInstance(Trip.RED);
-                newFragmentTag = Trip.RED;
-                fetchData(Trip.RED);
-                transaction.setCustomAnimations(R.anim.push_right_in, R.anim.push_left_out);
-                transaction.addToBackStack(null);
-                break;
-            case R.id.btn_blue:
-                newFragment = StopsFragment.newInstance(Trip.BLUE);
-                newFragmentTag = Trip.BLUE;
-                fetchData(Trip.BLUE);
-                transaction.setCustomAnimations(R.anim.push_right_in, R.anim.push_left_out);
-                transaction.addToBackStack(null);
-                break;
-
-            // TODO PLUG IN GREEN LINE
-            case R.id.btn_green:
-                // this just displays Green Line unavailability notification
-                startActivity(new Intent(this, Notification.class));
-                break;
-            default:
-                Toast.makeText(this, "What other View was clicked?", Toast.LENGTH_LONG).show();
-                break;
-        }
-        transaction.replace(R.id.fragment_container, newFragment, newFragmentTag).commit();
     }
 
     /**
@@ -259,6 +185,19 @@ public class BostonTActivity extends MainActivity
     }
 
     /**
+     * Called from {@link com.rndapp.t.fragments.MapFragment}. User wants to view the schedules in
+     * button form.
+     */
+    @Override
+    public void showSchedules() {
+        final Fragment fragment = new LinesFragment();
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        transaction.replace(R.id.fragment_container, fragment);
+        transaction.setCustomAnimations(R.anim.push_right_in, R.anim.push_left_out);
+        transaction.commit();
+    }
+
+    /**
      * Allows the {@link com.rndapp.t.fragments.LinesFragment} to communicate with this {@code
      * Activity}.
      *
@@ -266,8 +205,41 @@ public class BostonTActivity extends MainActivity
      */
     @Override
     public void onLineSelected(final String lineColor) {
-        // TODO what happens when user presses a color-coded subway button
-        StopsFragment stopsFragment = (StopsFragment) getFragmentManager().findFragmentById(R.id.fragment_stops);
+
+        if (lineColor == Trip.GREEN) {
+            Toast.makeText(this, "Green Line will be supported soon", Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        final FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+
+        // TODO how do we get the fragment? what if it exists?
+        // R.id.fragment_stops is in layout-large. if it's non-null, we're in dual pane mode
+        // StopsFragment newFragment = (StopsFragment) getFragmentManager().findFragmentById(R.id.fragment_stops);
+
+        final Fragment newFragment = StopsFragment.newInstance(lineColor);
+
+        // TODO Used for FragmentManager.BackStackEntry APIs
+        final String newFragmentTag = lineColor;
+
+        fetchData(Trip.BLUE);
+        transaction.setCustomAnimations(R.anim.push_right_in, R.anim.push_left_out);
+        transaction.addToBackStack(null);
+        transaction.replace(R.id.fragment_container, newFragment, newFragmentTag).commit();
+    }
+
+    /**
+     * Called when the {@link com.rndapp.t.fragments.LinesFragment} asks its callback (i.e., this
+     * activity) to switch to the {@link com.rndapp.t.fragments.MapFragment}.
+     */
+    @Override
+    public void showMap() {
+        final FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        final Fragment newFragment = new MapFragment();
+        transaction.setCustomAnimations(R.anim.push_left_in, R.anim.push_right_out);
+        transaction.replace(R.id.fragment_container, newFragment).commit();
     }
 
     /**

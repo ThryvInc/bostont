@@ -2,14 +2,19 @@ package com.rndapp.t.fragments;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.rndapp.subway_lib.TouchImageView;
+import com.rndapp.t.R;
 
 /**
  * Displays the subway line map. Created by kmchen1 on 4/2/14.
  */
-public class MapFragment extends Fragment {
+public class MapFragment extends Fragment implements View.OnClickListener {
 
     /**
      * The {@link com.rndapp.t.activities.BostonTActivity} that implements {@link
@@ -45,6 +50,25 @@ public class MapFragment extends Fragment {
          * @param lineColor The line the user selected, e.g., {@link com.rndapp.t.models.Trip#ORANGE}.
          */
         public void onMapLineSelected(String lineColor);
+
+        /**
+         * Tells callback activity to switch to {@link com.rndapp.t.fragments.LinesFragment}.
+         */
+        public void showSchedules();
+    }
+
+    /**
+     * Called when user clicks a button.
+     *
+     * @param v The button that was clicked.
+     */
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.btn_see_schedules:
+                mCallback.showSchedules();
+                break;
+        }
     }
 
     /**
@@ -55,13 +79,27 @@ public class MapFragment extends Fragment {
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
-
-        // Ensure the container activity has implemented the callback interface.
         try {
             mCallback = (OnMapLineSelectedListener) activity;
         } catch (ClassCastException e) {
             throw new ClassCastException(activity.toString() + " must implement " + OnMapLineSelectedListener.class.getName());
         }
+    }
+
+    /**
+     * Lifecycle Step 3. Inflate the fragment layout file. Load the buttons.
+     *
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        final View v = inflater.inflate(R.layout.fragment_map, container, false);
+        mSeeSchedulesButton = (Button) v.findViewById(R.id.btn_see_schedules);
+        mSeeSchedulesButton.setOnClickListener(this);
+        return v;
     }
 
 }
