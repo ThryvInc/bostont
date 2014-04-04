@@ -3,5 +3,7 @@
 
     <string name="hello">Hello World, BostonTActivity!</string>
     <string name="app_name">Boston T Map</string>
+    <string name="see_schedules">See Schedules</string>
+    <string name="help">Help</string>
 
 </resources>

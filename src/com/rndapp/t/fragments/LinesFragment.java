@@ -7,9 +7,11 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.rndapp.t.R;
 import com.rndapp.t.models.Trip;
@@ -95,6 +97,37 @@ public class LinesFragment extends Fragment implements View.OnClickListener {
     }
 
     /**
+     * Creates this fragment's menu.
+     *
+     * @param menu
+     * @param inflater
+     */
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.menu_lines, menu);
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+    /**
+     * Called when a menu item has been selected.
+     * @param item
+     * @return
+     */
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menu_item_see_map:
+                mCallback.showMap();
+                break;
+            case R.id.menu_item_help:
+                Toast.makeText((Activity) mCallback, "LinesFrag - TODO", Toast.LENGTH_SHORT).show();
+                break;
+        }
+        return true;
+    }
+
+
+    /**
      * Lifecycle Step 1.
      *
      * @param activity The {@code Activity} to which this {@code Fragment} attaches.
@@ -117,6 +150,7 @@ public class LinesFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
     }
 
     /**
@@ -158,11 +192,6 @@ public class LinesFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-    }
-
-    @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        super.onCreateOptionsMenu(menu, inflater);
     }
 
 }

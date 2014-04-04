@@ -8,9 +8,11 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.rndapp.subway_lib.TouchImageView;
 import com.rndapp.t.R;
@@ -76,6 +78,36 @@ public class MapFragment extends Fragment implements View.OnClickListener {
     }
 
     /**
+     * Creates this fragment's menu.
+     *
+     * @param menu
+     * @param inflater
+     */
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.menu_map, menu);
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+    /**
+     * Called when a menu item has been selected.
+     * @param item
+     * @return
+     */
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menu_item_see_schedules:
+                mCallback.showSchedules();
+                break;
+            case R.id.menu_item_help:
+                Toast.makeText((Activity) mCallback, "MapFrag - TODO", Toast.LENGTH_SHORT).show();
+                break;
+        }
+        return true;
+    }
+
+    /**
      * Lifecycle Step 1.
      *
      * @param activity The {@code Activity} to which this {@code Fragment} attaches.
@@ -88,6 +120,17 @@ public class MapFragment extends Fragment implements View.OnClickListener {
         } catch (ClassCastException e) {
             throw new ClassCastException(activity.toString() + " must implement " + OnMapLineSelectedListener.class.getName());
         }
+    }
+
+    /**
+     * Lifecycle Step 2.
+     *
+     * @param savedInstanceState
+     */
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
     }
 
     /**
@@ -106,18 +149,12 @@ public class MapFragment extends Fragment implements View.OnClickListener {
         mSubwayMap = (TouchImageView) v.findViewById(R.id.touchImg);
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inScaled = false;
-        Bitmap subway = BitmapFactory.decodeResource(getResources(), com.rndapp.subway_lib.R.drawable.subway, options);
+        Bitmap subway = BitmapFactory.decodeResource(getResources(), R.drawable.subway, options);
         mSubwayMap.setImageBitmap(subway);
 
         mSeeSchedulesButton = (Button) v.findViewById(R.id.btn_see_schedules);
         mSeeSchedulesButton.setOnClickListener(this);
         return v;
     }
-
-    @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        super.onCreateOptionsMenu(menu, inflater);
-    }
-
 
 }

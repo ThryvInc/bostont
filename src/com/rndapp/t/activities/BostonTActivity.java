@@ -7,6 +7,8 @@ import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -37,7 +39,7 @@ public class BostonTActivity extends ActionBarActivity implements
     /**
      * The path to the Boston T schedule JSON files.
      */
-    private final String JSON_URL_PATH = "http://developer.mbta.com/lib/rthr/";
+    private static final String JSON_URL_PATH = "http://developer.mbta.com/lib/rthr/";
 
     /**
      * Queue of Volley requests.

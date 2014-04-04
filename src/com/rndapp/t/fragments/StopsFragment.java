@@ -6,9 +6,11 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.rndapp.t.R;
 import com.rndapp.t.adapters.ScheduleAdapter;
@@ -82,6 +84,33 @@ public class StopsFragment extends Fragment {
     }
 
     /**
+     * Creates this fragment's menu.
+     *
+     * @param menu
+     * @param inflater
+     */
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.menu_stops, menu);
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+    /**
+     * Called when a menu item has been selected.
+     * @param item
+     * @return
+     */
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menu_item_help:
+                Toast.makeText((Activity) mCallback, "StopsFrag - TODO", Toast.LENGTH_SHORT).show();
+                break;
+        }
+        return true;
+    }
+
+    /**
      * Lifecycle step 1.
      *
      * @param activity The activity to which this fragment attaches.
@@ -104,6 +133,7 @@ public class StopsFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
         mLineColor = getArguments().getString(LINE_COLOR);
     }
 
@@ -158,12 +188,6 @@ public class StopsFragment extends Fragment {
         stopsFragment.setArguments(args);
         return stopsFragment;
     }
-
-    @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        super.onCreateOptionsMenu(menu, inflater);
-    }
-
 
 
 }
