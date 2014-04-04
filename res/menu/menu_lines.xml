@@ -4,14 +4,16 @@
 
     <item
         android:id="@+id/menu_item_see_map"
-        android:title="@string/see_map"
+        android:icon="@drawable/ic_action_map"
         android:showAsAction="ifRoom"
+        android:title="@string/see_map"
         />
 
     <item
         android:id="@+id/menu_item_help"
-        android:title="@string/help"
+        android:icon="@drawable/ic_action_help"
         android:showAsAction="ifRoom"
+        android:title="@string/help"
         />
 
 

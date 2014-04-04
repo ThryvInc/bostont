@@ -110,6 +110,7 @@ public class LinesFragment extends Fragment implements View.OnClickListener {
 
     /**
      * Called when a menu item has been selected.
+     *
      * @param item
      * @return
      */

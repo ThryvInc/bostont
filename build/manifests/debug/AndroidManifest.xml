@@ -1,5 +1,4 @@
-<!-- From: file:/Users/kevinchen/AndroidStudioProjects/bostont/AndroidManifest.xml -->
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="9" android:versionName="3.3" package="com.rndapp.t">
+<!-- From: file:/Users/kmchen1/AndroidStudioProjects/bostont/AndroidManifest.xml --><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="9" android:versionName="3.3" package="com.rndapp.t">
 
     <uses-sdk android:minSdkVersion="11" android:targetSdkVersion="19"/>
 
@@ -19,7 +18,7 @@
         <activity android:name="com.rndapp.subway_lib.Notification" android:theme="@android:style/Theme.Dialog"/>
 
         <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" android:name="com.google.ads.AdActivity"/>
-        <!-- From: file:/Users/kevinchen/AndroidStudioProjects/bostont/build/exploded-aar/bostont/subway_lib/unspecified/AndroidManifest.xml -->
+        <!-- From: file:/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/bostont/subway_lib/unspecified/AndroidManifest.xml -->
         <activity android:label="@string/app_name" android:name="com.rndapp.subway_lib.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -28,7 +27,7 @@
             </intent-filter>
             
         </activity>
-        <!-- From: file:/Users/kevinchen/AndroidStudioProjects/bostont/AndroidManifest.xml -->
+        <!-- From: file:/Users/kmchen1/AndroidStudioProjects/bostont/AndroidManifest.xml -->
         
     </application>
 
