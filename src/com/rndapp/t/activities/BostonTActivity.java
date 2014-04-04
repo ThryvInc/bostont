@@ -6,6 +6,7 @@ import android.app.FragmentTransaction;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -41,7 +42,7 @@ public class BostonTActivity extends ActionBarActivity implements
     /**
      * Queue of Volley requests.
      */
-    private final RequestQueue mRequestQueue = Volley.newRequestQueue(this);
+    private RequestQueue mRequestQueue;
 
     /**
      * The API key for this project.
@@ -65,31 +66,36 @@ public class BostonTActivity extends ActionBarActivity implements
     private String mlastLineColorFetched;
 
     /**
-     * Called when the activity is first created.
+     * Used for debug printing with Log.d
+     */
+    private static final String TAG = "BostonTActivity";
+
+    /**
+     * Lifecycle Step 1.
      */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        Log.d(TAG, "Initializing the Volley RequestQueue...");
+        mRequestQueue = Volley.newRequestQueue(this);
+
+        Log.d(TAG, "Setting contentView...");
         setContentView(R.layout.main);
 
-        // Check that the activity is using the layout version with the fragment_container FrameLayout
+        // Ensure the activity's layout has the 'fragment_container' FrameLayout
         if (findViewById(R.id.fragment_container) != null) {
 
-            // However, if we're being restored from a previous state,
-            // then we don't need to do anything and should return or else
-            // we could end up with overlapping fragments.
+            // We're being restored from a previous state...
             if (savedInstanceState != null) {
+                // Return, lest we see overlapping fragments...
                 return;
             }
 
-            // The initial fragment - MapFragment - to be placed in the activity layout
+            Log.d(TAG, "Creating MapFragment...");
             MapFragment mapFragment = new MapFragment();
 
-            // In case this activity was started with special instructions from an
-            // Intent, pass the Intent's extras to the fragment as arguments
-            mapFragment.setArguments(getIntent().getExtras());
-
-            // Add the fragment to the 'fragment_container' FrameLayout
+            Log.d(TAG, "Adding the fragment to fragment_container...");
             getFragmentManager().beginTransaction().add(R.id.fragment_container, mapFragment).commit();
 
         }

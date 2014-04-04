@@ -8,7 +8,7 @@
               android:id="@+id/linear_layout_main">
 
     <FrameLayout
-        android:id="@+id/frame_layout_main"
+        android:id="@+id/fragment_container"
         android:layout_width="fill_parent"
         android:layout_height="0dp"
         android:layout_weight="1">
