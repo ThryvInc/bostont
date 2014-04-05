@@ -4,11 +4,12 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.app.ProgressDialog;
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -42,19 +43,19 @@ public class BostonTActivity extends ActionBarActivity implements
     private static final String JSON_URL_PATH = "http://developer.mbta.com/lib/rthr/";
 
     /**
-     * Queue of Volley requests.
-     */
-    private RequestQueue mRequestQueue;
-
-    /**
      * The API key for this project.
      */
     private static final String API_KEY = "G9S4S9H9JXBK884NW625";
 
     /**
-     * A modifiable set of name/value mappings. Holds the schedule String.
+     * Used for debug printing with Log.d
      */
-    private JSONObject mFetchedData;
+    private static final String TAG = "BostonTActivity";
+
+    /**
+     * Queue of Volley requests.
+     */
+    private RequestQueue mRequestQueue;
 
     /**
      * Shows a "Loading..." message when user clicks a subway line button.
@@ -62,15 +63,15 @@ public class BostonTActivity extends ActionBarActivity implements
     private ProgressDialog mProgressDialog;
 
     /**
+     * A modifiable set of name/value mappings. Holds the schedule String.
+     */
+    private JSONObject mFetchedData;
+
+    /**
      * The last line color fetched. See {@link Trip#BLUE}, {@link Trip#GREEN}, etc. This can also be
      * used as a tag when dealing with fragment transactions.
      */
     private String mlastLineColorFetched;
-
-    /**
-     * Used for debug printing with Log.d
-     */
-    private static final String TAG = "BostonTActivity";
 
     /**
      * Lifecycle Step 1.
@@ -106,22 +107,15 @@ public class BostonTActivity extends ActionBarActivity implements
     }
 
     /**
-     * Fetches data from the web and stores it in a field. Called when a subway line is pressed.
-     * This method calls {@link com.rndapp.t.activities.BostonTActivity#getSchedule(String)}.
+     * Fetches data from the web and stores it in {@link com.rndapp.t.activities.BostonTActivity#mFetchedData}.
+     * Called when a subway line is pressed.
      *
      * @param lineColor The line to fetch data for. See {@link Trip#ORANGE}, e.g.
      */
     private void fetchData(final String lineColor) {
         mlastLineColorFetched = lineColor;
-        mProgressDialog = ProgressDialog.show(this, "", "Loading...", true, true);
-        Thread thread = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                mFetchedData = null;
-                getSchedule(lineColor);
-            }
-        });
-        thread.start();
+        mProgressDialog = ProgressDialog.show(this, "", "Loading the " + lineColor + " line...", true, true);
+        mRequestQueue.add(createRequestToJsonSchedule(lineColor));
     }
 
     /**
@@ -137,31 +131,39 @@ public class BostonTActivity extends ActionBarActivity implements
     }
 
     /**
-     * Volley makes a GET request for JSON file and then saves the fetched JSON object.
+     * Creates a Volley JSON request object to a given line color.
      *
-     * @param line The color of the subway line to retrieve. See {@link Trip#ORANGE}, e.g.
+     * @param lineColor The line color of the subway, e.g., {@link Trip#GREEN}.
+     * @return a Volley JSON request object to a given line color.
      */
-    private void getSchedule(final String line) {
-        final JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, getURL(line),
+    private JsonObjectRequest createRequestToJsonSchedule(final String lineColor) {
+        return new JsonObjectRequest(Request.Method.GET, getURL(lineColor),
                 null,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject fetchedData) {
                         BostonTActivity.this.mFetchedData = fetchedData;
+
+                        // Get current fragment,
+                        Fragment f = getFragmentManager().findFragmentByTag(mlastLineColorFetched);
+                        if (f != null) {
+                            Log.d(TAG, "Found fragment for: " + mlastLineColorFetched);
+                        }
+                        ((StopsFragment) f).updateListAdapter(fetchedData);
+
                         mProgressDialog.dismiss();
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError volleyError) {
-                        System.out.println(volleyError.getMessage());
+                        System.out.println("VolleyError: " + volleyError.getMessage());
                         BostonTActivity.this.mFetchedData = null;
-                        Toast.makeText(BostonTActivity.this, "VolleyError", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(BostonTActivity.this, "No internet connection.", Toast.LENGTH_SHORT).show();
                         mProgressDialog.dismiss();
                     }
                 }
         );
-        mRequestQueue.add(request);
     }
 
     /**
@@ -184,6 +186,21 @@ public class BostonTActivity extends ActionBarActivity implements
     }
 
     /**
+     * Checks whether we have an internet connection.
+     *
+     * @return True if we are connected.
+     */
+    private boolean isNetworkConnected() {
+        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo ni = cm.getActiveNetworkInfo();
+        return ni != null;
+    }
+
+    /////////////////////////////////////////////////////////////////////////////////////
+    ////////////////// IMPLEMENTATIONS OF FRAGMENT CALLBACK INTERFACES //////////////////
+    /////////////////////////////////////////////////////////////////////////////////////
+
+    /**
      * Allows the {@link com.rndapp.t.fragments.MapFragment} to communicate with this {@code
      * Activity}.
      *
@@ -200,9 +217,9 @@ public class BostonTActivity extends ActionBarActivity implements
      */
     @Override
     public void showSchedules() {
-        final Fragment fragment = new LinesFragment();
+        final Fragment linesFragment = new LinesFragment();
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
-        transaction.replace(R.id.fragment_container, fragment);
+        transaction.replace(R.id.fragment_container, linesFragment, LinesFragment.class.getName());
         //transaction.setCustomAnimations(R.anim.push_right_in, R.anim.push_left_out);
         transaction.commit();
     }
@@ -216,8 +233,16 @@ public class BostonTActivity extends ActionBarActivity implements
     @Override
     public void onLineSelected(final String lineColor) {
 
-        if (lineColor == Trip.GREEN) {
+        if (lineColor.equals(Trip.GREEN)) {
             Toast.makeText(this, "Green Line will be supported soon", Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        Log.d(TAG, "Fetching data for " + lineColor + " line...");
+        fetchData(lineColor);
+
+        if (mFetchedData == null && !mlastLineColorFetched.equals(lineColor)) {
+            Log.d(TAG, "Fetched Data == null && lastColorFetched == " + mlastLineColorFetched);
             return;
         }
 
@@ -225,15 +250,14 @@ public class BostonTActivity extends ActionBarActivity implements
         FragmentTransaction transaction = fragmentManager.beginTransaction();
 
         // TODO how do we get the fragment? what if it exists?
+        boolean found = fragmentManager.findFragmentById(R.id.fragment_stops) != null;
+        Log.d(TAG, "FragmentManager found StopsFragment?: " + found);
+
         // R.id.fragment_stops is in layout-large. if it's non-null, we're in dual pane mode
         // StopsFragment newFragment = (StopsFragment) getFragmentManager().findFragmentById(R.id.fragment_stops);
 
         final Fragment newFragment = StopsFragment.newInstance(lineColor);
-
-        // TODO Used for FragmentManager.BackStackEntry APIs
         final String newFragmentTag = lineColor;
-
-        fetchData(Trip.BLUE);
         //transaction.setCustomAnimations(R.anim.push_right_in, R.anim.push_left_out);
         transaction.addToBackStack(null);
         transaction.replace(R.id.fragment_container, newFragment, newFragmentTag).commit();
@@ -247,9 +271,9 @@ public class BostonTActivity extends ActionBarActivity implements
     public void showMap() {
         final FragmentManager fragmentManager = getFragmentManager();
         FragmentTransaction transaction = fragmentManager.beginTransaction();
-        final Fragment newFragment = new MapFragment();
+        final Fragment mapFragment = new MapFragment();
         //transaction.setCustomAnimations(R.anim.push_left_in, R.anim.push_right_out);
-        transaction.replace(R.id.fragment_container, newFragment).commit();
+        transaction.replace(R.id.fragment_container, mapFragment, MapFragment.class.getName()).commit();
     }
 
     /**

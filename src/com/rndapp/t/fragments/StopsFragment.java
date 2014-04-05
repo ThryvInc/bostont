@@ -2,6 +2,7 @@ package com.rndapp.t.fragments;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.app.ListFragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -21,7 +22,7 @@ import org.json.JSONObject;
 /**
  * Displays the list of stops for a specific line. Created by kmchen1 on 4/2/14.
  */
-public class StopsFragment extends Fragment {
+public class StopsFragment extends ListFragment {
 
     /**
      * Used as a key in the {@code Bundle} arguments that get attached to instances of {@code
@@ -32,23 +33,23 @@ public class StopsFragment extends Fragment {
     /**
      * The managing {@link com.rndapp.t.activities.BostonTActivity} callback.
      */
-    OnStopSelectedListener mCallback;
+    private OnStopSelectedListener mCallback;
 
     /**
      * The subway line color of the {@code Stop}s being shown. Discovered via {@code Bundle} args.
      */
-    String mLineColor;
+    private String mLineColor;
 
     /**
      * The adapter that controls this fragment's list of {@code Stop}s.
      */
-    ScheduleAdapter mScheduleAdapter;
+    private ScheduleAdapter mScheduleAdapter;
 
     /**
      * When pressed, will ask callback activity to re-fetch data.
      */
     // TODO refresh button here? is it even a button? or in menu?
-    Button mButtonRefresh;
+    private Button mButtonRefresh;
 
     /**
      * An interface for allowing this fragment to communicate with its callback activity. When a
@@ -139,6 +140,7 @@ public class StopsFragment extends Fragment {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
         mLineColor = getArguments().getString(LINE_COLOR);
+
     }
 
     /**
@@ -172,9 +174,11 @@ public class StopsFragment extends Fragment {
      *
      * @param fetchedData The JSONObject used to create the underlying ScheduleAdapter.
      */
-    public void updateListAdapter(JSONObject fetchedData) {
+    public void updateListAdapter(final JSONObject fetchedData) {
         if (fetchedData != null) {
             mScheduleAdapter = new ScheduleAdapter(getActivity(), R.layout.item_stop, fetchedData);
+            setListAdapter(mScheduleAdapter);
+            mScheduleAdapter.notifyDataSetChanged();
         }
     }
 

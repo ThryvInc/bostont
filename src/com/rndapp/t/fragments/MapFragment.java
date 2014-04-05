@@ -26,20 +26,20 @@ public class MapFragment extends Fragment implements View.OnClickListener {
      * The {@link com.rndapp.t.activities.BostonTActivity} that implements {@link
      * com.rndapp.t.fragments.MapFragment.OnMapLineSelectedListener}.
      */
-    OnMapLineSelectedListener mCallback;
+    private OnMapLineSelectedListener mCallback;
 
     /**
      * The {@link com.rndapp.subway_lib.TouchImageView} that allows users to interact with the map
      * and select subway lines. Once a line is highlighted, user may press See Schedules button to
      * view the stops, which is shown by the {@link com.rndapp.t.fragments.StopsFragment}.
      */
-    TouchImageView mSubwayMap;
+    private TouchImageView mSubwayMap;
 
     /**
      * If a line is highlighted, takes user to {@link com.rndapp.t.fragments.StopsFragment}. If no
      * subway line is highlighted, takes user to {@link com.rndapp.t.fragments.LinesFragment}.
      */
-    Button mSeeSchedulesButton;
+    private Button mSeeSchedulesButton;
 
     /**
      * {@link com.rndapp.t.activities.BostonTActivity} will implement this interface.

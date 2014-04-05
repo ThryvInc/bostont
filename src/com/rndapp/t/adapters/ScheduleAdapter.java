@@ -223,7 +223,7 @@ public class ScheduleAdapter extends BaseAdapter {
             // display name of the first stop
             holder.name.setText(s.getName());
             // show the prediction for the next train
-            holder.nextTrain.setText(formattedPredict(s));
+            holder.nextTrain.setText(s == null ? "null" : formattedPredict(s));
         }
 
         return convertView;
