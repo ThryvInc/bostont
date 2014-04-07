@@ -14,7 +14,7 @@
         android:textColor="#fff"
         android:textStyle="bold" />
 
-    <com.rndapp.subway_lib.TouchImageView
+    <com.rndapp.t.TouchImageView
         android:id="@+id/touchImg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />

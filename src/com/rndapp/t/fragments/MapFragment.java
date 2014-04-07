@@ -14,7 +14,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.rndapp.subway_lib.TouchImageView;
+import com.rndapp.t.TouchImageView;
 import com.rndapp.t.R;
 
 /**

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- From: file:/home/sun/AndroidStudioProjects/bostont/res/values-v11/style.xml -->
+    <!-- From: file:/Users/kmchen1/AndroidStudioProjects/bostont/res/values-v11/style.xml -->
     <eat-comment />
 
     <style name="AppCompatTheme" parent="@style/Theme.AppCompat"></style>
-    <!-- From: file:/home/sun/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values-v11/values.xml -->
+    <!-- From: file:/Users/kmchen1/AndroidStudioProjects/bostont/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/res/values-v11/values.xml -->
     <eat-comment />
 
     <style name="Theme.Base" parent="android:Theme.Holo">
