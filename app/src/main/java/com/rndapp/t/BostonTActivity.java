@@ -82,13 +82,13 @@ public class BostonTActivity extends MainActivity implements OnClickListener {
             pd.dismiss();
             if (fetchedData != null) {
                 ListView lv = (ListView) findViewById(R.id.line_list);
-                ScheduleAdapter sa = new ScheduleAdapter(context, R.layout.item, fetchedData);
+                ScheduleAdapter sa = new ScheduleAdapter(BostonTActivity.this, R.layout.item, fetchedData);
                 lv.setAdapter(sa);
                 va.setInAnimation(slideLeftIn);
                 va.setOutAnimation(slideLeftOut);
                 va.showNext();
             } else {
-                Toast.makeText(context, "Please make sure you are connected to the internet.", Toast.LENGTH_LONG).show();
+                Toast.makeText(BostonTActivity.this, "Please make sure you are connected to the internet.", Toast.LENGTH_LONG).show();
             }
         }
     };
@@ -100,7 +100,6 @@ public class BostonTActivity extends MainActivity implements OnClickListener {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-        context = this;
         setXML();
     }
 
@@ -130,7 +129,7 @@ public class BostonTActivity extends MainActivity implements OnClickListener {
      *
      * @param lineColor
      */
-    private void subwayLineButtonClicked(String lineColor) {
+    private void subwayLineButtonClicked(final String lineColor) {
         pd = ProgressDialog.show(this, "", "Loading...", true, true);
         Thread thread = new Thread(new Runnable() {
             public void run() {
