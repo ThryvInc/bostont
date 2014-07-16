@@ -1,12 +1,5 @@
 package com.rndapp.t;
 
-import java.util.ArrayList;
-import java.util.Calendar;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -15,32 +8,21 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.Calendar;
+
 public class ScheduleAdapter extends BaseAdapter {
 
-    /**
-     * The context from which the adapter was created.
-     * Used for getting resources and views.
-     */
     Context context;
-
-    /**
-     * The item resource ID. Used for layout inflation.
-     */
     int itemResID;
-
-    /**
-     *
-     */
     long time;
     int color;
     ArrayList<Trip> trips;
 
-    /**
-     *
-     * @param context
-     * @param itemResID
-     * @param json
-     */
     public ScheduleAdapter(Context context, int itemResID, JSONObject json) {
         this.context = context;
         this.itemResID = itemResID;
@@ -53,8 +35,7 @@ public class ScheduleAdapter extends BaseAdapter {
             for (int i = 0; i < trips.length(); i++) {
                 JSONObject jsontrip = trips.getJSONObject(i);
                 boolean added = false;
-                for (int j = 0; j < this.trips.size(); j++) {
-                    Trip trip = this.trips.get(j);
+                for (Trip trip : this.trips) {
                     if (trip.destination.equalsIgnoreCase(jsontrip.getString("Destination"))) {
                         trip.incorporatePredictions(jsontrip.getJSONArray("Predictions"));
                         added = true;
@@ -80,10 +61,7 @@ public class ScheduleAdapter extends BaseAdapter {
         }
     }
 
-    /**
-     * Returns the sum of stops of all trips.
-     * @return the sum of stops of all trips.
-     */
+    // sum of all stops in trip
     @Override
     public int getCount() {
         int result = 0;
@@ -96,7 +74,9 @@ public class ScheduleAdapter extends BaseAdapter {
     /**
      * Returns the stop (or trip, if the stop ends on the completion of a trip)
      * that is a specified number of stops away.
+     *
      * @param stopsAway The specified number of stops away.
+     *
      * @return the specified stop.
      */
     @Override
@@ -116,22 +96,12 @@ public class ScheduleAdapter extends BaseAdapter {
         return item;
     }
 
-    /**
-     * A {@code Stop}'s ID is its position.
-     * @param position The requested stop.
-     * @return the position.
-     */
     @Override
     public long getItemId(int position) {
         return position;
     }
 
-    /**
-     * Checks to see if a {@code Stop} at a specified index is enabled.
-     * For now, you cannot click on the stops.
-     * @param position The requested stop.
-     * @return false.
-     */
+    // for now you can't click on stops
     public boolean isEnabled(int position) {
         return false;
     }
@@ -156,7 +126,7 @@ public class ScheduleAdapter extends BaseAdapter {
             holder = (StopHolder) convertView.getTag();
         }
 
-        if (o.getClass() == Stop.class) {
+        if (o instanceof Stop) {
             Stop s = (Stop) o;
 
             holder.tv.setVisibility(View.GONE);

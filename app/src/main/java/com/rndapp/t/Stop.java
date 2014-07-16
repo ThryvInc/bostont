@@ -1,26 +1,16 @@
 package com.rndapp.t;
 
+import org.json.JSONObject;
+
 import java.io.Serializable;
 import java.util.ArrayList;
-
-import org.json.JSONObject;
+import java.util.Collections;
 
 public class Stop implements Serializable {
 
-    /**
-     * The name of the {@code Stop}.
-     */
     public String name;
-
-    /**
-     * A list of
-     */
     public ArrayList<Long> seconds;
 
-    /**
-     * Constructs a {@code Stop}.
-     * @param name The name of the {@code Stop}.
-     */
     public Stop(String name) {
         super();
         seconds = new ArrayList<Long>();
@@ -30,6 +20,7 @@ public class Stop implements Serializable {
     /**
      * Constructs a {@code Stop} from a {@code JSONObject}.
      * Reads values for the stop's name and
+     *
      * @param stop
      */
     public Stop(JSONObject stop) {
@@ -44,23 +35,18 @@ public class Stop implements Serializable {
     }
 
     public long minSec() {
-        long min = Long.MAX_VALUE;
-        for (int i = 0; i < seconds.size(); i++) {
-            Long l = seconds.get(i);
-            if (l < min) {
-                min = l;
-            }
-        }
-        return min;
+        if (seconds == null || seconds.isEmpty()) return Long.MAX_VALUE;
+        return Collections.min(seconds);
     }
 
+    public String getName() {
+        return name;
+    }
+
+    // stops equal if they have same name
     @Override
     public boolean equals(Object o) {
-        if (o.getClass() != Stop.class)
-            return false;
-        if (!((Stop) o).name.equalsIgnoreCase(this.name))
-            return false;
-        return true;
+        return o instanceof Stop && ((Stop) o).getName().equalsIgnoreCase(name);
     }
 
 }
