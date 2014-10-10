@@ -1,5 +1,7 @@
 package com.rndapp.t;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -108,10 +110,19 @@ public class BostonTActivity extends MainActivity implements OnClickListener {
 
             // TODO - alternative... there's no json schedule for green line
             case R.id.green_btn:
-                startActivity(new Intent(this, Notification.class));
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setTitle("Green Line");
+                builder.setMessage("Unfortunately, the MBTA does not offer schedules for the Green line. But as soon as they do, we'll make sure it gets to you!");
+                builder.setCancelable(true);
+                builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.cancel();
+                    }
+                });
+                builder.create().show();
                 return;
         }
-        Toast.makeText(this, "What other View was clicked?", Toast.LENGTH_LONG).show();
 
     }
 
