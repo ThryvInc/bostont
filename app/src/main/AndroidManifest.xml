@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.rndapp.t"
-          android:versionCode="9"
-          android:versionName="3.3" >
+          package="com.rndapp.t" >
 
     <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="18"/>
     <uses-permission  android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <application
+        android:theme="@style/AppTheme"
+        android:name=".MbtaApplication"
         android:icon="@drawable/app_icon"
         android:label="@string/app_name" >
         <activity
-            android:name=".BostonTActivity"
+            android:name=".activities.BostonTActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,10 +20,6 @@
             </intent-filter>
 
         </activity>
-
-        <activity
-            android:name="com.rndapp.subway_lib.Notification"
-            android:theme="@android:style/Theme.Dialog" />
 
         <activity android:name="com.google.ads.AdActivity"
                   android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"/>

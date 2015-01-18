@@ -1,4 +1,4 @@
-package com.rndapp.t;
+package com.rndapp.t.models;
 
 import android.app.Activity;
 import android.content.Context;
@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+
+import com.rndapp.t.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;

@@ -1,4 +1,4 @@
-package com.rndapp.t;
+package com.rndapp.t.models;
 
 import org.json.JSONObject;
 
