@@ -2,27 +2,35 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.rndapp.t" >
 
-    <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="18"/>
+    <meta-data android:name="LOCALYTICS_APP_KEY" android:value="5ca359ebbac71091796c969-de9bc06a-9f63-11e4-2aa7-004a77f8b47f"/>
+
     <uses-permission  android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
     <application
         android:theme="@style/AppTheme"
         android:name=".MbtaApplication"
         android:icon="@drawable/app_icon"
         android:label="@string/app_name" >
-        <activity
-            android:name=".activities.BostonTActivity"
-            android:label="@string/app_name" >
+
+        <activity android:name=".activities.BostonTActivity"
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
 
-        <activity android:name="com.google.ads.AdActivity"
-                  android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"/>
+        <activity android:name="com.google.android.gms.ads.AdActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
+
+        <meta-data
+            android:name="com.crashlytics.ApiKey"
+            android:value="b1bc39c835159dcffd9f2950a40007e570069713" />
+        <!--This meta-data tag is required to use Google Play Services.-->
+        <meta-data android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
     </application>
 
 </manifest>

@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 
 import com.rndapp.subway_lib.TouchImageView;
 import com.rndapp.t.R;
+import com.rndapp.t.models.Analytics;
 import com.rndapp.t.models.LineController;
 
 /**
@@ -29,12 +30,13 @@ public class MapFragment extends Fragment {
             }
         });
 
-        // shows map
         TouchImageView img = (TouchImageView)root.findViewById(R.id.touchImg);
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inScaled = false;
         Bitmap subway = BitmapFactory.decodeResource(getResources(), R.drawable.subway, options);
         img.setImageBitmap(subway);
+
+        Analytics.mapShown(getActivity());
 
         return root;
     }

@@ -6,18 +6,18 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.BaseAdapter;
 import android.widget.ListView;
 
 import com.rndapp.t.R;
-import com.rndapp.t.models.ScheduleAdapter;
 
 /**
  * Created by ell on 1/18/15.
  */
 public class LineFragment extends Fragment {
-    public ScheduleAdapter adapter;
+    protected BaseAdapter adapter;
 
-    public void setAdapter(ScheduleAdapter adapter) {
+    public void setAdapter(BaseAdapter adapter) {
         this.adapter = adapter;
     }
 

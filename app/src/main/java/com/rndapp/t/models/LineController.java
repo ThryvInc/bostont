@@ -7,5 +7,5 @@ import org.json.JSONObject;
  */
 public interface LineController {
     public void showSchedules();
-    public void showLine(JSONObject jsonObject);
+    public void showLine(Line line);
 }

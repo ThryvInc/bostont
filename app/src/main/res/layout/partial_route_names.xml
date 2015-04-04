@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal">
+
+    <TextView
+        android:id="@+id/route_name1"
+        style="@style/RouteNameTextView"/>
+
+    <TextView
+        android:id="@+id/route_name2"
+        style="@style/RouteNameTextView"/>
+
+    <TextView
+        android:id="@+id/route_name3"
+        style="@style/RouteNameTextView"/>
+
+    <TextView
+        android:id="@+id/route_name4"
+        style="@style/RouteNameTextView"/>
+
+    <TextView
+        android:id="@+id/route_name5"
+        style="@style/RouteNameTextView"/>
+
+    <TextView
+        android:id="@+id/route_name6"
+        style="@style/RouteNameTextView"/>
+
+</LinearLayout>

@@ -7,45 +7,25 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
 import android.widget.Toast;
 
-import com.android.volley.VolleyError;
 import com.rndapp.t.R;
+import com.rndapp.t.models.Analytics;
 import com.rndapp.t.models.Line;
 import com.rndapp.t.models.LineController;
-import com.rndapp.t.models.LineScheduleLoader;
-
-import org.json.JSONObject;
+import com.rndapp.t.models.Route;
 
 /**
  * Created by ell on 1/18/15.
  */
-public class SchedulesFragment extends Fragment implements View.OnClickListener, LineScheduleLoader.OnLineScheduleLoadedListener{
+public class SchedulesFragment extends Fragment implements View.OnClickListener, Line.OnLoadingCompleteCallback{
 
     // appears when request is loading schedule
     protected ProgressDialog pd;
-
-    public enum BostonLine implements Line {
-        ORANGE("orange"),
-        RED("red"),
-        BLUE("blue");
-
-        // cruft in html: e.g., http://developer.mbta.com/lib/rthr/blue.json
-        private final String name;
-
-        private BostonLine(String name) {
-            this.name = name;
-        }
-
-        @Override
-        public String getName() {
-            return name;
-        }
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -65,62 +45,54 @@ public class SchedulesFragment extends Fragment implements View.OnClickListener,
         }
     }
 
-
-    @Override
-    public void onLineScheduleLoaded(JSONObject jsonObject) {
-        pd.dismiss();
-
-        // just in case, check for success, then toggle animations
-        if (jsonObject != null) {
-            ((LineController)getActivity()).showLine(jsonObject);
-        }
-    }
-
-    @Override
-    public void onFailure(VolleyError volleyError) {
-        pd.dismiss();
-        Toast.makeText(getActivity(), "No Internet Connection.", Toast.LENGTH_SHORT).show();
-    }
-
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
 
             case R.id.orange_btn:
-                makeRequest(BostonLine.ORANGE);
+                Analytics.orangeLinePressed(getActivity());
+                Route[] orangeRoutes = {new Route("903_", "Oak Grove", R.color.orange), new Route("913_", "WELLINGTON", R.color.orange)};
+                getLineWithRoutes(orangeRoutes, true);
                 break;
 
             case R.id.red_btn:
-                makeRequest(BostonLine.RED);
+                Analytics.redLinePressed(getActivity());
+                Route[] redRoutes = {new Route("931_", "ASHMONT", R.color.red), new Route("933_", "BRAINTREE", R.color.red)};
+                getLineWithRoutes(redRoutes, true);
                 break;
 
             case R.id.blue_btn:
-                makeRequest(BostonLine.BLUE);
+                Analytics.blueLinePressed(getActivity());
+                Route[] blueRoutes = {new Route("946_", "BLUE LINE", R.color.blue)};
+                getLineWithRoutes(blueRoutes, true);
                 break;
 
-            // TODO - alternative... there's no json schedule for green line
             case R.id.green_btn:
-                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-                builder.setTitle("Green Line");
-                builder.setMessage("Unfortunately, the MBTA does not offer schedules for the Green line. But as soon as they do, we'll make sure it gets to you!");
-                builder.setCancelable(true);
-                builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        dialogInterface.cancel();
-                    }
-                });
-                builder.create().show();
+                Analytics.greenLinePressed(getActivity());
+                Route[] greenRoutes = {new Route("Green-B", "B", R.color.green),
+                        new Route("Green-C", "C", R.color.green),
+                        new Route("Green-D", "D", R.color.green),
+                        new Route("Green-E", "E", R.color.green)};
+                getLineWithRoutes(greenRoutes, false);
                 break;
         }
     }
 
-    protected final void makeRequest(Line line) {
+    protected final void getLineWithRoutes(Route[] routes, boolean shouldPredict){
         pd = ProgressDialog.show(getActivity(), "", "Loading", true, true);
-        LineScheduleLoader.load(this, getLineUrl(line));
+        Line line = new Line(routes, shouldPredict, this);
     }
 
-    protected final String getLineUrl(Line line) {
-        return "http://developer.mbta.com/lib/rthr/" + line.getName() + ".json";
+    @Override
+    public void onLineLoadedSuccess(Line line) {
+        pd.dismiss();
+        if (getActivity() != null) ((LineController)getActivity()).showLine(line);
+    }
+
+    @Override
+    public void onLineLoadedFailure() {
+        pd.dismiss();
+        if (getActivity() != null)
+            Toast.makeText(getActivity(), "Check your internet connection and try again", Toast.LENGTH_LONG).show();
     }
 }

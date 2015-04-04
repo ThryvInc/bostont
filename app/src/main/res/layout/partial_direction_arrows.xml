@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/iv_arrow1"
+        style="@style/ArrowImageView"/>
+
+    <ImageView
+        android:id="@+id/iv_arrow2"
+        style="@style/ArrowImageView"/>
+
+    <ImageView
+        android:id="@+id/iv_arrow3"
+        style="@style/ArrowImageView"/>
+
+    <ImageView
+        android:id="@+id/iv_arrow4"
+        style="@style/ArrowImageView"/>
+
+    <ImageView
+        android:id="@+id/iv_arrow5"
+        style="@style/ArrowImageView"/>
+
+    <ImageView
+        android:id="@+id/iv_arrow6"
+        style="@style/ArrowImageView"/>
+
+</LinearLayout>

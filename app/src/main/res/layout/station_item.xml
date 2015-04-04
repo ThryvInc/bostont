@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_station_name"
+        android:textSize="26sp"
+        android:layout_margin="10dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/up_arrows"
+        android:layout_toStartOf="@+id/up_arrows"
+        android:text="Downtown Crossing"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_station_name"
+        android:layout_alignParentBottom="true"
+        android:gravity="bottom"
+        android:orientation="horizontal">
+        <!--<ImageView-->
+            <!--android:layout_width="40dp"-->
+            <!--android:layout_height="40dp"-->
+            <!--android:layout_marginLeft="10dp"-->
+            <!--android:background="@drawable/red_heart"-->
+            <!--android:visibility="gone"/>-->
+        <!--<ImageView-->
+            <!--android:layout_width="40dp"-->
+            <!--android:layout_height="40dp"-->
+            <!--android:layout_marginLeft="10dp"-->
+            <!--android:background="@drawable/refresh_icon"-->
+            <!--android:visibility="gone"/>-->
+        </LinearLayout>
+
+    <include
+        android:id="@+id/up_arrows"
+        layout="@layout/partial_direction_arrows"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_toLeftOf="@+id/up_predictions"
+        android:layout_toStartOf="@+id/up_predictions"/>
+    <include
+        android:id="@+id/up_predictions"
+        layout="@layout/partial_prediction_text_views"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_toLeftOf="@+id/route_names"
+        android:layout_toStartOf="@+id/route_names"/>
+    <include
+        android:id="@+id/route_names"
+        layout="@layout/partial_route_names"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_toLeftOf="@+id/down_predictions"
+        android:layout_toStartOf="@+id/down_predictions"/>
+    <include
+        android:id="@+id/down_predictions"
+        layout="@layout/partial_prediction_text_views"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_toLeftOf="@+id/down_arrows"
+        android:layout_toStartOf="@+id/down_arrows"/>
+    <include
+        layout="@layout/partial_direction_arrows"
+        android:id="@+id/down_arrows"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"/>
+
+
+</RelativeLayout>
