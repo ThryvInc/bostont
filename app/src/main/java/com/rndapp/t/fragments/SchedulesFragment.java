@@ -90,9 +90,12 @@ public class SchedulesFragment extends Fragment implements View.OnClickListener,
     }
 
     @Override
-    public void onLineLoadedFailure() {
+    public void onLineLoadedFailure(boolean usersFault) {
         pd.dismiss();
-        if (getActivity() != null)
-            Toast.makeText(getActivity(), "Check your internet connection and try again", Toast.LENGTH_LONG).show();
+        if (getActivity() != null) {
+            String message = "The MBTA is currently not responding";
+            if (usersFault) message = "Check your internet connection and try again";
+            Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show();
+        }
     }
 }

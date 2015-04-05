@@ -22,10 +22,11 @@ public class Line {
     protected ArrayList<Station> mStations = new ArrayList<>();
     protected OnLoadingCompleteCallback mCallback;
     protected int mRequestSemaphore = 0;
+    protected int mErrorCount = 0;
 
     public interface OnLoadingCompleteCallback {
         public void onLineLoadedSuccess(Line line);
-        public void onLineLoadedFailure();
+        public void onLineLoadedFailure(boolean usersFault);
     }
 
     public Line(Route[] routes, boolean shouldGetPredictions, OnLoadingCompleteCallback callback) {
@@ -36,6 +37,7 @@ public class Line {
     }
 
     protected void getRoutes(boolean shouldGetPredictions){
+        mErrorCount = 0;
         for (Route route : mRoutes){
             getStopsForRoute(route, shouldGetPredictions);
         }
@@ -62,7 +64,7 @@ public class Line {
 
             @Override
             public void onFailure(VolleyError error) {
-                if (mCallback != null) mCallback.onLineLoadedFailure();
+                if (mCallback != null) mCallback.onLineLoadedFailure(error.networkResponse == null || error.networkResponse.statusCode < 300);
             }
         });
         request.get(route.getRouteId());
@@ -92,6 +94,10 @@ public class Line {
             @Override
             public void onFailure(VolleyError error) {
                 mRequestSemaphore--;
+                mErrorCount++;
+                if (Line.this.mCallback != null && mRequestSemaphore == 0 && mErrorCount > 0){
+                    Line.this.mCallback.onLineLoadedFailure(error.networkResponse == null || error.networkResponse.statusCode < 300);
+                }
             }
         });
         request.get(route.getRouteId());
@@ -121,6 +127,10 @@ public class Line {
             @Override
             public void onFailure(VolleyError error) {
                 mRequestSemaphore--;
+                mErrorCount++;
+                if (Line.this.mCallback != null && mRequestSemaphore == 0 && mErrorCount > 0){
+                    Line.this.mCallback.onLineLoadedFailure(error.networkResponse == null || error.networkResponse.statusCode < 300);
+                }
             }
         });
         request.get(route.getRouteId());
