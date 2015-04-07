@@ -32,6 +32,6 @@ public class Route {
 
         Route otherRoute = (Route)o;
 
-        return this.getRouteId().equals(otherRoute.getRouteId());
+        return this.getRouteName().equals(otherRoute.getRouteName());
     }
 }

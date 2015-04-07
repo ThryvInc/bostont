@@ -51,7 +51,7 @@ public class Line {
                 if (mbtaRoute != null && mbtaRoute.getDirections() != null){
                     for (MBTADirection direction : mbtaRoute.getDirections()){
                         if (direction.getStops() != null){
-                            addStopsToStations(route, direction.getStops(), direction.getDirectionName());
+                            addStopsToStations(route, direction.getStops(), null, direction.getDirectionName());
                         }
                     }
                 }
@@ -81,7 +81,7 @@ public class Line {
                         if (direction.getTrips() != null){
                             for (MBTATrip trip : direction.getTrips()){
                                 if (trip.getStops() != null){
-                                    addStopsToStations(route, trip.getStops(), direction.getDirectionName());
+                                    addStopsToStations(route, trip.getStops(), trip.getName(), direction.getDirectionName());
                                 }
                             }
                         }
@@ -114,7 +114,7 @@ public class Line {
                         if (direction.getTrips() != null){
                             for (MBTATrip trip : direction.getTrips()){
                                 if (trip.getStops() != null){
-                                    addStopsToStations(route, trip.getStops(), direction.getDirectionName());
+                                    addStopsToStations(route, trip.getStops(), trip.getName(), direction.getDirectionName());
                                 }
                             }
                         }
@@ -136,11 +136,17 @@ public class Line {
         request.get(route.getRouteId());
     }
 
-    protected synchronized void addStopsToStations(Route route, ArrayList<MBTAStop> stops, String directionName){
+    protected synchronized void addStopsToStations(Route route, ArrayList<MBTAStop> stops, String tripName, String directionName){
         for (MBTAStop stop : stops){
             Prediction prediction = null;
             if (stop.getPrediction() != null && Integer.parseInt(stop.getPrediction()) > -1){
-                prediction = new Prediction(Integer.parseInt(stop.getPrediction()), route, directionName);
+                if (mRoutes.length > 1){
+                    if (tripName != null && tripName.toLowerCase().contains(route.getRouteName().toLowerCase())){
+                        prediction = new Prediction(Integer.parseInt(stop.getPrediction()), route, directionName);
+                    }
+                }else {
+                    prediction = new Prediction(Integer.parseInt(stop.getPrediction()), route, directionName);
+                }
             }
 
             if (stop.getParentId() != null && stop.getParentName() != null){
@@ -156,7 +162,9 @@ public class Line {
                 }
             }else {
                 for (Station station : mStations){
-                    if (prediction != null && station.isStopAtStation(stop)) station.addPrediction(prediction);
+                    if (prediction != null && station.isStopAtStation(stop)) {
+                        station.addPrediction(prediction);
+                    }
                 }
             }
         }

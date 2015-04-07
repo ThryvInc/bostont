@@ -51,19 +51,19 @@ public class SchedulesFragment extends Fragment implements View.OnClickListener,
 
             case R.id.orange_btn:
                 Analytics.orangeLinePressed(getActivity());
-                Route[] orangeRoutes = {new Route("903_", "Oak Grove", R.color.orange), new Route("913_", "WELLINGTON", R.color.orange)};
+                Route[] orangeRoutes = {new Route("Orange", "ORANGE", R.color.orange)};
                 getLineWithRoutes(orangeRoutes, true);
                 break;
 
             case R.id.red_btn:
                 Analytics.redLinePressed(getActivity());
-                Route[] redRoutes = {new Route("931_", "ASHMONT", R.color.red), new Route("933_", "BRAINTREE", R.color.red)};
+                Route[] redRoutes = {new Route("Red", "ASHMONT", R.color.red), new Route("Red", "BRAINTREE", R.color.red)};
                 getLineWithRoutes(redRoutes, true);
                 break;
 
             case R.id.blue_btn:
                 Analytics.blueLinePressed(getActivity());
-                Route[] blueRoutes = {new Route("946_", "BLUE LINE", R.color.blue)};
+                Route[] blueRoutes = {new Route("Blue", "BLUE LINE", R.color.blue)};
                 getLineWithRoutes(blueRoutes, true);
                 break;
 

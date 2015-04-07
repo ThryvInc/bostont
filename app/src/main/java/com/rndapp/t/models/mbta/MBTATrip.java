@@ -10,8 +10,14 @@ import java.util.ArrayList;
 public class MBTATrip {
     @SerializedName("trip_headsign")
     protected String mHeadsign;
+    @SerializedName("trip_name")
+    protected String mName;
     @SerializedName("stop")
     protected ArrayList<MBTAStop> mStops;
+
+    public String getName() {
+        return mName;
+    }
 
     public String getHeadsign() {
         return mHeadsign;
