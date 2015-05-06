@@ -29,21 +29,21 @@ public class Line {
         public void onLineLoadedFailure(boolean usersFault);
     }
 
-    public Line(Route[] routes, boolean shouldGetPredictions, OnLoadingCompleteCallback callback) {
+    public Line(Route[] routes, OnLoadingCompleteCallback callback) {
         this.mRoutes = routes;
         this.mCallback = callback;
 
-        getRoutes(shouldGetPredictions);
+        getRoutes();
     }
 
-    protected void getRoutes(boolean shouldGetPredictions){
+    protected void getRoutes(){
         mErrorCount = 0;
         for (Route route : mRoutes){
-            getStopsForRoute(route, shouldGetPredictions);
+            getStopsForRoute(route);
         }
     }
 
-    protected void getStopsForRoute(final Route route, final boolean shouldGetPredictions){
+    protected void getStopsForRoute(final Route route){
         StopsByRouteRequest request = new StopsByRouteRequest();
         request.setCallback(new RouteRequest.RouteRequestCallback() {
             @Override
@@ -55,7 +55,7 @@ public class Line {
                         }
                     }
                 }
-                if (shouldGetPredictions){
+                if (route.isPredictable()){
                     getPredictionsForRoute(route);
                 }else {
                     getSchedulesForRoute(route);
@@ -67,7 +67,7 @@ public class Line {
                 if (mCallback != null) mCallback.onLineLoadedFailure(error.networkResponse == null || error.networkResponse.statusCode < 300);
             }
         });
-        request.get(route.getRouteId());
+        request.get(route.getMbtaRouteId());
     }
 
     protected void getPredictionsForRoute(final Route route){
@@ -100,7 +100,7 @@ public class Line {
                 }
             }
         });
-        request.get(route.getRouteId());
+        request.get(route.getMbtaRouteId());
     }
 
     protected void getSchedulesForRoute(final Route route){
@@ -133,7 +133,7 @@ public class Line {
                 }
             }
         });
-        request.get(route.getRouteId());
+        request.get(route.getMbtaRouteId());
     }
 
     protected synchronized void addStopsToStations(Route route, ArrayList<MBTAStop> stops, String tripName, String directionName){
@@ -141,7 +141,7 @@ public class Line {
             Prediction prediction = null;
             if (stop.getPrediction() != null && Integer.parseInt(stop.getPrediction()) > -1){
                 if (mRoutes.length > 1){
-                    if (tripName != null && tripName.toLowerCase().contains(route.getRouteName().toLowerCase())){
+                    if (tripName != null && (tripName.toLowerCase() + " ").contains(" " + route.getRouteId().toLowerCase() + " ")){
                         prediction = new Prediction(Integer.parseInt(stop.getPrediction()), route, directionName);
                     }
                 }else {

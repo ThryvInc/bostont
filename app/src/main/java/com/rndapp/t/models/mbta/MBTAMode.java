@@ -13,5 +13,11 @@ public class MBTAMode {
     @SerializedName("route")
     private ArrayList<MBTARoute> mRoutes;
 
+    public String getRouteType() {
+        return mRouteType;
+    }
 
+    public ArrayList<MBTARoute> getRoutes() {
+        return mRoutes;
+    }
 }

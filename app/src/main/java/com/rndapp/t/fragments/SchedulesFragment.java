@@ -51,36 +51,36 @@ public class SchedulesFragment extends Fragment implements View.OnClickListener,
 
             case R.id.orange_btn:
                 Analytics.orangeLinePressed(getActivity());
-                Route[] orangeRoutes = {new Route("Orange", "ORANGE", R.color.orange)};
-                getLineWithRoutes(orangeRoutes, true);
+                Route[] orangeRoutes = {Route.ORANGE};
+                getLineWithRoutes(orangeRoutes);
                 break;
 
             case R.id.red_btn:
                 Analytics.redLinePressed(getActivity());
-                Route[] redRoutes = {new Route("Red", "ASHMONT", R.color.red), new Route("Red", "BRAINTREE", R.color.red)};
-                getLineWithRoutes(redRoutes, true);
+                Route[] redRoutes = {Route.ASHMONT, Route.BRAINTREE};
+                getLineWithRoutes(redRoutes);
                 break;
 
             case R.id.blue_btn:
                 Analytics.blueLinePressed(getActivity());
-                Route[] blueRoutes = {new Route("Blue", "BLUE LINE", R.color.blue)};
-                getLineWithRoutes(blueRoutes, true);
+                Route[] blueRoutes = {Route.BLUE};
+                getLineWithRoutes(blueRoutes);
                 break;
 
             case R.id.green_btn:
                 Analytics.greenLinePressed(getActivity());
-                Route[] greenRoutes = {new Route("Green-B", "B", R.color.green),
-                        new Route("Green-C", "C", R.color.green),
-                        new Route("Green-D", "D", R.color.green),
-                        new Route("Green-E", "E", R.color.green)};
-                getLineWithRoutes(greenRoutes, false);
+                Route[] greenRoutes = {Route.B_LINE,
+                        Route.C_LINE,
+                        Route.D_LINE,
+                        Route.E_LINE};
+                getLineWithRoutes(greenRoutes);
                 break;
         }
     }
 
-    protected final void getLineWithRoutes(Route[] routes, boolean shouldPredict){
+    protected final void getLineWithRoutes(Route[] routes){
         pd = ProgressDialog.show(getActivity(), "", "Loading", true, true);
-        Line line = new Line(routes, shouldPredict, this);
+        Line line = new Line(routes, this);
     }
 
     @Override

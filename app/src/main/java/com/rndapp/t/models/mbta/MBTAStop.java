@@ -28,6 +28,8 @@ public class MBTAStop {
     protected String mPrediction;
     @SerializedName("sch_dep_dt")
     protected String mDepartureTime;
+    @SerializedName("mode")
+    private ArrayList<MBTAMode> mModes;
 
     @Override
     public boolean equals(Object o) {
@@ -36,6 +38,10 @@ public class MBTAStop {
         MBTAStop otherStop = (MBTAStop)o;
 
         return otherStop.mStopId.equals(this.mStopId);
+    }
+
+    public ArrayList<MBTAMode> getModes() {
+        return mModes;
     }
 
     public String getStopId() {

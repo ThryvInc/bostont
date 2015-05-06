@@ -6,12 +6,15 @@ import android.graphics.Color;
 import android.graphics.ColorFilter;
 import android.graphics.LightingColorFilter;
 import android.graphics.drawable.Drawable;
+import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.rndapp.t.R;
@@ -21,13 +24,16 @@ import java.util.ArrayList;
 /**
  * Created by ell on 2/8/15.
  */
-public class StationAdapter extends BaseAdapter {
+public class StationAdapter extends RecyclerView.Adapter<StationAdapter.StationHolder> {
 
     Context context;
     int itemResID;
-    long time;
-    int color;
     Line mLine;
+
+    protected boolean hasNorthbound;
+    protected boolean hasSouthbound;
+    protected boolean hasEastbound;
+    protected boolean hasWestbound;
 
     public StationAdapter(Context context, int itemResID, Line line) {
         this.context = context;
@@ -35,33 +41,13 @@ public class StationAdapter extends BaseAdapter {
         this.mLine = line;
     }
 
-    private void setColor(String line) {
-        if (line.equalsIgnoreCase("BLUE")) {
-            color = context.getResources().getColor(R.color.blue);
-        } else if (line.equalsIgnoreCase("orange")) {
-            color = context.getResources().getColor(R.color.orange);
-        } else if (line.equalsIgnoreCase("red")) {
-            color = context.getResources().getColor(R.color.red);
-        }
-    }
-
-    // sum of all stops in trip
-    @Override
-    public int getCount() {
-        return mLine.mStations.size();
-    }
-
-    /**
-     * Returns the stop (or trip, if the stop ends on the completion of a trip)
-     * that is a specified number of stops away.
-     *
-     * @param stopsAway The specified number of stops away.
-     *
-     * @return the specified stop.
-     */
-    @Override
     public Station getItem(int stopsAway) {
         return mLine.mStations.get(stopsAway);
+    }
+
+    @Override
+    public int getItemCount(){
+        return mLine.mStations.size();
     }
 
     @Override
@@ -75,67 +61,23 @@ public class StationAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public StationHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
+        View itemView = LayoutInflater.
+                from(viewGroup.getContext()).
+                inflate(itemResID, viewGroup, false);
+
+        StationHolder stationHolder = new StationHolder(itemView);
+        stationHolder.adapter = this;
+        return stationHolder;
+    }
+
+    @Override
+    public void onBindViewHolder(StationHolder holder, int position) {
         Station station = getItem(position);
 
-        StationHolder holder;
-
-        if (convertView == null) {
-            LayoutInflater inflater = ((Activity) context).getLayoutInflater();
-            convertView = inflater.inflate(itemResID, parent, false);
-
-            holder = new StationHolder();
-            holder.stationName = (TextView) convertView.findViewById(R.id.tv_station_name);
-
-
-            convertView.setTag(holder);
-        } else {
-            holder = (StationHolder) convertView.getTag();
-        }
+        holder.station = station;
 
         holder.stationName.setText(station.getStationName());
-
-        View routeNames = convertView.findViewById(R.id.route_names);
-        View leftArrows = convertView.findViewById(R.id.up_arrows);
-        View rightArrows = convertView.findViewById(R.id.down_arrows);
-        View leftPredictions = convertView.findViewById(R.id.up_predictions);
-        View rightPredictions = convertView.findViewById(R.id.down_predictions);
-
-        holder.route1 = new RouteHolder((TextView)routeNames.findViewById(R.id.route_name1),
-                (ImageView)leftArrows.findViewById(R.id.iv_arrow1),
-                (ImageView)rightArrows.findViewById(R.id.iv_arrow1),
-                (TextView)leftPredictions.findViewById(R.id.tv_prediction1),
-                (TextView)rightPredictions.findViewById(R.id.tv_prediction1));
-
-        holder.route2 = new RouteHolder((TextView)routeNames.findViewById(R.id.route_name2),
-                (ImageView)leftArrows.findViewById(R.id.iv_arrow2),
-                (ImageView)rightArrows.findViewById(R.id.iv_arrow2),
-                (TextView)leftPredictions.findViewById(R.id.tv_prediction2),
-                (TextView)rightPredictions.findViewById(R.id.tv_prediction2));
-
-        holder.route3 = new RouteHolder((TextView)routeNames.findViewById(R.id.route_name3),
-                (ImageView)leftArrows.findViewById(R.id.iv_arrow3),
-                (ImageView)rightArrows.findViewById(R.id.iv_arrow3),
-                (TextView)leftPredictions.findViewById(R.id.tv_prediction3),
-                (TextView)rightPredictions.findViewById(R.id.tv_prediction3));
-
-        holder.route4 = new RouteHolder((TextView)routeNames.findViewById(R.id.route_name4),
-                (ImageView)leftArrows.findViewById(R.id.iv_arrow4),
-                (ImageView)rightArrows.findViewById(R.id.iv_arrow4),
-                (TextView)leftPredictions.findViewById(R.id.tv_prediction4),
-                (TextView)rightPredictions.findViewById(R.id.tv_prediction4));
-
-        holder.route5 = new RouteHolder((TextView)routeNames.findViewById(R.id.route_name5),
-                (ImageView)leftArrows.findViewById(R.id.iv_arrow5),
-                (ImageView)rightArrows.findViewById(R.id.iv_arrow5),
-                (TextView)leftPredictions.findViewById(R.id.tv_prediction5),
-                (TextView)rightPredictions.findViewById(R.id.tv_prediction5));
-
-        holder.route6 = new RouteHolder((TextView)routeNames.findViewById(R.id.route_name6),
-                (ImageView)leftArrows.findViewById(R.id.iv_arrow6),
-                (ImageView)rightArrows.findViewById(R.id.iv_arrow6),
-                (TextView)leftPredictions.findViewById(R.id.tv_prediction6),
-                (TextView)rightPredictions.findViewById(R.id.tv_prediction6));
 
         switch (station.getRoutes().size()){
             case 6:
@@ -159,8 +101,6 @@ public class StationAdapter extends BaseAdapter {
         }
 
         showHideRoutes(station, holder);
-
-        return convertView;
     }
 
     private void setupRoute(ArrayList<Prediction> predictions, RouteHolder routeHolder){
@@ -249,14 +189,89 @@ public class StationAdapter extends BaseAdapter {
         return Integer.toString(minute) + "m";
     }
 
-    static class StationHolder {
+    static class StationHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+        RecyclerView.Adapter adapter;
         TextView stationName;
+        ImageView refreshButton;
+        ProgressBar progressBar;
         RouteHolder route1;
         RouteHolder route2;
         RouteHolder route3;
         RouteHolder route4;
         RouteHolder route5;
         RouteHolder route6;
+
+        Station station;
+
+        public StationHolder(View itemView) {
+            super(itemView);
+            View routeNames = itemView.findViewById(R.id.route_names);
+            refreshButton = (ImageView)itemView.findViewById(R.id.btn_refresh);
+            progressBar = (ProgressBar)itemView.findViewById(R.id.pb_refresh);
+            View leftArrows = itemView.findViewById(R.id.up_arrows);
+            View rightArrows = itemView.findViewById(R.id.down_arrows);
+            View leftPredictions = itemView.findViewById(R.id.up_predictions);
+            View rightPredictions = itemView.findViewById(R.id.down_predictions);
+
+            stationName = (TextView)itemView.findViewById(R.id.tv_station_name);
+            refreshButton.setOnClickListener(this);
+
+            route1 = new RouteHolder((TextView)routeNames.findViewById(R.id.route_name1),
+                    (ImageView)leftArrows.findViewById(R.id.iv_arrow1),
+                    (ImageView)rightArrows.findViewById(R.id.iv_arrow1),
+                    (TextView)leftPredictions.findViewById(R.id.tv_prediction1),
+                    (TextView)rightPredictions.findViewById(R.id.tv_prediction1));
+
+            route2 = new RouteHolder((TextView)routeNames.findViewById(R.id.route_name2),
+                    (ImageView)leftArrows.findViewById(R.id.iv_arrow2),
+                    (ImageView)rightArrows.findViewById(R.id.iv_arrow2),
+                    (TextView)leftPredictions.findViewById(R.id.tv_prediction2),
+                    (TextView)rightPredictions.findViewById(R.id.tv_prediction2));
+
+            route3 = new RouteHolder((TextView)routeNames.findViewById(R.id.route_name3),
+                    (ImageView)leftArrows.findViewById(R.id.iv_arrow3),
+                    (ImageView)rightArrows.findViewById(R.id.iv_arrow3),
+                    (TextView)leftPredictions.findViewById(R.id.tv_prediction3),
+                    (TextView)rightPredictions.findViewById(R.id.tv_prediction3));
+
+            route4 = new RouteHolder((TextView)routeNames.findViewById(R.id.route_name4),
+                    (ImageView)leftArrows.findViewById(R.id.iv_arrow4),
+                    (ImageView)rightArrows.findViewById(R.id.iv_arrow4),
+                    (TextView)leftPredictions.findViewById(R.id.tv_prediction4),
+                    (TextView)rightPredictions.findViewById(R.id.tv_prediction4));
+
+            route5 = new RouteHolder((TextView)routeNames.findViewById(R.id.route_name5),
+                    (ImageView)leftArrows.findViewById(R.id.iv_arrow5),
+                    (ImageView)rightArrows.findViewById(R.id.iv_arrow5),
+                    (TextView)leftPredictions.findViewById(R.id.tv_prediction5),
+                    (TextView)rightPredictions.findViewById(R.id.tv_prediction5));
+
+            route6 = new RouteHolder((TextView)routeNames.findViewById(R.id.route_name6),
+                    (ImageView)leftArrows.findViewById(R.id.iv_arrow6),
+                    (ImageView)rightArrows.findViewById(R.id.iv_arrow6),
+                    (TextView)leftPredictions.findViewById(R.id.tv_prediction6),
+                    (TextView)rightPredictions.findViewById(R.id.tv_prediction6));
+        }
+
+        @Override
+        public void onClick(View v) {
+            refreshButton.setVisibility(View.GONE);
+            progressBar.setVisibility(View.VISIBLE);
+            station.refresh(new Station.OnStationRefreshCallback() {
+                @Override
+                public void onStationRefreshSuccess() {
+                    if (adapter != null) adapter.notifyDataSetChanged();
+                    refreshButton.setVisibility(View.VISIBLE);
+                    progressBar.setVisibility(View.GONE);
+                }
+
+                @Override
+                public void onStationRefreshFailure() {
+                    refreshButton.setVisibility(View.VISIBLE);
+                    progressBar.setVisibility(View.GONE);
+                }
+            });
+        }
     }
 
     static class RouteHolder {
