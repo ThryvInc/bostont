@@ -91,7 +91,7 @@ public class SchedulesFragment extends Fragment implements View.OnClickListener,
 
     @Override
     public void onLineLoadedFailure(boolean usersFault) {
-        pd.dismiss();
+        if (pd != null) pd.dismiss();
         if (getActivity() != null) {
             String message = "The MBTA is currently not responding";
             if (usersFault) message = "Check your internet connection and try again";

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="@style/Theme.AppCompat" >
+        <item name="android:alertDialogStyle">@style/CustomDialogTheme</item>
+    </style>
+
+    <style name="CustomDialogTheme" parent="@android:style/Theme.Dialog">
+        <item name="android:background">#000</item>
+        <item name="android:buttonBarButtonStyle">@style/CustomButtonBarButtonStyle</item>
+    </style>
+
+    <style name="CustomButtonBarButtonStyle" parent="@android:style/Widget.Material.Light.Button.Borderless.Colored">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+</resources>

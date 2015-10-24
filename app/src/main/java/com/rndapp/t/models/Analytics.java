@@ -33,6 +33,8 @@ public class Analytics {
     private static final String RED_LINE_KEY = "RedLinePressed";
     private static final String ORANGE_LINE_KEY = "OrangeLinePressed";
     private static final String APP_OPENS_KEY = "NumberOfAppOpens";
+    private static final String NAG_RATING = "NagRating-v1";
+    private static final String NAG_APP = "NagApp-v1";
 
     private static HashMap<TrackerName, Tracker> mTrackers = new HashMap<TrackerName, Tracker>();
     public enum TrackerName {
@@ -92,6 +94,46 @@ public class Analytics {
 
         //Flurry
         FlurryAgent.logEvent(MAP_KEY);
+    }
+
+    public static void nagRating(Context context, String response){
+        Map<String, String> map = new HashMap<String, String>();
+        map.put("numberOfAppOpens", numberGroup(Analytics.getNumberOfOpens(context)));
+        map.put("response", response);
+
+        //GoogleAnalytics
+        Tracker t = getTracker(context, TrackerName.APP_TRACKER);
+        t.send(new HitBuilders.EventBuilder()
+                .setAction(NAG_RATING)
+                .set("numberOfAppOpens", numberGroup(Analytics.getNumberOfOpens(context)))
+                .set("response", response)
+                .build());
+
+        //Parse
+        ParseAnalytics.trackEventInBackground(NAG_RATING, map);
+
+        //Flurry
+        FlurryAgent.logEvent(NAG_RATING, map);
+    }
+
+    public static void nagApp(Context context, String response){
+        Map<String, String> map = new HashMap<String, String>();
+        map.put("numberOfAppOpens", numberGroup(Analytics.getNumberOfOpens(context)));
+        map.put("response", response);
+
+        //GoogleAnalytics
+        Tracker t = getTracker(context, TrackerName.APP_TRACKER);
+        t.send(new HitBuilders.EventBuilder()
+                .setAction(NAG_APP)
+                .set("numberOfAppOpens", numberGroup(Analytics.getNumberOfOpens(context)))
+                .set("response", response)
+                .build());
+
+        //Parse
+        ParseAnalytics.trackEventInBackground(NAG_APP, map);
+
+        //Flurry
+        FlurryAgent.logEvent(NAG_APP, map);
     }
 
     public static void schedulesShown(Context context){
@@ -168,7 +210,7 @@ public class Analytics {
         FlurryAgent.logEvent(GREEN_LINE_KEY);
     }
 
-    private static int getNumberOfOpens(Context context){
+    public static int getNumberOfOpens(Context context){
         SharedPreferences preferences = context.getApplicationContext().getSharedPreferences("Analytics", Context.MODE_PRIVATE);
         return preferences.getInt("number_of_app_opens", 0);
     }
@@ -187,5 +229,22 @@ public class Analytics {
             mTrackers.put(trackerId, t);
         }
         return mTrackers.get(trackerId);
+    }
+
+    protected static String numberGroup(int number){
+        if (number == 1){
+            return "1";
+        }else if (number < 6){
+            return "2-5";
+        }else if (number < 10){
+            return "6-10";
+        }else if (number < 20){
+            return "11-20";
+        }else if (number < 50){
+            return "21-50";
+        }else if (number < 100){
+            return "51-100";
+        }
+        return "100+";
     }
 }

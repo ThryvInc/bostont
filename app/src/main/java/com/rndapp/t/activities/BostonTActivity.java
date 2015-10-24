@@ -1,11 +1,14 @@
 package com.rndapp.t.activities;
 
+import android.app.Activity;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.View;
 
+import com.flurry.android.FlurryAgent;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -16,10 +19,16 @@ import com.rndapp.t.models.Analytics;
 import com.rndapp.t.models.Line;
 import com.rndapp.t.models.LineController;
 import com.rndapp.t.R;
+import com.rndapp.t.models.Nagger;
 import com.rndapp.t.models.StationAdapter;
 
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+
 public class BostonTActivity extends ActionBarActivity implements LineController{
-    AdView adView;
+    protected static final String PREFS_NAME = "main_activity";
+    protected AdView adView;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -28,8 +37,17 @@ public class BostonTActivity extends ActionBarActivity implements LineController
 
         Analytics.activityCreated(this);
 
+        if (isAdOnTop()){
+            adView = (AdView)findViewById(R.id.ad_top);
+            findViewById(R.id.ad_bottom).setVisibility(View.GONE);
+            setAdOnTop(true);
+        }else {
+            adView = (AdView)findViewById(R.id.ad_bottom);
+            findViewById(R.id.ad_top).setVisibility(View.GONE);
+            setAdOnTop(false);
+        }
+
         if (!getResources().getString(R.string.version).equals("paid")){
-            adView = (AdView)this.findViewById(R.id.ad);
             AdRequest adRequest = new AdRequest.Builder()
                     .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
                     .addTestDevice("124C0C8E23FB2264186BB5819F6A0D57")
@@ -41,7 +59,17 @@ public class BostonTActivity extends ActionBarActivity implements LineController
                     super.onAdLoaded();
                     adView.setVisibility(View.VISIBLE);
                 }
+
+                @Override
+                public void onAdOpened() {
+                    super.onAdOpened();
+                    Map<String, String> map = new HashMap<String, String>();
+                    map.put("onTop", isAdOnTop() ? "true" : "false");
+                    FlurryAgent.logEvent("AdClicked", map);
+                }
             });
+        }else{
+            adView.setVisibility(View.GONE);
         }
 
         FragmentManager fragmentManager = getSupportFragmentManager();
@@ -73,12 +101,27 @@ public class BostonTActivity extends ActionBarActivity implements LineController
     public void onResume() {
         super.onResume();
         if (adView != null) adView.resume();
+
+        if (!getResources().getString(R.string.version).equals("paid")) {
+            new Nagger(this).startNag();
+        }
     }
 
     @Override
     public void onDestroy() {
         if (adView != null) adView.destroy();
         super.onDestroy();
+    }
+
+    protected boolean isAdOnTop(){
+        return this.getApplicationContext()
+                .getSharedPreferences(PREFS_NAME, Activity.MODE_PRIVATE)
+                .getBoolean("adOnTop", new Date().getTime() % 2 == 0);
+    }
+
+    protected void setAdOnTop(boolean canNag){
+        SharedPreferences.Editor editor = this.getApplicationContext().getSharedPreferences(PREFS_NAME, Activity.MODE_PRIVATE).edit();
+        editor.putBoolean("adOnTop", canNag).apply();
     }
 
     @Override

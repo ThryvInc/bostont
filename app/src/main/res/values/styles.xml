@@ -1,6 +1,8 @@
 <resources>
 
-    <style name="AppTheme" parent="@style/Theme.AppCompat" />
+    <style name="AppTheme" parent="@style/Theme.AppCompat" >
+
+    </style>
 
     <style name="PredictionTextView">
         <item name="android:layout_width">wrap_content</item>

@@ -5,20 +5,30 @@
     android:layout_height="fill_parent"
     android:orientation="vertical">
 
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/ad_top"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-2574276621042285/1351304508"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"/>
+
     <FrameLayout
         android:id="@+id/fl_fragments"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_above="@+id/ad"/>
+        android:layout_below="@+id/ad_top"
+        android:layout_above="@+id/ad_bottom"/>
 
     <com.google.android.gms.ads.AdView
-        android:id="@+id/ad"
+        android:id="@+id/ad_bottom"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         ads:adSize="BANNER"
         ads:adUnitId="ca-app-pub-2574276621042285/1351304508"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"/>
+
 </RelativeLayout>
