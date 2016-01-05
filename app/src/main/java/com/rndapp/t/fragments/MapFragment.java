@@ -1,7 +1,9 @@
 package com.rndapp.t.fragments;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -27,6 +29,13 @@ public class MapFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 ((LineController)getActivity()).showSchedules();
+            }
+        });
+
+        root.findViewById(R.id.tv_privacy).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://teschrock.wordpress.com/transit-app-privacy-policy/")));
             }
         });
 

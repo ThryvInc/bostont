@@ -6,6 +6,8 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
 import com.crashlytics.android.Crashlytics;
 import com.rndapp.t.models.Analytics;
+import com.xone.XoneManager;
+
 import io.fabric.sdk.android.Fabric;
 
 /**

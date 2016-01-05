@@ -1,11 +1,22 @@
 package com.rndapp.t.activities;
 
+import android.Manifest;
 import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 
 import com.flurry.android.FlurryAgent;
@@ -21,14 +32,17 @@ import com.rndapp.t.models.LineController;
 import com.rndapp.t.R;
 import com.rndapp.t.models.Nagger;
 import com.rndapp.t.models.StationAdapter;
+import com.xone.XoneManager;
+import com.xone.XoneTipStyle;
 
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-public class BostonTActivity extends ActionBarActivity implements LineController{
+public class BostonTActivity extends AppCompatActivity implements LineController{
     protected static final String PREFS_NAME = "main_activity";
     protected AdView adView;
+    private static final int REQUEST_CODE_ASK_PERMISSIONS = 1;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -37,15 +51,16 @@ public class BostonTActivity extends ActionBarActivity implements LineController
 
         Analytics.activityCreated(this);
 
-        if (isAdOnTop()){
-            adView = (AdView)findViewById(R.id.ad_top);
-            findViewById(R.id.ad_bottom).setVisibility(View.GONE);
-            setAdOnTop(true);
-        }else {
-            adView = (AdView)findViewById(R.id.ad_bottom);
-            findViewById(R.id.ad_top).setVisibility(View.GONE);
-            setAdOnTop(false);
+        XoneManager.init(this, "007f1544b91341dea0c36176dbecd139");
+        XoneManager.enableAutoTips(this, XoneTipStyle.newBuilder().setShowFromBottom(true).build());
+
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) !=  PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_CODE_ASK_PERMISSIONS);
         }
+
+        adView = (AdView)findViewById(R.id.ad_bottom);
+        findViewById(R.id.ad_top).setVisibility(View.GONE);
+        setAdOnTop(false);
 
         if (!getResources().getString(R.string.version).equals("paid")){
             AdRequest adRequest = new AdRequest.Builder()
@@ -112,11 +127,36 @@ public class BostonTActivity extends ActionBarActivity implements LineController
         if (adView != null) adView.destroy();
         super.onDestroy();
     }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://teschrock.wordpress.com/transit-app-privacy-policy/")));
+        return true;
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        switch (requestCode) {
+            case REQUEST_CODE_ASK_PERMISSIONS:
+                if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    XoneManager.locationPermissionGranted();
+                } else {
+                    XoneManager.locationPermissionDenied();
+                }
+                break;
+            default:
+                super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
+    }
 
     protected boolean isAdOnTop(){
-        return this.getApplicationContext()
-                .getSharedPreferences(PREFS_NAME, Activity.MODE_PRIVATE)
-                .getBoolean("adOnTop", new Date().getTime() % 2 == 0);
+        return false;
     }
 
     protected void setAdOnTop(boolean canNag){

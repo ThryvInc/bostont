@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 
 import com.flurry.android.FlurryAgent;
 import com.google.android.gms.analytics.GoogleAnalytics;
@@ -45,7 +46,7 @@ public class Analytics {
         Parse.initialize(application, PARSE_KEY_ONE, PARSE_KEY_TWO);
     }
 
-    public static void activityCreated(ActionBarActivity activity){
+    public static void activityCreated(AppCompatActivity activity){
         ParseAnalytics.trackAppOpenedInBackground(activity.getIntent());
     }
 
